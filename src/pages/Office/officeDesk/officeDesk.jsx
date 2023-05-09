@@ -1,73 +1,75 @@
 import React, { useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-//import AbbeySmall from '../../../assets/Bedroom/Nightstand/Abbey-Small.avif';
-import CabinetPiv from '../../../assets/Dinningroom/dinning cabinet/cabinet.avif';
-import MordernCab from '../../../assets/Dinningroom/dinning cabinet/mordencabinet.avif';
-import niceCab from '../../../assets/Dinningroom/dinning cabinet/nice.avif';
-import suppercool from '../../../assets/Dinningroom/dinning cabinet/suppercool.avif';
-import vendi from '../../../assets/Dinningroom/dinning cabinet/vendinemachine.avif';
+import apartment from '../../../assets/Office/office desk/apartment.avif';
+import ardel from '../../../assets/Office/office desk/ardel.avif';
+import florence from '../../../assets/Office/office desk/florence.avif';
+import griffit from '../../../assets/Office/office desk/griffit.avif';
+import isla from '../../../assets/Office/office desk/isla.avif';
+import ringo from '../../../assets/Office/office desk/ringo.avif';
+import roqque from '../../../assets/Office/office desk/roqque.avif';
+import somer from '../../../assets/Office/office desk/somer.avif';
 
-let CabinetArr = [
+let DeskArr = [
     {
-        Img : CabinetPiv,
-        name: 'Cabinet ',
-        Price: 300,
-        discount : 350,
+        Img : apartment,
+        name: 'Apartment',
+        Price: 200,
+        discount : 250,
     },
     {
-        Img : MordernCab,
-        name: 'Mordern',
+        Img : ardel,
+        name: 'Ardel',
         Price: 350,
         discount : 400,
     },
     {
-        Img :niceCab,
-        name: 'Nice',
+        Img :florence,
+        name: 'florence',
         Price: 348,
         discount : 400,
     },
     {
-        Img : suppercool,
-        name: 'Supercool',
-        Price: 400,
-        discount : 450,
+        Img : griffit,
+        name: 'griffit',
+        Price: 100,
+        discount : 150,
     },
-    /*
+    
     {
-        Img : Isla,
+        Img : isla,
         name: 'Isla Stand',
         Price: 100,
         discount : 160,
     },
     {
-        Img : Roque,
-        name: 'Rogue stand',
+        Img : ringo,
+        name: 'ringo',
         Price: 100,
         discount : 150,
     },
     {
-        Img : Soffia,
-        name: 'Soffia',
+        Img : roqque,
+        name: 'roqque',
         Price: 150,
         discount : 200,
     },
     {
-        Img : Tina,
-        name: 'Tina Nighstand',
+        Img : roqque,
+        name: 'roqque',
         Price: 50,
         discount : 70,
     }
-    */
+    
 ]
 
 
-export const Cabinets = () => {
+export const OfficeDesk = () => {
     return(
         <div className="py-[20px] ">
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
 {
-CabinetArr.map(items => (
+DeskArr.map(items => (
 
 
 

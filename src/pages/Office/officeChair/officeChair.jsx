@@ -2,16 +2,10 @@ import React, { useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
-import  LoungeChair from '../../../assets/Livingroom/livingroom chair/soto-chair.avif';
-import  BellChair from '../../../assets/Livingroom/livingroom chair/bell-chair.avif';
-import  BondiChair from '../../../assets/Livingroom/livingroom chair/bondi-outdoor-chair.avif';
-import  BryantChair from '../../../assets/Livingroom/livingroom chair/bryant-chair.avif';
-import  CollinsChair from '../../../assets/Livingroom/livingroom chair/collins-chair.avif';
-import  Eastwood from '../../../assets/Livingroom/livingroom chair/eastwood-swivel-chair.avif';
-import  HughesSwivel from '../../../assets/Livingroom/livingroom chair/hughes-swivel-chair.avif';
-import  NinaGlider from '../../../assets/Livingroom/livingroom chair/nina-glider.avif';
-
-
+import  gerdDesk from '../../../assets/Office/office chair/gerd desk.avif';
+import  juneChaiir from '../../../assets/Office/office chair/juneChaiir.avif';
+import  liaChair from '../../../assets/Office/office chair/liaChair.avif';
+import  rae from '../../../assets/Office/office chair/rae.avif';
 
 
 
@@ -21,29 +15,30 @@ import  NinaGlider from '../../../assets/Livingroom/livingroom chair/nina-glider
 
 let ChairArr = [
     {
-        Img : LoungeChair,
-        name: 'Lounge chair',
+        Img : gerdDesk,
+        name: 'Gerd Desk',
         Price: 150,
         discount : 200,
     },
     {
-        Img : BellChair,
-        name: 'Bell Chair',
+        Img : juneChaiir,
+        name: 'June Chair',
         Price: 200,
         discount : 250,
     },
     {
-        Img : BondiChair,
-        name: 'Bondi Chair',
+        Img : liaChair,
+        name: 'Lia Chair',
         Price: 170,
         discount : 200,
     },
     {
-        Img : BryantChair,
-        name: 'Bryant Chair ',
-        Price: 300,
-        discount : 350,
+        Img : rae,
+        name: 'rae ',
+        Price: 100,
+        discount : 150,
     },
+    /*
     {
         Img : CollinsChair,
         name: 'Collins Chair',
@@ -67,11 +62,11 @@ let ChairArr = [
         name: 'Nina Glider',
         Price: 180,
         discount : 230,
-    }
+    }*/
 ]
 
 
-export const Chairs = () => {
+export const OfficeChairs = () => {
     return(
         <div className="py-[50px] ">
        <div>
