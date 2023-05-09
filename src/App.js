@@ -5,6 +5,7 @@ import { MobileNav } from './components/Navlink/mobileviewNav';
 import { Home } from './pages/Home/Home';
 import { Bedroom } from './pages/Bedroom/Bedroom';
 import { Livingroom } from './pages/Livingroom/Livingroom';
+import { Dinningroom } from './pages/Dinningroom/Dinningroom';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
   <Home/>
   <Bedroom/>
   <Livingroom/>
+  <Dinningroom/>
     </div>
     </BrowserRouter>
   
