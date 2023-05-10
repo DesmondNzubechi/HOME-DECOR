@@ -9,6 +9,7 @@ import { Dinningroom } from './pages/Dinningroom/Dinningroom';
 import { Office } from './pages/Office/Office';
 import { OutdoorFurniture } from './pages/Outdoor/OutDoor';
 import { Decor } from './pages/Decor/Decor';
+import { Kitchen } from './pages/Kitchen/Kitchen';
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +25,7 @@ function App() {
   <Office/>
   <OutdoorFurniture/>
   <Decor/>
+  <Kitchen/>
     </div>
     </BrowserRouter>
   
