@@ -8,7 +8,7 @@ import { Livingroom } from './pages/Livingroom/Livingroom';
 import { Dinningroom } from './pages/Dinningroom/Dinningroom';
 import { Office } from './pages/Office/Office';
 import { OutdoorFurniture } from './pages/Outdoor/OutDoor';
-
+import { Decor } from './pages/Decor/Decor';
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +23,7 @@ function App() {
   <Dinningroom/>
   <Office/>
   <OutdoorFurniture/>
+  <Decor/>
     </div>
     </BrowserRouter>
   
