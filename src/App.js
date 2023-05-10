@@ -7,7 +7,7 @@ import { Bedroom } from './pages/Bedroom/Bedroom';
 import { Livingroom } from './pages/Livingroom/Livingroom';
 import { Dinningroom } from './pages/Dinningroom/Dinningroom';
 import { Office } from './pages/Office/Office';
-
+import { OutdoorFurniture } from './pages/Outdoor/OutDoor';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
   <Livingroom/>
   <Dinningroom/>
   <Office/>
+  <OutdoorFurniture/>
     </div>
     </BrowserRouter>
   
