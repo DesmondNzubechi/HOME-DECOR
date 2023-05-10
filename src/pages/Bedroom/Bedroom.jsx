@@ -6,7 +6,7 @@ import { Nightstands } from "./Nightstand/Nightstand";
 
 export const Bedroom = () => {
     return(
-        <div className="py-[50px] px-[20px] ">
+        <div className="py-[50px] pt-[100px] px-[20px] ">
        <div>
         <div className="flex md:px-[20px] items-end flex-row justify-between ">
         <h1 className="uppercase  p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[18px] md:text-[40px] ">All bedroom </h1>

@@ -72,7 +72,7 @@ let KitchenArr = [
 
 export const Kitchen = () => {
     return(
-        <div className="py-[50px] px-[20px] ">
+        <div className="py-[50px] pt-[100px] px-[20px] ">
        <div>
        <h1 className="uppercase my-[20px] p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[25px] md:text-[40px] ">Kitchen</h1>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">

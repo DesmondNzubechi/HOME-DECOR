@@ -14,18 +14,19 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-  <DesktopNav
-  className='fixed bg-red-500 bottom-0'
-  />
+  <DesktopNav/>
   <MobileNav/>
-  <Home/>
-  <Bedroom/>
-  <Livingroom/>
-  <Dinningroom/>
-  <Office/>
-  <OutdoorFurniture/>
-  <Decor/>
-  <Kitchen/>
+  <Routes>
+    <Route path='/' element={  <Home/>} />
+    <Route path='/bedroom' element={<Bedroom/>} />
+    <Route path='/livingroom' element={  <Livingroom/>} />
+    <Route path='/dinningroom' element={ <Dinningroom/>} />
+    <Route path='/outdoor' element={  <OutdoorFurniture/>} />
+    <Route path='/decor' element={  <Decor/>} />
+    <Route path='/kitchen' element={   <Kitchen/>} />
+    <Route path='/office' element={   <Office/>} />
+
+  </Routes>
     </div>
     </BrowserRouter>
   
