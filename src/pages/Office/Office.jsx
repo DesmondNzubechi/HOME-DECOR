@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import { OfficeChairs } from "./officeChair/officeChair";
 import { OfficeDesk } from "./officeDesk/officeDesk";
+import { OfficeShelve } from "./officeShelve/officeShelves";
+
+
 export const Office = () => {
     return(
         <div className="py-[50px] px-[20px] ">
@@ -20,7 +23,7 @@ export const Office = () => {
         </div>
        <OfficeDesk/>
        <OfficeChairs/>
-    
+    <OfficeShelve/>
        </div>
         </div>
     )

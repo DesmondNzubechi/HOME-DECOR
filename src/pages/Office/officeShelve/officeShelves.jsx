@@ -2,14 +2,12 @@ import React, { useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
-import  aneNesting from '../../../assets/Livingroom/livingroom table/prange.avif';
-import  declanCofeeTable from '../../../assets/Livingroom/livingroom table/declan-coffee-table.avif';
-import  florence from '../../../assets/Livingroom/livingroom table/florence-desk.avif';
-import  Gabriella from '../../../assets/Livingroom/livingroom table/gabriella-coffee-table.avif';
-import  irenCofee from '../../../assets/Livingroom/livingroom table/iren cofee table.png';
-import  mitziTable from '../../../assets/Livingroom/livingroom table/mitzi-expandable-dining-table.avif';
-import  nestingTable from '../../../assets/Livingroom/livingroom table/nestin table.avif';
-import  xavierTable from '../../../assets/Livingroom/livingroom table/xavier-apartment.avif';
+import  crosley from '../../../assets/Office/office shelve/crosley.avif';
+import  hazel from '../../../assets/Office/office shelve/hazel.avif';
+import  lois from '../../../assets/Office/office shelve/lois.avif';
+import  owen from '../../../assets/Office/office shelve/owen.avif';
+import  rigo from '../../../assets/Office/office shelve/rigo.avif';
+import  mitziTable from '../../../assets/Office/office shelve/roque.avif';
 
 
 
@@ -18,32 +16,32 @@ import  xavierTable from '../../../assets/Livingroom/livingroom table/xavier-apa
 
 
 
-
-let TableArr = [
+let ShelvesArr = [
     {
-        Img : aneNesting,
-        name: 'Ane Nesting',
+        Img : crosley,
+        name: 'crosley',
         Price: 150,
         discount : 300,
     },
     {
-        Img : declanCofeeTable,
-        name: 'Cofee Table',
+        Img : hazel,
+        name: 'hazel',
         Price: 100,
         discount : 150,
     },
     {
-        Img : florence,
-        name: 'Florence Desk',
+        Img : lois,
+        name: 'lois ',
         Price: 230,
         discount : 300,
     },
     {
-        Img : Gabriella,
-        name: 'Gabriella Table',
+        Img : rigo,
+        name: 'rigo ',
         Price: 300,
         discount : 350,
     },
+    /*
     {
         Img : irenCofee,
         name: 'Iren Table',
@@ -68,20 +66,17 @@ let TableArr = [
         Price: 175,
         discount : 210,
     }
+    */
 ]
 
 
-export const Tables= () => {
+export const OfficeShelve = () => {
     return(
         <div className="py-[50px] ">
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
-TableArr.map(items => (
-
-
-
-    
+ShelvesArr.map(items => (
     <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-4 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
