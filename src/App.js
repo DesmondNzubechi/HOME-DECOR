@@ -19,7 +19,6 @@ function App() {
       <div className="App">
   <DesktopNav/>
   <MobileNav/>
-  <CartLog/>
   <Routes>
     <Route path='/' element={  <Home/>} />
     <Route path='/bedroom' element={<Bedroom/>} />

@@ -1,14 +1,4 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper";
-
+import React, { useRef, useState, useContext } from "react";
 import newArrivalImg1 from '../../assets/circleT.avif';
 import newArrivalImg2 from '../../assets/cushion1.avif';
 import newArrivalImg3 from '../../assets/cushion2.avif';
@@ -17,8 +7,11 @@ import newArrivalImg5 from '../../assets/officeF3.avif';
 import newArrivalImg6 from '../../assets/officeF2.avif';
 import newArrivalImg7 from '../../assets/kitchen2.jpg';
 import newArrivalImg8 from '../../assets/officeF2.avif';
-
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
+import { CartContext } from "../CartContext/CartContext";
+import { CartProvider } from "../CartContext/CartContext";
+
+
 
 let newArrivalObj = [
     {
@@ -56,7 +49,14 @@ let newArrivalObj = [
 ]
 
 
-export const NewArrival = () => {
+export const NewArrival = ({product}) => {
+
+const {dispatch} = useContext(CartContext);
+const addToCart = () => {
+    dispatch({type:addToCart, payload:product.id})
+}
+
+
     return(
         <div className="py-[50px] ">
        <div>

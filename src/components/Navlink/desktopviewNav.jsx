@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import {BsSearch} from 'react-icons/bs';
 import './style.css';
+import { CartLog } from "../Cart/Cart";
 
 
 
 
 export const DesktopNav = () => {
+    const [cart, setCart] = useState(false);
     return(
         <div className="lg:flex hidden flex-row py-[10px] z-[20]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-Tp  gap-5 justify-around">
             <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[30px] ">HomeDecor</h1></div>
@@ -61,7 +63,7 @@ style={({isActive}) => {
     <AiFillHeart className="text-[30px] "/>
     <AiFillShopping className="text-[30px] "/>
 </div>
-
+{cart && <CartLog/>}
         </div>
 
     )

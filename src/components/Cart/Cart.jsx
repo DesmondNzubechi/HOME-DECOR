@@ -1,20 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {AiFillShopping, AiOutlinePlus, AiOutlineMinus, AiFillMinusCircle} from 'react-icons/ai';
 import {BsFillPlusCircleFill} from 'react-icons/bs';
 import {HiOutlineXMark} from 'react-icons/hi2';
 import Pic from '../../assets/cushion7.jpg';
 
 export const CartLog = () => {
-
+const [hideCart, setHideCart]  = useState(false);
 const initialCartItems = [
     {
    name: 'Sofa',
    img: Pic,
    price: 600,
     }
-]
+];
 
     return(
+       
         <div className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Tp ">
 <div className="bg-black absolute top-0 left-0 bottom-0 w-[100%] md:w-[50%] ">
 <div className="flex flex-row border-b border-slate-500 p-[10px] justify-between items-center  gap-2  ">
@@ -49,8 +50,6 @@ const initialCartItems = [
 
 
 </div>
-
-
-        </div>
+ </div>
     )
 }

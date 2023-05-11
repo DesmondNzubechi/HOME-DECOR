@@ -4,9 +4,12 @@ import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import {BsSearch} from 'react-icons/bs';
 import {FaBars} from 'react-icons/fa';
 import {HiOutlineXMark} from 'react-icons/hi2';
+import { CartLog } from "../Cart/Cart";
 import './style.css';
 
 export const MobileNav = () => {
+
+    const [cart, setCart] = useState(false);
 const [navIcons, SetNavIcons] = useState({
    showIcon : true,
    hideIcon : false,
@@ -84,7 +87,7 @@ style={({isActive}) => {
   { navIcons.showIcon && <FaBars onClick={ShowSideLink} className="text-[22px] md:text-[25px]  "/>}
   { navIcons.hideIcon &&  <HiOutlineXMark onClick={HideSideLink} className="text-[22px] md:text-[25px] "/>}
 </div>
-
+{cart &&<CartLog/>}
         </div>
 
     )
