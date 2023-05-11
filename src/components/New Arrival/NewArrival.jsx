@@ -8,54 +8,62 @@ import newArrivalImg6 from '../../assets/officeF2.avif';
 import newArrivalImg7 from '../../assets/kitchen2.jpg';
 import newArrivalImg8 from '../../assets/officeF2.avif';
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-import { CartContext } from "../CartContext/CartContext";
-import { CartProvider } from "../CartContext/CartContext";
-
-
+//import { cartContext } from "../CartContext/CartContext";
 
 let newArrivalObj = [
     {
+        id: 1,
         Img : newArrivalImg1,
         name: 'sofa',
     },
     {
+        id: 2,
         Img : newArrivalImg2,
         name: 'sofa',
     },
     {
+        id: 3,
         Img : newArrivalImg3,
         name: 'sofa',
     },
     {
+        id: 4,
         Img : newArrivalImg4,
         name: 'sofa',
     },
     {
+        id: 5,
         Img : newArrivalImg5,
         name: 'sofa',
     },
     {
+        id: 6,
         Img : newArrivalImg6,
         name: 'sofa',
     },
     {
+        id: 7,
         Img : newArrivalImg7,
         name: 'sofa',
     },
     {
+        id: 8,
         Img : newArrivalImg8,
         name: 'sofa',
     }
 ]
 
 
-export const NewArrival = ({product}) => {
+export const NewArrival = () => {
 
-const {dispatch} = useContext(CartContext);
-const addToCart = () => {
-    dispatch({type:addToCart, payload:product.id})
-}
+  /*  const {dispatch} = useContext(cartContext);
 
+    const addToCart = () => {
+        dispatch({
+            type: 'Add_To_Cart',
+            payload: items,
+        })
+    }*/
 
     return(
         <div className="py-[50px] ">
@@ -68,7 +76,7 @@ newArrivalObj.map(items => (
 
 
     
-    <div className="md:p-3 p-1 rounded relative flex flex-col justify-center items-center    border my-[10px]  md:min-w-[150px] ">
+    <div key={items.id} className="md:p-3 p-1 rounded relative flex flex-col justify-center items-center    border my-[10px]  md:min-w-[150px] ">
     <div className=" p-4 max-w-[300px] ">
     <img src={items.Img} alt="" className="w-full" />
     </div>
@@ -84,7 +92,7 @@ newArrivalObj.map(items => (
         </div>
         <div className="flex flex-row gap-2 items-center">
         <AiFillHeart className="text-[20px] p-1  text-red-500 shadow rounded-full md:text-[30px]  "/>
-<AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+<AiFillShopping  className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
         </div>
     </div>
     </div>

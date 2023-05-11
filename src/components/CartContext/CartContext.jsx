@@ -1,39 +1,32 @@
 import React from "react";
 import { useReducer, createContext } from "react";
+export const cartContext = createContext();
 
-export const CartContext = createContext();
-
-
-
-const cartReducer = (state, action) => {
-    switch (action.type) {
-        case 'addToCart': 
-     const checkProduct = state.find(product => product.id === action.payload.id);
-     if (checkProduct) {
-        return state.map(product => product.id === action.payload.id ?
-            {...product, quantity: product.quantity + 1}:
-            product
-            );
-        } else {
-        return [...state, {...action.payload, quantity: 1}]
-     }
-     break;
-     case 'removeFromCart':
-        return state.filter(product => product.id !== action.payload);
-    
-            break;
-    
-        default:
-           return state;
-    }
+/*
+const reducerFxn = (state, action) => {
+   switch (action.type) {
+    case "Add_To_Cart":{
+        return
+            [...state, 
+              ...action.payload,
+            ]
+            
+    };
+        
+        break;
+   
+    default:
+        return state;
+        break;
+   }
 }
 
-
-export const CartProvider = ({children}) => {
-    const [state, dispatch] = useReducer(cartReducer, []);
-    return (
-        <CartContext.Provider>
-            {children}
-        </CartContext.Provider>
+export const ContextPro = (props) => {
+    const [cartItems, dispatch] = useReducer(reducerFxn, []);
+console.Console(cartItems);
+    return(
+<cartContext.Provider  value={{cartItems, dispatch}}>
+{props.children}
+</cartContext.Provider>
     )
-}
+}*/
