@@ -74,12 +74,12 @@ export const Kitchen = () => {
     return(
         <div className="py-[50px] pt-[100px] px-[20px] ">
        <div>
-       <h1 className="uppercase my-[20px] p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[25px] md:text-[40px] ">Kitchen</h1>
+       <h1 className="uppercase my-[20px] p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[25px] md:text-[40px] ">Kitchen Cabinet</h1>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
 KitchenArr.map(items => (
     <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
-         <div className=" p-1 max-w-[150px] h-[150px] ">
+         <div className=" p-1 max-w-[210px] h-[150px]  ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
        <div className="flex w-full   bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">

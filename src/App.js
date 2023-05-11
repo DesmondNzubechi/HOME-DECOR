@@ -10,12 +10,16 @@ import { Office } from './pages/Office/Office';
 import { OutdoorFurniture } from './pages/Outdoor/OutDoor';
 import { Decor } from './pages/Decor/Decor';
 import { Kitchen } from './pages/Kitchen/Kitchen';
+import { CartLog } from './components/Cart/Cart';
+
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
   <DesktopNav/>
   <MobileNav/>
+  <CartLog/>
   <Routes>
     <Route path='/' element={  <Home/>} />
     <Route path='/bedroom' element={<Bedroom/>} />
