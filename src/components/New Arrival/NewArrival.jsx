@@ -8,8 +8,7 @@ import newArrivalImg6 from '../../assets/officeF2.avif';
 import newArrivalImg7 from '../../assets/kitchen2.jpg';
 import newArrivalImg8 from '../../assets/officeF2.avif';
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-//import { cartContext } from "../CartContext/CartContext";
-
+import { CartContext } from "../CartContext/CartContext";
 let newArrivalObj = [
     {
         id: 1,
@@ -56,15 +55,16 @@ let newArrivalObj = [
 
 export const NewArrival = () => {
 
-  /*  const {dispatch} = useContext(cartContext);
 
-    const addToCart = () => {
+    const {dispatch} = useContext(CartContext);
+
+    const addToCart = (items) => {
         dispatch({
-            type: 'Add_To_Cart',
-            payload: items,
-        })
-    }*/
-
+       type: "Add_To_Cart",
+       payload: items,
+        });
+    };
+   
     return(
         <div className="py-[50px] ">
        <div>
@@ -72,10 +72,6 @@ export const NewArrival = () => {
      <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
 {
 newArrivalObj.map(items => (
-
-
-
-    
     <div key={items.id} className="md:p-3 p-1 rounded relative flex flex-col justify-center items-center    border my-[10px]  md:min-w-[150px] ">
     <div className=" p-4 max-w-[300px] ">
     <img src={items.Img} alt="" className="w-full" />
@@ -92,7 +88,7 @@ newArrivalObj.map(items => (
         </div>
         <div className="flex flex-row gap-2 items-center">
         <AiFillHeart className="text-[20px] p-1  text-red-500 shadow rounded-full md:text-[30px]  "/>
-<AiFillShopping  className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+<AiFillShopping onClick={() => addToCart(items)}  className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
         </div>
     </div>
     </div>
