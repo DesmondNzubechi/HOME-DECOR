@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import {BsSearch} from 'react-icons/bs';
 import {FaBars} from 'react-icons/fa';
 import {HiOutlineXMark} from 'react-icons/hi2';
-import { CartLog } from "../Cart/Cart";
 import './style.css';
+import { CartContext } from "../CartContext/CartContext";
 
 export const MobileNav = () => {
 
-    const [cart, setCart] = useState(false);
+
+    const {showCartItems} = useContext(CartContext);
+   
 const [navIcons, SetNavIcons] = useState({
    showIcon : true,
    hideIcon : false,
@@ -83,11 +85,11 @@ style={({isActive}) => {
 <div className="flex text-slate-100 items-center flex-row gap-3  ">
     <BsSearch className="text-[22px] md:text-[25px] "/>
     <AiFillHeart className="text-[22px] md:text-[25px]  "/>
-    <AiFillShopping className="text-[22px] md:text-[25px] "/>
+    <AiFillShopping onClick={showCartItems} className="text-[22px] md:text-[25px] "/>
   { navIcons.showIcon && <FaBars onClick={ShowSideLink} className="text-[22px] md:text-[25px]  "/>}
   { navIcons.hideIcon &&  <HiOutlineXMark onClick={HideSideLink} className="text-[22px] md:text-[25px] "/>}
 </div>
-{cart &&<CartLog/>}
+
         </div>
 
     )

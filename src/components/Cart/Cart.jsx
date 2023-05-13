@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {AiFillShopping, AiOutlinePlus, AiOutlineMinus, AiFillMinusCircle} from 'react-icons/ai';
 import {BsFillPlusCircleFill} from 'react-icons/bs';
 import {HiOutlineXMark} from 'react-icons/hi2';
 import Pic from '../../assets/cushion7.jpg';
+import { CartContext } from "../CartContext/CartContext";
 
 export const CartLog = () => {
+
+  const {cartItems} = useContext(CartContext);
+const {showCart} = useContext(CartContext);
+const {hideCartItems} = useContext(CartContext);
+
 const [hideCart, setHideCart]  = useState(false);
 const initialCartItems = [
     {
@@ -15,12 +21,13 @@ const initialCartItems = [
 ];
 
     return(
-       
+      <>
+       {showCart &&
         <div className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Tp ">
 <div className="bg-black absolute top-0 left-0 bottom-0 w-[100%] md:w-[50%] ">
 <div className="flex flex-row border-b border-slate-500 p-[10px] justify-between items-center  gap-2  ">
     <h1 className="uppercase font-myfont    flex flex-row items-center  gap-2  text-slate-50 text-[22px] md:text-[30px] ">Cart Items <AiFillShopping className="text-[30px] text-white "/></h1>
-   <HiOutlineXMark  className="text-[30px] font-bold text-red-500  "/>
+   <HiOutlineXMark onClick={hideCartItems} className="text-[30px] font-bold text-red-500  "/>
 </div>
 
 <div className="p-[20px] grid grid-cols-1 justify-center  ">
@@ -51,5 +58,7 @@ const initialCartItems = [
 
 </div>
  </div>
+       }
+        </>
     )
 }

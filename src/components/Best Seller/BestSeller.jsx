@@ -1,14 +1,4 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-import { Pagination } from "swiper";
-
+import React, { useContext, useRef, useState } from "react";
 import newArrivalImg1 from '../../assets/circleT.avif';
 import newArrivalImg2 from '../../assets/cushion1.avif';
 import newArrivalImg3 from '../../assets/cushion2.avif';
@@ -19,7 +9,7 @@ import newArrivalImg7 from '../../assets/kitchen2.jpg';
 import newArrivalImg8 from '../../assets/officeF2.avif';
 
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-
+import { CartContext } from "../CartContext/CartContext";
 let newArrivalObj = [
     {
         Img : newArrivalImg1,
@@ -57,6 +47,9 @@ let newArrivalObj = [
 
 
 export const BestSeller = () => {
+
+const {addToCart} = useContext(CartContext);
+
     return(
         <div className="py-[50px] ">
        <div>
@@ -84,7 +77,7 @@ newArrivalObj.map(items => (
             </div>
             <div className="flex flex-row gap-2 items-center">
             <AiFillHeart className="text-[20px] p-1  text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>

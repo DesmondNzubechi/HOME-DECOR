@@ -56,15 +56,9 @@ let newArrivalObj = [
 export const NewArrival = () => {
 
 
-    const {dispatch} = useContext(CartContext);
+    const { addToCart } = useContext(CartContext)
 
-    const addToCart = (items) => {
-        dispatch({
-       type: "Add_To_Cart",
-       payload: items,
-        });
-    };
-   
+  
     return(
         <div className="py-[50px] ">
        <div>
@@ -88,7 +82,7 @@ newArrivalObj.map(items => (
         </div>
         <div className="flex flex-row gap-2 items-center">
         <AiFillHeart className="text-[20px] p-1  text-red-500 shadow rounded-full md:text-[30px]  "/>
-<AiFillShopping onClick={() => addToCart(items)}  className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+<AiFillShopping onClick={() => addToCart(items)}   className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
         </div>
     </div>
     </div>
