@@ -13,7 +13,7 @@ module.exports = {
         "Tp": "rgba(0, 0, 0, 0.9)",
         "T": "rgba(0, 0, 0, .8)",
         "Contact": "rgba(0, 0, 0, .7)",
-        "Icon": "rgba(0, 0, 0, .3)",
+        "Icon": "rgba(0, 0, 0, .5)",
       }
   },
   plugins: [],
