@@ -8,7 +8,7 @@ import { CartContext } from "../CartContext/CartContext";
 
 export const DesktopNav = () => {
 
-    const {showCartItems} = useContext(CartContext);
+    const {showCartItems, showWishList} = useContext(CartContext);
 
 
 
@@ -62,7 +62,7 @@ style={({isActive}) => {
 
 <div className="flex text-slate-100 flex-row gap-3  ">
     <BsSearch className="text-[30px] "/>
-    <AiFillHeart className="text-[30px] "/>
+    <AiFillHeart onClick={showWishList} className="text-[30px] "/>
     <AiFillShopping onClick={showCartItems} className="text-[30px] "/>
 </div>
 

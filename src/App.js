@@ -12,6 +12,7 @@ import { Decor } from './pages/Decor/Decor';
 import { Kitchen } from './pages/Kitchen/Kitchen';
 import { CartPro } from './components/CartContext/CartContext';
 import { CartLog } from './components/Cart/Cart';
+import { WishList } from './components/WishList/WishList';
 function App() {
   return (
     <CartPro>
@@ -20,6 +21,7 @@ function App() {
   <DesktopNav/>
   <MobileNav/>
   <CartLog/>
+  <WishList/>
   <Routes>
     <Route path='/' element={  <Home/>} />
     <Route path='/bedroom' element={<Bedroom/>} />

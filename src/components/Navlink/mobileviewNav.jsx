@@ -10,7 +10,7 @@ import { CartContext } from "../CartContext/CartContext";
 export const MobileNav = () => {
 
 
-    const {showCartItems} = useContext(CartContext);
+    const {showCartItems, showWishList} = useContext(CartContext);
    
 const [navIcons, SetNavIcons] = useState({
    showIcon : true,
@@ -84,7 +84,7 @@ style={({isActive}) => {
 
 <div className="flex text-slate-100 items-center flex-row gap-3  ">
     <BsSearch className="text-[22px] md:text-[25px] "/>
-    <AiFillHeart className="text-[22px] md:text-[25px]  "/>
+    <AiFillHeart onClick={showWishList} className="text-[22px] md:text-[25px]  "/>
     <AiFillShopping onClick={showCartItems} className="text-[22px] md:text-[25px] "/>
   { navIcons.showIcon && <FaBars onClick={ShowSideLink} className="text-[22px] md:text-[25px]  "/>}
   { navIcons.hideIcon &&  <HiOutlineXMark onClick={HideSideLink} className="text-[22px] md:text-[25px] "/>}
