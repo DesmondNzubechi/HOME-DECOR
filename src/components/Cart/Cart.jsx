@@ -21,7 +21,7 @@ let subTotal = 0;
       <>
        {showCart &&
         <div className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Icon ">
-<div className="bg-slate-900 h-full overflow-y-auto fixed top-0 right-0 bottom-0 w-[100%] md:w-[40%] ">
+<div className="bg-slate-900 h-[100vh] overflow-y-auto fixed top-0 right-0 bottom-0 w-[100%] md:w-[40%] ">
 {/*<div className="flex  md:w-[38%] w-full bg-slate-700 flex-row  p-[10px] justify-around items-center  gap-2  ">
  */} <HiOutlineXMark  onClick={hideCartItems} className="text-[40px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 hover:text-black font-bold bg-slate-300 shadow-2xl fixed right-[40px]    z-[20] top-5 rounded-full p-1 text-red-500  "/>
 {/*</div>*/}
