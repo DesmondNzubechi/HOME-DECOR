@@ -19,7 +19,7 @@ export const CartPro = (props) => {
 if (existingProduct) {
   return cartItems.map(pro => (
     pro.id === action.payload.id?
-    {...pro, quantity: pro.quantity++}:
+    {...pro, quantity: pro.quantity + 1}:
     pro
   ));
 } else {
@@ -40,7 +40,7 @@ if (existingProduct) {
          
           return cartItems.map(pro => (
             pro.id === action.payload.id?
-            {...pro, quantity: pro.quantity++}:
+            {...pro, quantity: pro.quantity + 1}:
             pro
           ));
       
