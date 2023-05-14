@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  scout from '../../../assets/Outdoor/outdoor tables/scout-outdoor-low-sid
 import  vista from '../../../assets/Outdoor/outdoor tables/vista-outdoor-side-table.avif';
 import  vita from '../../../assets/Outdoor/outdoor tables/vita-outdoor-coffee-table.avif';
 import  kinsev from '../../../assets/Outdoor/outdoor tables/white-kinsey-outdoor-dining-table.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  kinsev from '../../../assets/Outdoor/outdoor tables/white-kinsey-outdoor
 
 let TableArr = [
     {
+        id: 154,
         Img : lagunaCofee,
         name: 'Laguna Table',
         Price: 200,
         discount : 300,
     },
     {
+        id:155,
         Img : sideT,
         name: 'side Table',
         Price: 150,
         discount : 200,
     },
     {
+        id:156,
         Img : laurel,
         name: 'laurel',
         Price: 200,
         discount : 250,
     },
     {
+        id:157,
         Img : nikoT,
         name: 'niko Table ',
         Price: 300,
@@ -44,24 +48,28 @@ let TableArr = [
     },
    
     {
+        id:158,
         Img : scout,
         name: 'scout table',
         Price: 120,
         discount : 170,
     },
     {
+        id:159,
         Img : vista,
         name: 'vista',
         Price: 155,
         discount : 315,
     },
     {
+        id:160,
         Img : vita,
         name: 'vita',
         Price: 213,
         discount : 250,
     },
     {
+        id:161,
         Img : kinsev,
         name: 'kinsev',
         Price: 190,
@@ -71,14 +79,18 @@ let TableArr = [
 
 
 export const OutdoorTable = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
 TableArr.map(items => (
+
+
+
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
@@ -90,8 +102,8 @@ TableArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>

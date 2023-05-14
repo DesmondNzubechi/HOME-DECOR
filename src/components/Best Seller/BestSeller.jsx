@@ -12,34 +12,43 @@ import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import { CartContext } from "../CartContext/CartContext";
 let newArrivalObj = [
     {
+        id: 9,
         Img : newArrivalImg1,
         name: 'sofa',
+
     },
     {
+        id: 10,
         Img : newArrivalImg2,
         name: 'sofa',
     },
     {
+        id: 11,
         Img : newArrivalImg3,
         name: 'sofa',
     },
     {
+        id: 12,
         Img : newArrivalImg4,
         name: 'sofa',
     },
     {
+        id: 13,
         Img : newArrivalImg5,
         name: 'sofa',
     },
     {
+        id: 14,
         Img : newArrivalImg6,
         name: 'sofa',
     },
     {
+        id: 15,
         Img : newArrivalImg7,
         name: 'sofa',
     },
     {
+        id: 16,
         Img : newArrivalImg8,
         name: 'sofa',
     }
@@ -61,7 +70,7 @@ newArrivalObj.map(items => (
 
 
     
-    <div className="md:p-3 p-1 rounded relative flex flex-col justify-center items-center    border my-[10px]  md:min-w-[150px] ">
+    <div key={items.id} className="md:p-3 p-1 rounded relative flex flex-col justify-center items-center    border my-[10px]  md:min-w-[150px] ">
         <div className=" p-4 max-w-[300px] ">
         <img src={items.Img} alt="" className="w-full" />
         </div>

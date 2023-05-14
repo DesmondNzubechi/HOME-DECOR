@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  peacock from '../../../assets/Decor/pillow/peacock-decorative-knife-edge
 import  pillow from '../../../assets/Decor/pillow/pillow1.avif';
 import  squarePIllow from '../../../assets/Decor/pillow/square-pillow.avif';
 import  chevyPillow from '../../../assets/Decor/pillow/sunny-chevy-decorative-knife-edge-pillows.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  chevyPillow from '../../../assets/Decor/pillow/sunny-chevy-decorative-kn
 
 let PillowArr = [
     {
+        id:53,
         Img : BlackPillow,
         name: 'Black Pillow',
         Price: 50,
         discount : 70,
     },
     {
+        id:54,
         Img : jivePillow,
         name: 'jive Pillow',
         Price: 40,
         discount : 60,
     },
     {
+        id:55,
         Img : MinkaLumbar,
         name: 'Minka Lumbar',
         Price: 100,
         discount : 130,
     },
     {
+        id:56,
         Img : minkaPleat,
         name: 'minka Pleat ',
         Price: 65,
@@ -44,24 +48,28 @@ let PillowArr = [
     },
    
     {
+        id:57,
         Img : peacock,
         name: 'peacock',
         Price: 80,
         discount : 130,
     },
     {
+        id:58,
         Img : pillow,
         name: 'pillow Ash',
         Price: 55,
         discount : 99,
     },
     {
+        id:59,
         Img : squarePIllow,
         name: 'square PIllow',
         Price: 100,
         discount : 150,
     },
     {
+        id:60,
         Img : chevyPillow,
         name: 'chevy Pillow',
         Price: 80,
@@ -71,6 +79,7 @@ let PillowArr = [
 
 
 export const Pillow = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
@@ -81,7 +90,7 @@ PillowArr.map(items => (
 
 
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
@@ -93,8 +102,8 @@ PillowArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>

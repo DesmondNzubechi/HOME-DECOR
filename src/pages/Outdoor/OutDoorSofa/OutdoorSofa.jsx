@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  catalina from '../../../assets/Outdoor/outdoor sofa/catalina-outdoor-sof
 import  laguna from '../../../assets/Outdoor/outdoor sofa/laguna-outdoor-sofa.avif';
 import  scout from '../../../assets/Outdoor/outdoor sofa/scout.avif';
 import  zola from '../../../assets/Outdoor/outdoor sofa/zola-outdoor.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  zola from '../../../assets/Outdoor/outdoor sofa/zola-outdoor.avif';
 
 let SofaArr = [
     {
+        id:146,
         Img : blackCamel,
         name: 'Carmel',
         Price: 200,
         discount : 300,
     },
     {
+        id:147,
         Img : bondi,
         name: 'bondi',
         Price: 250,
         discount : 300,
     },
     {
+        id:148,
         Img : loveSeat,
         name: 'love Seat',
         Price: 170,
         discount : 200,
     },
     {
+        id:149,
         Img : carmel,
         name: 'carmel ',
         Price: 300,
@@ -44,24 +48,28 @@ let SofaArr = [
     },
    
     {
+        id:150,
         Img : catalina,
         name: 'catalina',
         Price: 150,
         discount : 200,
     },
     {
+        id:151,
         Img : laguna,
         name: 'laguna',
         Price: 200,
         discount : 300,
     },
     {
+        id:152,
         Img : scout,
         name: 'scout',
         Price: 230,
         discount : 350,
     },
     {
+        id:153,
         Img : zola,
         name: 'zola',
         Price: 490,
@@ -71,6 +79,7 @@ let SofaArr = [
 
 
 export const OutdoorSofa = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
@@ -81,7 +90,7 @@ SofaArr.map(items => (
 
 
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
@@ -93,8 +102,8 @@ SofaArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>
@@ -103,5 +112,4 @@ SofaArr.map(items => (
      </div>
        </div>
         </div>
-    )
-}
+    )}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  liliTableLamp from '../../../assets/Decor/light/lili-table-lamp.avif';
 import  mandiPendant from '../../../assets/Decor/light/mandi-pendant.avif';
 import  QuincyFloorLamp from '../../../assets/Decor/light/quincy-floor-lamp.avif';
 import  savannahTableLamp from '../../../assets/Decor/light/savannah-table-lamp.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  savannahTableLamp from '../../../assets/Decor/light/savannah-table-lamp.
 
 let LightArr = [
     {
+        id:45,
         Img : briaTableLamp,
         name: 'bria tableLamp',
         Price: 200,
         discount : 300,
     },
     {
+        id:46,
         Img : BurkeFloorLamp,
         name: 'Burke FloorLamp',
         Price: 120,
         discount : 160,
     },
     {
+        id:47,
         Img : carrieTableLamp,
         name: 'carrie TableLamp',
         Price: 190,
         discount : 250,
     },
     {
+        id:48,
         Img : dameTableLamp,
         name: 'dame TableLamp ',
         Price: 200,
@@ -44,24 +48,28 @@ let LightArr = [
     },
    
     {
+        id:49,
         Img : liliTableLamp,
         name: 'lili TableLamp',
         Price: 150,
         discount : 200,
     },
     {
+        id:50,
         Img : mandiPendant,
         name: 'mandi Pendant',
         Price: 319,
         discount : 400,
     },
     {
+        id:51,
         Img : QuincyFloorLamp,
         name: 'Quincy FloorLamp',
         Price: 150,
         discount : 250,
     },
     {
+        id:52,
         Img : savannahTableLamp,
         name: 'savannah TableLamp',
         Price: 380,
@@ -71,6 +79,7 @@ let LightArr = [
 
 
 export const Light = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
@@ -81,8 +90,8 @@ LightArr.map(items => (
 
 
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
-         <div className=" p-2 max-w-[150px] h-[150px] ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+         <div className=" p-2 max-w-[150px] h-[130px] ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
        <div className="flex w-full   bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">
@@ -93,8 +102,8 @@ LightArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>

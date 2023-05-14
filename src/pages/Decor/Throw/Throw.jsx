@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  piperThrow from '../../../assets/Decor/Throw/piper-throw.avif';
 import  pompomThrow from '../../../assets/Decor/Throw/pom-pom-slub-throw.avif';
 import  vukimiThrow from '../../../assets/Decor/Throw/yukimi-throw.avif';
 import  zolaThrow from '../../../assets/Decor/Throw/zola-throw.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,12 +19,14 @@ import  zolaThrow from '../../../assets/Decor/Throw/zola-throw.avif';
 
 let ThrowArr = [
     {
+        id: 61,
         Img : aspenThrow,
         name: 'aspen Throw',
         Price: 50,
         discount : 70,
     },
     {
+        id: 62,
         Img : boucleThrow,
         name: 'boucle Throw',
         Price: 40,
@@ -37,6 +39,7 @@ let ThrowArr = [
         discount : 100,
     },
     {
+        id: 63,
         Img : gianaThrow,
         name: 'giana Throw',
         Price: 65,
@@ -44,24 +47,28 @@ let ThrowArr = [
     },
    
     {
+        id: 64,
         Img : piperThrow,
         name: 'piper Throw',
         Price: 80,
         discount : 130,
     },
     {
+        id:65,
         Img : pompomThrow,
         name: 'pompom Throw',
         Price: 55,
         discount : 99,
     },
     {
+        id:66,
         Img : vukimiThrow,
         name: 'vukimi Throw',
         Price: 70,
         discount : 100,
     },
     {
+        id:67,
         Img : zolaThrow,
         name: 'zola Throw',
         Price: 50,
@@ -71,6 +78,7 @@ let ThrowArr = [
 
 
 export const Throw = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
@@ -81,7 +89,7 @@ ThrowArr.map(items => (
 
 
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
@@ -93,8 +101,8 @@ ThrowArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>

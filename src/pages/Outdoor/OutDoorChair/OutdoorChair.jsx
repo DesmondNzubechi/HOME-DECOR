@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState , useContext} from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  greyPaoha from '../../../assets/Outdoor/outdoor chair/grey-paoha.avif';
 import  laurel from '../../../assets/Outdoor/outdoor chair/laurel-outdoor-chair.avif';
 import  lounger from '../../../assets/Outdoor/outdoor chair/white-pfeiffer-outdoor-lounger.avif';
 import  zuma from '../../../assets/Outdoor/outdoor chair/zuma-outdoor-lounge-chair.avif';
-
+import { CartContext } from "../../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  zuma from '../../../assets/Outdoor/outdoor chair/zuma-outdoor-lounge-cha
 
 let ChairArr = [
     {
+        id: 129,
         Img : avillaStool,
         name: 'avilla Stool',
         Price: 100,
         discount : 200,
     },
     {
+        id:130,
         Img : blackBelmont,
         name: 'black Belmont',
         Price: 120,
         discount : 160,
     },
     {
+        id:140,
         Img : Bondi,
         name: 'Bondi',
         Price: 170,
         discount : 200,
     },
     {
+        id:141,
         Img : doheny,
         name: 'doheny ',
         Price: 100,
@@ -44,24 +48,28 @@ let ChairArr = [
     },
    
     {
+        id:142,
         Img : greyPaoha,
         name: 'grey Paoha',
         Price: 100,
         discount : 120,
     },
     {
+        id:143,
         Img : laurel,
         name: 'laurel',
         Price: 200,
         discount : 300,
     },
     {
+        id:144,
         Img : lounger,
         name: 'lounger',
         Price: 250,
         discount : 350,
     },
     {
+        id:145,
         Img : zuma,
         name: 'zuma',
         Price: 180,
@@ -71,6 +79,7 @@ let ChairArr = [
 
 
 export const OutdoorChairs = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
         <div className="py-[50px] ">
        <div>
@@ -81,7 +90,7 @@ ChairArr.map(items => (
 
 
     
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
@@ -93,8 +102,8 @@ ChairArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>
@@ -103,5 +112,4 @@ ChairArr.map(items => (
      </div>
        </div>
         </div>
-    )
-}
+    )}

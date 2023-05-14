@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 
 
@@ -10,7 +10,7 @@ import  liliTableLamp from '../../assets/Kitchen/kitchen4.avif';
 import  mandiPendant from '../../assets/Kitchen/kitchen5.avif';
 import  QuincyFloorLamp from '../../assets/Kitchen/kitchen6.avif';
 import  savannahTableLamp from '../../assets/Kitchen/kitchen7.avif';
-
+import { CartContext } from "../../components/CartContext/CartContext";
 
 
 
@@ -19,24 +19,28 @@ import  savannahTableLamp from '../../assets/Kitchen/kitchen7.avif';
 
 let KitchenArr = [
     {
+        id: 17,
         Img : briaTableLamp,
         name: 'Good cabinet',
         Price: 300,
         discount : 350,
     },
     {
+        id: 18,
         Img : BurkeFloorLamp,
         name: 'Kitchen cabinet',
         Price: 200,
         discount : 260,
     },
     {
+        id: 19,
         Img : carrieTableLamp,
         name: 'Quality Cabinet',
         Price: 300,
         discount : 350,
     },
     {
+        id: 20,
         Img : dameTableLamp,
         name: 'Cabinet',
         Price: 400,
@@ -44,24 +48,28 @@ let KitchenArr = [
     },
    
     {
+        id: 21,
         Img : liliTableLamp,
         name: 'white',
         Price: 350,
         discount : 400,
     },
     {
+        id: 22,
         Img : mandiPendant,
         name: 'expensive',
         Price: 819,
         discount : 1000,
     },
     {
+        id: 23,
         Img : QuincyFloorLamp,
         name: 'Quality',
         Price: 550,
         discount : 700,
     },
     {
+        id: 24,
         Img : savannahTableLamp,
         name: 'Perfect',
         Price: 600,
@@ -71,15 +79,19 @@ let KitchenArr = [
 
 
 export const Kitchen = () => {
+    const {addToCart, addToWishList} = useContext(CartContext);
     return(
-        <div className="py-[50px] pt-[100px] px-[20px] ">
+        <div className="py-[50px] ">
        <div>
-       <h1 className="uppercase my-[20px] p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[25px] md:text-[40px] ">Kitchen Cabinet</h1>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
 KitchenArr.map(items => (
-    <div className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
-         <div className=" p-1 max-w-[210px] h-[150px]  ">
+
+
+
+    
+    <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
+         <div className=" p-2 max-w-[150px] h-full ">
         <img src={items.Img} alt="" className="w-full h-full" />
         </div>
        <div className="flex w-full   bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">
@@ -90,8 +102,8 @@ KitchenArr.map(items => (
             </div>
           
             <div className="flex flex-row gap-2 items-center">
-            <AiFillHeart className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px]   text-red-500 shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] p-1 text-white bg-slate-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
     </div>
