@@ -58,7 +58,7 @@ cartItems.map(product => {
     <p className="flex flex-row gap-1 text-slate-50 "><span className="text-[15px] text-slate-200  font-semibold ">X{product.quantity}</span> <span className="text-[15px] text-slate-200 font-semibold "> {totalPrice}</span> </p>
     <BsFillPlusCircleFill onClick={() => increaseCart(product)} className="text-slate-100 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 hover:text-green-500 text-[20px]"/>
   </span>
-  <button onClick={() => removeFromCart(product)} className="text-slate-500 shadow-2xl bg-slate-900 border-slate-500 border border-[2px] hover:text-white hover:bg-red-500 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 rounded">Remove</button>
+  <button onClick={() => removeFromCart(product)} className="text-slate-500 shadow-2xl bg-slate-900 border-slate-500 border border-[2px] hover:text-white hover:bg-red-500 transition ease-in  rounded">Remove</button>
   </div>
     <div>
     </div>

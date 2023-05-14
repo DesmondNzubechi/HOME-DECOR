@@ -28,18 +28,11 @@ if (existingProduct) {
 } else {
   //ADDING THE PRODUCT TO CART IF IT IS NOT IN THE CART
   return [...cartItems, 
-    {
-      ...action.payload,
-     
-    }
+    {...action.payload,}
   ];
-}
-
-      }
+} }
         break;
-        
         //THIS REMOVE PRODUCT IN THE CART WHEN REMOVE BUTTON IS CLICKED
-       
       case "Remove_From_Cart":
         return cartItems.filter(product => product.id !== action.payload.id);
         break;
@@ -56,7 +49,6 @@ if (existingProduct) {
         };
         
         break;
-        
         //THIS DECREASE THE QUANTITY OF PRODUCT IN THE CART WHEN DECREAMENT BUTTON IS CLICKED
        
         case 'Reduce_Quantity': {
@@ -66,23 +58,29 @@ if (existingProduct) {
               : item
           ));
         }
-        
         break;
       default:
         return cartItems;
     }
   };
-
-
   //WISHLIST REDUCER FUNCTION
   //THIS FUNCTION CHECK THE TYPE OF ACTION THAT IS TAKEN AND THEN CARRYOUT THE NECESSARY 
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
       case 'Add_To_WishList':{
       
-          return[...wishList, action.favObj]
-       
-       
+
+  return [...wishList, action.favObj]
+
+     /* if (checkList) {
+         return wishList.map(n => (
+          n.name === action.favObj.name?
+          alert(`${n.name} is already in your wishlist`):
+          n
+         ))
+      } else {
+        return [...wishList, action.favObj]
+      };*/
       }
         break;
         case 'Remove_Wish':{
@@ -95,13 +93,10 @@ if (existingProduct) {
         break;
     }
   }
-
 // CART REDUCER
   const [cartItems, dispatch] = useReducer(cartReducer, []);
   //WISHLIST REDUCER
    const [wishList, dispatchWishList] = useReducer(wishListReducer, []);
-
-
 /// ADD TO CART FUNCTION 
   const addToCart = (items) => {
     dispatch({
@@ -109,7 +104,6 @@ if (existingProduct) {
       payload: {...items, quantity: 1,},
     })
   };
-
   ///THIS FUNCTION INCREASE THE QUANTITY OF THE PRODUCT IN THE CART WHEN THE PLUS BUTTON IS CLICKED
 const increaseCart = (product) => {
   dispatch({
@@ -117,16 +111,13 @@ const increaseCart = (product) => {
     payload: product,
   })
 };
-
 ///THIS FUNCTION DECREASE THE QUANTITY OF THE PRODUCT IN THE CART WHEN THE MINUS BUTTON IS CLICKED
-
 const reduceQuantity = (product) => {
   dispatch({
     type:'Reduce_Quantity',
     payload: product,
   })
 };
-
 ///THIS FUNCTION REMOVE THE PRODUCT IN THE CART WHEN THE REMOVE BUTTON IS CLICKED
 const removeFromCart = (product) => {
   dispatch({
@@ -134,9 +125,7 @@ const removeFromCart = (product) => {
     payload: product,
   })
 }
-
 ///THIS FUNCTION ADD  PRODUCT IN THE WISHLIST WHEN THE HEART ICON BUTTON IS CLICKED
-
   const addToWishList = (items) => {
     dispatchWishList({
       type: 'Add_To_WishList',
@@ -158,30 +147,28 @@ const [showWish, setShowWishList] = useState(false);
   const showCartItems = () => {
     setShowCart(true);
   };
-  
 //THIS FUNCTION SET CART PAGE VISIBLE WHEN THE HEART ICON IS CLICKED
- 
   const showWishList = () => {
     setShowWishList(true);
   };
-  
 //THIS FUNCTION SET WISHLIST PAGE INVISIBLE WHEN THE X ICON IS CLICKED
- 
   const hideWishList = () => {
     setShowWishList(false);
   };
-  
 //THIS FUNCTION SET CART PAGE INVISIBLE WHEN THE X ICON IS CLICKED
- 
   const hideCartItems = () => {
     setShowCart(false);
   }
 
+
+  //SHOW PRODUCT FULL DETAIL
+  const [fullDetail, setFullDetail] = useState('top-[-3000px]');
+const showFullDetail = () => {
+  setFullDetail('top-0');
+}
   console.log(wishList);
-
-
   return (
-    <CartContext.Provider value={{ cartItems, dispatch, addToCart, showCart, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList, showWishList, wishList, removeFromWishList }} >
+    <CartContext.Provider value={{ cartItems, showFullDetail, dispatch, addToCart, showCart, fullDetail, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList, showWishList, wishList, removeFromWishList }} >
       {props.children}
     </CartContext.Provider>
   );
