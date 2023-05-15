@@ -36,21 +36,16 @@ if (existingProduct) {
       case "Remove_From_Cart":
         return cartItems.filter(product => product.id !== action.payload.id);
         break;
-
         //THIS INCREASE THE QUANTITY OF PRODUCT IN THE CART WHEN INCREAMENT BUTTON IS CLICKED
         case 'Update_Quantity':{
-         
           return cartItems.map(pro => (
             pro.id === action.payload.id?
             {...pro, quantity: pro.quantity + 1}:
             pro
           ));
-      
         };
-        
         break;
         //THIS DECREASE THE QUANTITY OF PRODUCT IN THE CART WHEN DECREAMENT BUTTON IS CLICKED
-       
         case 'Reduce_Quantity': {
           return cartItems.map((item) => (
             item.id === action.payload.id
@@ -159,8 +154,6 @@ const [showWish, setShowWishList] = useState(false);
   const hideCartItems = () => {
     setShowCart(false);
   }
-
-
   //SHOW PRODUCT FULL DETAIL
   const [fullDetail, setFullDetail] = useState([]);
   const [details, setDetails] = useState('top-[-3000px]');
