@@ -162,9 +162,9 @@ const [showWish, setShowWishList] = useState(false);
 
 
   //SHOW PRODUCT FULL DETAIL
-  const [fullDetail, setFullDetail] = useState('top-[-3000px]');
-const showFullDetail = () => {
-  setFullDetail('top-0');
+  const [fullDetail, setFullDetail] = useState([]);
+const showFullDetail = (items) => {
+  setFullDetail([{...items}]);
 }
   console.log(wishList);
   return (
