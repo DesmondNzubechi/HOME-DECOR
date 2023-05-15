@@ -117,7 +117,7 @@ Beds.map(items => (
 { 
 fullDetail.map(items => {
     return (
-        <div className={`fixed px-[40px] py-[20px] flex flex-row justify-center bg-Tp   left-0 right-0 w-full h-[100vh]  ${details} z-[50] `}>
+        <div className={`fixed px-[40px] py-[20px]  ease-in-out  duration-500 flex flex-row justify-center bg-Tp   left-0 right-0 w-full h-[100vh]  ${details} z-[50] `}>
         <div className="bg-slate-100 relative p-4 rounded-lg overflow-y-auto  max-w-[400px] ">
         <HiOutlineXMark onClick={HideDetails}  className="text-[40px] transition ease-in delay-150  hover:bg-red-500 hover:text-black font-bold bg-slate-300 shadow-2xl absolute left-[10px]    z-[20] top-1 rounded-full p-1 text-red-500  "/>
 <div  >
