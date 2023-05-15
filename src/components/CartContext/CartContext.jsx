@@ -163,12 +163,17 @@ const [showWish, setShowWishList] = useState(false);
 
   //SHOW PRODUCT FULL DETAIL
   const [fullDetail, setFullDetail] = useState([]);
+  const [details, setDetails] = useState('top-[-3000px]');
 const showFullDetail = (items) => {
   setFullDetail([{...items}]);
+  setDetails('top-0')
+}
+const HideDetails = () => {
+  setDetails('top-[-3000px]')
 }
   console.log(wishList);
   return (
-    <CartContext.Provider value={{ cartItems, showFullDetail, dispatch, addToCart, showCart, fullDetail, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList, showWishList, wishList, removeFromWishList }} >
+    <CartContext.Provider value={{ cartItems, showFullDetail, dispatch, addToCart, showCart, fullDetail, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details,  }} >
       {props.children}
     </CartContext.Provider>
   );
