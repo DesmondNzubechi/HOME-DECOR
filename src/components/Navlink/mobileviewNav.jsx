@@ -10,8 +10,11 @@ import { CartContext } from "../CartContext/CartContext";
 export const MobileNav = () => {
 
 
-    const {showCartItems, showWishList} = useContext(CartContext);
-   
+    const {showCartItems, wishList, showWishList, cartItems} = useContext(CartContext);
+
+let cartNum = cartItems.length;
+let wishListNum = wishList.length;
+
 const [navIcons, SetNavIcons] = useState({
    showIcon : true,
    hideIcon : false,
@@ -35,7 +38,7 @@ const HideSideLink = ()  => {
     setSideLink('left-[-1000px]');
 }
     return(
-        <div className="lg:hidden z-[20] flex flex-row py-[10px]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-Tp  gap-5 justify-around">
+        <div className="lg:hidden z-[20] flex flex-row py-[22px]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-Tp  gap-5 justify-around">
             <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[20px] md:text-[30px] ">HomeDecor</h1></div>
 
 
@@ -83,11 +86,17 @@ style={({isActive}) => {
 </ul>
 
 <div className="flex text-slate-100 items-center flex-row gap-3  ">
-    <BsSearch className="text-[22px] md:text-[25px] "/>
-    <AiFillHeart onClick={showWishList} className="text-[22px] md:text-[25px]  "/>
-    <AiFillShopping onClick={showCartItems} className="text-[22px] md:text-[25px] "/>
-  { navIcons.showIcon && <FaBars onClick={ShowSideLink} className="text-[22px] md:text-[25px]  "/>}
-  { navIcons.hideIcon &&  <HiOutlineXMark onClick={HideSideLink} className="text-[22px] md:text-[25px] "/>}
+    <BsSearch className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px] "/>
+    <div onClick={showWishList} className="relative">
+    <button className="absolute bg-Icon font-bold text-slate-50 px-[10px] right-[-10px] rounded-full top-[-20px] ">{wishListNum}</button>
+    <AiFillHeart  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px]  "/>
+    </div>
+  <div onClick={showCartItems} className="relative">
+    <button className="absolute bg-Icon text-slate-50 px-[10px] right-[-10px] font-bold rounded-full top-[-20px] ">{cartNum}</button>
+  <AiFillShopping  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px] "/>
+    </div> 
+  { navIcons.showIcon && <FaBars onClick={ShowSideLink} className="text-[22px]  cursor-pointer hover:text-slate-300  md:text-[25px]  "/>}
+  { navIcons.hideIcon &&  <HiOutlineXMark onClick={HideSideLink} className="text-[22px] hover:cursor-pointer  md:text-[25px] "/>}
 </div>
 
         </div>

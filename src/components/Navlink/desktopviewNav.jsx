@@ -8,12 +8,13 @@ import { CartContext } from "../CartContext/CartContext";
 
 export const DesktopNav = () => {
 
-    const {showCartItems, showWishList} = useContext(CartContext);
+    const {showCartItems, wishList, showWishList, cartItems} = useContext(CartContext);
 
-
+let cartNum = cartItems.length;
+let wishListNum = wishList.length;
 
     return(
-        <div className="lg:flex hidden flex-row py-[10px] z-[20]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-Tp  gap-5 justify-around">
+        <div className="lg:flex hidden flex-row py-[22px] z-[20]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-Tp  gap-5 justify-around">
             <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[30px] ">HomeDecor</h1></div>
 
 
@@ -61,10 +62,15 @@ style={({isActive}) => {
 </ul>
 
 <div className="flex text-slate-100 flex-row gap-3  ">
-    <BsSearch className="text-[30px] "/>
-    <AiFillHeart onClick={showWishList} className="text-[30px] "/>
-    <AiFillShopping onClick={showCartItems} className="text-[30px] "/>
-</div>
+    <BsSearch className="text-[30px]  cursor-pointer hover:text-slate-300"/>
+    <div onClick={showWishList} className="relative">
+    <button className="absolute bg-Icon font-bold text-slate-50 px-[10px] right-[-10px] rounded-full top-[-20px] ">{wishListNum}</button>
+    <AiFillHeart  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px]  "/>
+    </div>
+  <div onClick={showCartItems} className="relative">
+    <button className="absolute bg-Icon text-slate-50 px-[10px] right-[-10px] font-bold rounded-full top-[-20px] ">{cartNum}</button>
+  <AiFillShopping  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px] "/>
+    </div>  </div>
 
         </div>
 
