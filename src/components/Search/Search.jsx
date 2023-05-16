@@ -41,16 +41,24 @@ export const SearchP = () => {
 
    const getSearchedWord = (e) => {
     setSearched(e.target.value);
+    if (e.target.value !== '') {
+
+        const newResult = newaa.filter(searchy => (
+            searchy.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()) ||  searchy.category.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+           ))
+           setFeedback(`result for your search  "${e.target.value}"`);
+           setDisplayResult(newResult);
+    } else{
+        setFeedback(`Search For products`);
+    }
    
-  }
-
+  };
   const theResult = () => {
-
     const newResult = newaa.filter(searchy => (
         searchy.name.toLocaleLowerCase().includes(searched.toLocaleLowerCase()) ||  searchy.category.toLocaleLowerCase().includes(searched.toLocaleLowerCase())
        ))
     setDisplayResult(newResult);
-      setFeedback(`result for your search  "${searched}"`);
+    
   }
 
 /* else if (searched !== '' && displayResult.length === 0) {
@@ -64,16 +72,16 @@ export const SearchP = () => {
       
    <div className={`fixed ease-in-out  duration-500  h-full px-[20px]  py-[20px] flex flex-row justify-center z-[100] ${Search} left-0 right-0 w-full bg-Icon `}>
      <div className="rounded pb-[20px] relative overflow-y-auto   bg-slate-50 lg:min-w-[800px] md:min-w-[600px] px-[20px]">
-        <div className=" flex flex-row items-end gap-5 my-[20px] "> 
+        <div className=" flex flex-row items-end  gap-5 my-[20px] "> 
         <HiOutlineXMark onClick={HideSearch}  className="text-[30px] transition ease-in delay-150  hover:bg-red-500 hover:text-black font-bold bg-slate-300 shadow-2xl absolute right-[10px]    z-[20] top-1 rounded-full p-1 text-red-500  "/>
 
-         <input value={searched} onChange={getSearchedWord} className="w-full bg-transparent font-myfont  text-[20px] py-[10px] border-slate-500 border-b-[5px] outline-0 " type="text" name="" placeholder="Search For Products"  id="" />
-        <button disabled={!searched} onClick={theResult} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 rounded px-2 py-1 text-slate-200 font-semibold">Search</button>
-        </div>
+         <input  onChange={getSearchedWord} className="w-full bg-transparent font-myfont  text-[20px] py-[10px] border-slate-500 border-b-[5px] outline-0 " type="text" name="" placeholder="Search For Products"  id="" />
+       { <button disabled={!searched} onClick={theResult} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 rounded px-2 py-1 text-slate-200 font-semibold">Search</button>
+       } </div>
 
 
     <p className="text-center mt-[30px] font-myfont capitalize text-slate-700 text-[25px] ">{feedBack}</p>
-        <div className="grid grid-cols-1 mx-[20px]  md:grid-cols-1 mt-[30px] gap-[30px] ">
+        <div className="grid grid-cols-1 mx-[20px]  md:grid-cols-2 mt-[30px] gap-[30px] ">
 {
        displayResult.map(items => (
 
@@ -82,7 +90,7 @@ export const SearchP = () => {
             
     <div key={items.id} className=" max-w-[350px]  py-0   mx-[20px] transition ease-out delay-150 hover:-translate-y-1 hover:scale-100 rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl mb-[10px]   ">
          <div onClick={() => showFullDetail(items)} className="max-w-[400px]  rounded-5 cursor-pointer  ">
-        <img src={items.Img} alt="" className="w-full " />
+        <img src={items.Img} alt="" className="w-full max-h-[250px] " />
         </div>
        <div className="flex w-full rounded-b-md  bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">
             <div>
