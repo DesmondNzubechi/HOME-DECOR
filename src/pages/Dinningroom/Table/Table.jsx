@@ -11,7 +11,7 @@ import toscano from '../../../assets/Dinningroom/dinning table/toscano.avif';
 import { CartContext } from "../../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
 
-let TableArr = [
+export let TableArr = [
     {
         id: 81,
         Img : bauer,
@@ -19,7 +19,8 @@ let TableArr = [
         Price: 100,
         discount : 150,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+        category : 'dinning table',
+       
     },
     {
         id:82,
@@ -28,6 +29,7 @@ let TableArr = [
         Price: 60,
         discount : 100,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -37,6 +39,7 @@ let TableArr = [
         Price: 120,
         discount : 150,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -46,6 +49,7 @@ let TableArr = [
         Price: 150,
         discount : 200,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -55,6 +59,7 @@ let TableArr = [
         Price: 120,
         discount : 160,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -64,6 +69,7 @@ let TableArr = [
         Price: 150,
         discount : 200,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -73,6 +79,7 @@ let TableArr = [
         Price: 200,
         discount : 250,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     },
     {
@@ -82,6 +89,7 @@ let TableArr = [
         Price: 250,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning table',
     
     }
 ]

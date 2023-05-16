@@ -17,8 +17,9 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let LightArr = [
+export let LightArr = [
     {
+        category : 'decor light',
         id:45,
         Img : briaTableLamp,
         name: 'bria tableLamp',
@@ -28,6 +29,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:46,
         Img : BurkeFloorLamp,
         name: 'Burke FloorLamp',
@@ -37,6 +39,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:47,
         Img : carrieTableLamp,
         name: 'carrie TableLamp',
@@ -46,6 +49,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:48,
         Img : dameTableLamp,
         name: 'dame TableLamp ',
@@ -56,6 +60,7 @@ let LightArr = [
     },
    
     {
+        category : 'decor light',
         id:49,
         Img : liliTableLamp,
         name: 'lili TableLamp',
@@ -65,6 +70,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:50,
         Img : mandiPendant,
         name: 'mandi Pendant',
@@ -74,6 +80,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:51,
         Img : QuincyFloorLamp,
         name: 'Quincy FloorLamp',
@@ -83,6 +90,7 @@ let LightArr = [
     
     },
     {
+        category : 'decor light',
         id:52,
         Img : savannahTableLamp,
         name: 'savannah TableLamp',

@@ -20,8 +20,9 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let SofaArr = [
+export let SofaArr = [
     {
+        category : 'sofa livingroom',
         id: 97,
         Img : antonDayBed,
         name: 'Anton Daybed',
@@ -31,6 +32,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id: 98,
         Img : BrierSleeper,
         name: 'Brier Sleeper',
@@ -40,6 +42,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:99,
         Img : bryantSofa,
         name: 'Bryant Sofa',
@@ -49,6 +52,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:100,
         Img : BryantUSofa,
         name: 'Bryant U-Sofa',
@@ -58,6 +62,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:101,
         Img : holtSectional,
         name: 'Holt Sectional',
@@ -67,6 +72,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:102,
         Img : LewisSection,
         name: 'LewisSection',
@@ -76,6 +82,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:103,
         Img : LewisSofa,
         name: 'Lewis Sofa',
@@ -85,6 +92,7 @@ let SofaArr = [
     
     },
     {
+        category : 'sofa livingroom',
         id:104,
         Img : SofaQuality,
         name: 'Premium Sofa',

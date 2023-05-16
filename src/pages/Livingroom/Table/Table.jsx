@@ -20,7 +20,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let TableArr = [
+export let TableArrL = [
     {
         id:105,
         Img : aneNesting,
@@ -28,6 +28,7 @@ let TableArr = [
         Price: 150,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -37,6 +38,7 @@ let TableArr = [
         Price: 100,
         discount : 150,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -46,6 +48,7 @@ let TableArr = [
         Price: 230,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -55,6 +58,7 @@ let TableArr = [
         Price: 300,
         discount : 350,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -64,6 +68,7 @@ let TableArr = [
         Price: 200,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -73,6 +78,7 @@ let TableArr = [
         Price: 200,
         discount : 250,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -82,6 +88,7 @@ let TableArr = [
         Price: 100,
         discount : 150,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'table livingroom',
     
     },
     {
@@ -91,7 +98,8 @@ let TableArr = [
         Price: 175,
         discount : 210,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+        category: 'table livingroom',
+        
     }
 ]
 
@@ -103,7 +111,7 @@ export const Tables= () => {
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
-TableArr.map(items => (
+TableArrL.map(items => (
     
     <div key={items.id} className=" rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
          <div onClick={() => showFullDetail(items)} className=" p-2 max-w-[150px] cursor-pointer h-[130px] ">

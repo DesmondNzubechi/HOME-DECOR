@@ -9,7 +9,7 @@ import vendi from '../../../assets/Dinningroom/dinning cabinet/vendinemachine.av
 import { CartContext } from "../../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
 
-let CabinetArr = [
+export let CabinetArr = [
     {
         id: 69,
         Img : CabinetPiv,
@@ -17,14 +17,15 @@ let CabinetArr = [
         Price: 300,
         discount : 350,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    },
+        category : 'dinning cabinet', },
     {
         id:70,
         Img : MordernCab,
         name: 'Mordern',
         Price: 350,
         discount : 400,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning cabinet',
     },
     {
         id:71,
@@ -32,7 +33,8 @@ let CabinetArr = [
         name: 'Nice',
         Price: 348,
         discount : 400,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning cabinet',
     
     },
     {
@@ -41,7 +43,8 @@ let CabinetArr = [
         name: 'Supercool',
         Price: 400,
         discount : 450,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'dinning cabinet',
     
     },
     /*

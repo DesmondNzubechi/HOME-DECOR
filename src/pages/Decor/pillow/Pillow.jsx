@@ -17,15 +17,17 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let PillowArr = [
+export let PillowArr = [
     {
+
         id:53,
         Img : BlackPillow,
         name: 'Black Pillow',
         Price: 50,
         discount : 70,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-   
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
+      
     },
     {
         id:54,
@@ -33,7 +35,8 @@ let PillowArr = [
         name: 'jive Pillow',
         Price: 40,
         discount : 60,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
     {
@@ -42,7 +45,8 @@ let PillowArr = [
         name: 'Minka Lumbar',
         Price: 100,
         discount : 130,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
     {
@@ -51,7 +55,8 @@ let PillowArr = [
         name: 'minka Pleat ',
         Price: 65,
         discount : 100,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
    
@@ -61,7 +66,8 @@ let PillowArr = [
         name: 'peacock',
         Price: 80,
         discount : 130,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
     {
@@ -70,7 +76,8 @@ let PillowArr = [
         name: 'pillow Ash',
         Price: 55,
         discount : 99,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
     {
@@ -79,7 +86,8 @@ let PillowArr = [
         name: 'square PIllow',
         Price: 100,
         discount : 150,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     },
     {
@@ -88,7 +96,8 @@ let PillowArr = [
         name: 'chevy Pillow',
         Price: 80,
         discount : 150,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category : 'decor pillow',
    
     }
 ]

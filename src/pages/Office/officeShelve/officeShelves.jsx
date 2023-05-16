@@ -26,7 +26,8 @@ let ShelvesArr = [
         Price: 150,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+      category : 'office shelf',
+     
     },
     {
         id:126,
@@ -35,6 +36,7 @@ let ShelvesArr = [
         Price: 100,
         discount : 150,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category : 'office shelf',
     
     },
     {
@@ -44,6 +46,7 @@ let ShelvesArr = [
         Price: 230,
         discount : 300,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category : 'office shelf',
     
     },
     {
@@ -53,6 +56,7 @@ let ShelvesArr = [
         Price: 300,
         discount : 350,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category : 'office shelf',
     
     },
     /*

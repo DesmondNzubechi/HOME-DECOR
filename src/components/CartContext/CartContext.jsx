@@ -2,12 +2,16 @@
 
 import React, { createContext, useReducer, useState } from "react";
 
+
+
+
+
 export const CartContext = createContext();
 
 
 export const CartPro = (props) => {
 
-
+ 
   //CART REDUCER FUNCTION
   //THIS FUNCTION CHECK THE TYPE OF ACTION THAT IS TAKEN AND THEN CARRYOUT THE NECESSARY 
   const cartReducer = (cartItems, action) => {
@@ -164,9 +168,19 @@ const showFullDetail = (items) => {
 const HideDetails = () => {
   setDetails('top-[-3000px]')
 }
+
+
+const [Search, setSearch] = useState('top-[-3000px]');
+const showSearch = (items) => {
+  setSearch('top-0')
+}
+const HideSearch = () => {
+  setSearch('top-[-3000px]')
+}
+
   console.log(wishList);
   return (
-    <CartContext.Provider value={{ cartItems, showFullDetail, dispatch, addToCart, showCart, fullDetail, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details,  }} >
+    <CartContext.Provider value={{HideSearch, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart, fullDetail, hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details,  }} >
       {props.children}
     </CartContext.Provider>
   );

@@ -10,8 +10,9 @@ import abbeyMedium from '../../../assets/Bedroom/dressers/everson-dresser.avif';
 import setChair from '../../../assets/Bedroom/dressers/setchair.avif';
 import { CartContext } from "../../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
-let Beds = [
+export let Dresser = [
     {
+        category: 'dresser',
         id: 33,
         Img : Roque,
         name: 'Roque Dresser',
@@ -21,6 +22,7 @@ let Beds = [
       
     },
     {
+        category: 'dresser',
         id: 34,
         Img : largeFrame,
         name: 'Large frame',
@@ -30,6 +32,7 @@ let Beds = [
       
     },
     {
+        category: 'dresser',
         id: 35,
         Img : commode,
         name: 'Commode',
@@ -39,6 +42,7 @@ let Beds = [
       
     },
     {
+        category: 'dresser',
         id: 36,
         Img : drawer,
         name: 'Portable drawer',
@@ -84,7 +88,7 @@ export const Dressers = () => {
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
-Beds.map(items => (
+Dresser.map(items => (
 
 
 

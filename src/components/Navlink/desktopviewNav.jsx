@@ -8,7 +8,7 @@ import { CartContext } from "../CartContext/CartContext";
 
 export const DesktopNav = () => {
 
-    const {showCartItems, wishList, showWishList, cartItems} = useContext(CartContext);
+    const {showCartItems, wishList, showWishList, cartItems, showSearch,} = useContext(CartContext);
 
 let cartNum = cartItems.length;
 let wishListNum = wishList.length;
@@ -62,7 +62,7 @@ style={({isActive}) => {
 </ul>
 
 <div className="flex text-slate-100 flex-row gap-3  ">
-    <BsSearch className="text-[30px]  cursor-pointer hover:text-slate-300"/>
+    <BsSearch onClick={showSearch} className="text-[30px]  cursor-pointer hover:text-slate-300"/>
     <div onClick={showWishList} className="relative">
     <button className="absolute bg-Icon font-bold text-slate-50 px-[10px] right-[-10px] rounded-full top-[-20px] ">{wishListNum}</button>
     <AiFillHeart  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px]  "/>

@@ -18,15 +18,16 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let ChairArr = [
+export  let ChairArr = [
     {
         id: 129,
         Img : avillaStool,
         name: 'avilla Stool',
         Price: 100,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
+      
     },
     {
         id:130,
@@ -34,7 +35,8 @@ let ChairArr = [
         name: 'black Belmont',
         Price: 120,
         discount : 160,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
     {
@@ -43,7 +45,8 @@ let ChairArr = [
         name: 'Bondi',
         Price: 170,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
     {
@@ -52,7 +55,8 @@ let ChairArr = [
         name: 'doheny ',
         Price: 100,
         discount : 150,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
    
@@ -62,7 +66,8 @@ let ChairArr = [
         name: 'grey Paoha',
         Price: 100,
         discount : 120,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
     {
@@ -71,7 +76,8 @@ let ChairArr = [
         name: 'laurel',
         Price: 200,
         discount : 300,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
     {
@@ -80,7 +86,8 @@ let ChairArr = [
         name: 'lounger',
         Price: 250,
         discount : 350,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     },
     {
@@ -89,7 +96,8 @@ let ChairArr = [
         name: 'zuma',
         Price: 180,
         discount : 230,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+      category: 'outdoor chair',
     
     }
 ]

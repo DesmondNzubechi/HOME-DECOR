@@ -12,8 +12,9 @@ import { CartContext } from "../CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
 
 
-let newArrivalObj = [
+export let newArrivalObj = [
     {
+        category: 'best seller',
         id: 9,
         Img : newArrivalImg1,
         name: 'quality red',
@@ -24,6 +25,7 @@ let newArrivalObj = [
 
     },
     {
+        category: 'best seller',
         id: 10,
         Img : newArrivalImg2,
         name: 'simple red',
@@ -33,6 +35,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 11,
         Img : newArrivalImg3,
         name: 'quality interor',
@@ -42,6 +45,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 12,
         Img : newArrivalImg4,
         name: 'expensive sofa',
@@ -51,6 +55,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 13,
         Img : newArrivalImg5,
         name: 'full interor',
@@ -60,6 +65,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 14,
         Img : newArrivalImg6,
         name: 'home table',
@@ -69,6 +75,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 15,
         Img : newArrivalImg7,
         name: 'reading setup',
@@ -78,6 +85,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'best seller',
         id: 16,
         Img : newArrivalImg8,
         name: 'smooth sofa',

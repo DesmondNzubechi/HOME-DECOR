@@ -13,6 +13,8 @@ import { Kitchen } from './pages/Kitchen/Kitchen';
 import { CartPro } from './components/CartContext/CartContext';
 import { CartLog } from './components/Cart/Cart';
 import { WishList } from './components/WishList/WishList';
+import { SearchP } from './components/Search/Search';
+
 function App() {
   return (
     <CartPro>
@@ -22,6 +24,7 @@ function App() {
   <MobileNav/>
   <CartLog/>
   <WishList/>
+  <SearchP/>
   <Routes>
     <Route path='/' element={  <Home/>} />
     <Route path='/bedroom' element={<Bedroom/>} />

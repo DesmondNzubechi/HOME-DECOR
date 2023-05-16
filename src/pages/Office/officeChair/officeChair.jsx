@@ -15,15 +15,16 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let ChairArr = [
+export let ChairArr = [
     {
         id:113,
         Img : gerdDesk,
         name: 'Gerd Desk',
         Price: 150,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'office chair',
+
     },
     {
         id:114,
@@ -31,7 +32,8 @@ let ChairArr = [
         name: 'June Chair',
         Price: 200,
         discount : 250,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'office chair',
     
     },
     {
@@ -40,7 +42,8 @@ let ChairArr = [
         name: 'Lia Chair',
         Price: 170,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'office chair',
     
     },
     {
@@ -49,7 +52,8 @@ let ChairArr = [
         name: 'rae ',
         Price: 100,
         discount : 150,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category: 'office chair',
     
     },
     /*

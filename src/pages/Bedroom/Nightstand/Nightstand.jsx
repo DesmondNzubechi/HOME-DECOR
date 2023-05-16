@@ -10,8 +10,9 @@ import Soffia from '../../../assets/Bedroom/Nightstand/soffia.avif';
 import Tina from '../../../assets/Bedroom/Nightstand/tina.avif';
 import { CartContext } from "../../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
-let Nightstand = [
+export let Nightstand = [
     {
+        category: 'nightstand',
         id: 37,
         Img : Tina,
         name: 'Abbey Small',
@@ -21,6 +22,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id: 38,
         Img : Ackley,
         name: 'Ackley',
@@ -30,6 +32,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id: 39,
         Img : Colette,
         name: 'Colette',
@@ -39,6 +42,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id:40,
         Img : Everson,
         name: 'Everson ',
@@ -48,6 +52,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id:41,
         Img : Isla,
         name: 'Isla Stand',
@@ -57,6 +62,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id:42,
         Img : Roque,
         name: 'Rogue stand',
@@ -66,6 +72,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id:43,
         Img : Soffia,
         name: 'Soffia',
@@ -75,6 +82,7 @@ let Nightstand = [
       
     },
     {
+        category: 'nightstand',
         id:44,
         Img : Tina,
         name: 'Tina Nighstand',

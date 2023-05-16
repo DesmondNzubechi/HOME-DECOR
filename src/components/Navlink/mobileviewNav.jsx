@@ -10,7 +10,7 @@ import { CartContext } from "../CartContext/CartContext";
 export const MobileNav = () => {
 
 
-    const {showCartItems, wishList, showWishList, cartItems} = useContext(CartContext);
+    const {showCartItems, wishList, showWishList, cartItems,  showSearch,} = useContext(CartContext);
 
 let cartNum = cartItems.length;
 let wishListNum = wishList.length;
@@ -86,7 +86,7 @@ style={({isActive}) => {
 </ul>
 
 <div className="flex text-slate-100 items-center flex-row gap-3  ">
-    <BsSearch className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px] "/>
+    <BsSearch onClick={showSearch} className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px] "/>
     <div onClick={showWishList} className="relative">
     <button className="absolute bg-Icon font-bold text-slate-50 px-[10px] right-[-10px] rounded-full top-[-20px] ">{wishListNum}</button>
     <AiFillHeart  className="text-[22px]  cursor-pointer hover:text-slate-300 md:text-[25px]  "/>

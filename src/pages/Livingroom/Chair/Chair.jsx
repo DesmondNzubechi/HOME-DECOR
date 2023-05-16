@@ -20,15 +20,16 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let ChairArr = [
+export let ChairArrL = [
     {
         id: 89,
         Img : LoungeChair,
         name: 'Lounge chair',
         Price: 150,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-    
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
+
     },
     {
         id:90,
@@ -36,7 +37,8 @@ let ChairArr = [
         name: 'Bell Chair',
         Price: 200,
         discount : 250,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -45,7 +47,8 @@ let ChairArr = [
         name: 'Bondi Chair',
         Price: 170,
         discount : 200,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -54,7 +57,8 @@ let ChairArr = [
         name: 'Bryant Chair ',
         Price: 300,
         discount : 350,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -63,7 +67,8 @@ let ChairArr = [
         name: 'Collins Chair',
         Price: 100,
         discount : 120,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -72,7 +77,8 @@ let ChairArr = [
         name: 'East Wood',
         Price: 250,
         discount : 300,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -81,7 +87,8 @@ let ChairArr = [
         name: 'Hughes Swivel',
         Price: 200,
         discount : 250,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     },
     {
@@ -90,7 +97,8 @@ let ChairArr = [
         name: 'Nina Glider',
         Price: 180,
         discount : 230,
-        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+       category: 'livingroom chair',
     
     }
 ]
@@ -103,7 +111,7 @@ export const Chairs = () => {
        <div>
   <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] ">
 {
-ChairArr.map(items => (
+ChairArrL.map(items => (
 
 
 

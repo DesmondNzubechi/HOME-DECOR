@@ -11,8 +11,9 @@ import Bed1 from '../../../assets/Bedroom/bed/bed1.avif';
 import bed2 from '../../../assets/Bedroom/bed/bed2.avif';
 import { CartContext } from "../../../components/CartContext/CartContext";
 import {HiOutlineXMark} from 'react-icons/hi2';
-let Beds = [
+export let Beds = [
     {
+        category : 'bed',
         id: 25,
         Img : babyBed,
         name: 'Baby Bed',
@@ -21,6 +22,7 @@ let Beds = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
        },
     {
+        category : 'bed',
         id: 26,
         Img : JumiperBed,
         name: 'Jumiper Bed',
@@ -30,6 +32,7 @@ let Beds = [
        
     },
     {
+        category : 'bed',
         id: 27,
         Img : estlle,
         name: 'Estlle Bed',
@@ -39,6 +42,7 @@ let Beds = [
        
     },
     {
+        category : 'bed',
         id: 28,
         Img : doubleBed,
         name: 'Double Bed',
@@ -47,6 +51,7 @@ let Beds = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     },
     {
+        category : 'bed',
         id: 29,
         Img : leartherBed,
         name: 'Leather Bed',
@@ -55,6 +60,7 @@ let Beds = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     },
     {
+        category : 'bed',
         id: 30,
         Img : mockupBed,
         name: 'Authentic bed',
@@ -63,6 +69,7 @@ let Beds = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     },
     {
+        category : 'bed',
         id: 31,
         Img : whiteBed,
         name: 'Pure White',
@@ -71,6 +78,7 @@ let Beds = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     },
     {
+        category : 'bed',
         id: 32,
         Img : Bed1,
         name: 'Quality Bed',

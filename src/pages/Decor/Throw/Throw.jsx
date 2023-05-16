@@ -17,7 +17,7 @@ import { HiOutlineXMark } from "react-icons/hi2";
 
 
 
-let ThrowArr = [
+export let ThrowArr = [
     {
         id: 61,
         Img : aspenThrow,
@@ -25,7 +25,8 @@ let ThrowArr = [
         Price: 50,
         discount : 70,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
-   
+        category : 'decor throw',
+
     },
     {
         id: 62,
@@ -34,6 +35,7 @@ let ThrowArr = [
         Price: 40,
         discount : 60,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
     {
@@ -42,6 +44,7 @@ let ThrowArr = [
         Price: 70,
         discount : 100,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
     {
@@ -51,6 +54,7 @@ let ThrowArr = [
         Price: 65,
         discount : 100,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
    
@@ -61,6 +65,7 @@ let ThrowArr = [
         Price: 80,
         discount : 130,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
     {
@@ -70,6 +75,7 @@ let ThrowArr = [
         Price: 55,
         discount : 99,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
     {
@@ -79,6 +85,7 @@ let ThrowArr = [
         Price: 70,
         discount : 100,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     },
     {
@@ -88,6 +95,7 @@ let ThrowArr = [
         Price: 50,
         discount : 100,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
+        category : 'decor throw',
    
     }
 ]

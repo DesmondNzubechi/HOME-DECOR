@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from "react";
+import React, { useRef, useState, useContext, createContext } from "react";
 import newArrivalImg1 from '../../assets/circleT.avif';
 import newArrivalImg2 from '../../assets/cushion1.avif';
 import newArrivalImg3 from '../../assets/cushion2.avif';
@@ -11,8 +11,9 @@ import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import { CartContext } from "../CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
 
-let newArrivalObj = [
+export let newArrivalObj = [
     {
+        category: 'new arrival',
         id: 1,
         Img : newArrivalImg1,
         name: 'Stool',
@@ -22,6 +23,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 2,
         Img : newArrivalImg2,
         name: 'sofa',
@@ -31,6 +33,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 3,
         Img : newArrivalImg3,
         name: 'Expensive',
@@ -40,6 +43,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 4,
         Img : newArrivalImg4,
         name: 'Cofee Table',
@@ -49,6 +53,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 5,
         Img : newArrivalImg5,
         name: 'Office chair',
@@ -58,6 +63,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 6,
         Img : newArrivalImg6,
         name: 'Outdoor',
@@ -67,6 +73,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 7,
         Img : newArrivalImg7,
         name: 'kitchen cabinet',
@@ -76,6 +83,7 @@ let newArrivalObj = [
     
     },
     {
+        category: 'new arrival',
         id: 8,
         Img : newArrivalImg8,
         name: 'Office',
@@ -84,11 +92,9 @@ let newArrivalObj = [
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     
     }
-]
+];
 
-
-export const NewArrival = () => {
-
+export const NewArrival = (props) => {
 
     const {addToCart, addToWishList, showFullDetail, fullDetail, HideDetails, details,} = useContext(CartContext);
     
@@ -96,6 +102,7 @@ export const NewArrival = () => {
     return(
         <div className="py-[50px] ">
        <div>
+      
         <h1 className="uppercase my-[20px] p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[25px] md:text-[40px] ">New arrival</h1>
      <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
 {
