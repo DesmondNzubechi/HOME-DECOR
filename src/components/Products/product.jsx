@@ -26,12 +26,12 @@ export const Product = () => {
 fullDetail.map(items => {
     return (
       
-        <div className="bg-slate-100 flex md:flex-row flex-col gap-5 justify-around relative  rounded-lg overflow-y-auto  ">
+        <div className="bg-slate-100 md:items-center flex md:flex-row flex-col gap-5 justify-around relative  rounded-lg overflow-y-auto  ">
      
-<div className="max-w-[450px] ">
-  <img src={items.Img} alt=""  className="w-full h-full "/>
+<div className="max-w-[600px] ">
+  <img src={items.Img} alt=""  className="w-full  "/>
 </div>
-        <div className=" flex flex-col gap-5">
+        <div className=" flex flex-col gap-2">
             <div>
         <h1 className="uppercase font-myfont text-[16px]  text-slate-800">Name:</h1>
             <h1 className="uppercase font-bold text-[22px] ">{items.name}</h1>
@@ -46,7 +46,7 @@ fullDetail.map(items => {
              </div>
             <div>
                 <h1 className="uppercase font-myfont text-[16px]  text-slate-800">DEscription:</h1>
-                <p className="text-slate-600 text-[15px] max-w-[400px] font-fonty" >{items.descr}</p>
+                <p className="text-slate-600 text-[15px] max-w-[500px] font-fonty" >{items.descr}</p>
             </div>
             <div className="grid grid-cols-1 gap-2 my-5">
     <button onClick={() => addToCart(items)} className="bg-slate-800 w-fit px-[22px] py-[10px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-100  rounded text-[14px] md:text-[17px] text-slate-50 border ">Addd to Cart</button>
