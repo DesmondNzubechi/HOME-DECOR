@@ -17,6 +17,7 @@ import { SearchP } from './components/Search/Search';
 import { Product } from './components/Products/product';
 import { CartContext } from './components/CartContext/CartContext';
 import { useContext } from 'react';
+import { CheckOut } from './components/Checkout/Checkout';
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
     <Route path='/kitchen' element={   <Kitchen/>} />
     <Route path='/office' element={   <Office/>} />
     <Route path='/product' element={<Product/>} />
-
+  <Route path='/checkout' element={ <CheckOut/>} />
   </Routes>
     </div>
     </BrowserRouter>
