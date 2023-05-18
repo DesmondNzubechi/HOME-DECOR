@@ -28,7 +28,7 @@ export const Ordering = () => {
         }
     }
     return(
-        <div className="bg-slate-100">
+        <div className="bg-slate-100 relative h-full">
             <div onClick={showOrderedItems} className=" cursor-pointer bg-white shadow p-3 rounded flex flex-col gap-5">
                 <div className="flex  justify-between">
                  <h1 className="text-[20px] font-myfont ">Your Cart</h1> 
@@ -75,6 +75,7 @@ export const Ordering = () => {
         <p className="text-red-500">$899</p>
     </div>
 </div>
+       
         </div>
     )
 }

@@ -11,7 +11,7 @@ export const CheckOut = () => {
             <PaymentCheckout />
        
             </div>
-            <div className='p-4 bg-slate-100  md:col-span-2'>
+            <div className='p-4 bg-slate-100 min-h-[100vh]  md:col-span-2'>
             <Ordering />
             </div>
      
