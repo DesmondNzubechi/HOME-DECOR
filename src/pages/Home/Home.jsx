@@ -3,6 +3,8 @@ import { HeroSection } from "../../components/Hero Section/heroSection";
 import { WhyChooseUs } from "../../components/Hero Section/heroSection";
 import { NewArrival } from "../../components/New Arrival/NewArrival";
 import { BestSeller } from "../../components/Best Seller/BestSeller";
+import { EmailCheckout } from "../../components/Checkout/CheckoutEmail";
+import { AddressCheckout } from "../../components/Checkout/CheckoutAddress";
 export const Home = () => {
     return (
         <div className="px-[20px] overflow-x-hidden pt-[70px] pb-[30px] ">
@@ -10,6 +12,8 @@ export const Home = () => {
         <WhyChooseUs/>
         <NewArrival/>
         <BestSeller/>
+        <EmailCheckout/>
+        <AddressCheckout/>
         </div>
     )
 }
