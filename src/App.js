@@ -14,6 +14,9 @@ import { CartPro } from './components/CartContext/CartContext';
 import { CartLog } from './components/Cart/Cart';
 import { WishList } from './components/WishList/WishList';
 import { SearchP } from './components/Search/Search';
+import { Product } from './components/Products/product';
+import { CartContext } from './components/CartContext/CartContext';
+import { useContext } from 'react';
 
 function App() {
   return (
@@ -34,6 +37,7 @@ function App() {
     <Route path='/decor' element={  <Decor/>} />
     <Route path='/kitchen' element={   <Kitchen/>} />
     <Route path='/office' element={   <Office/>} />
+    <Route path='/product' element={<Product/>} />
 
   </Routes>
     </div>
