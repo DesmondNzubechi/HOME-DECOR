@@ -28,8 +28,8 @@ fullDetail.map(items => {
       
         <div className="bg-slate-100 flex md:flex-row flex-col gap-5 justify-around relative  rounded-lg overflow-y-auto  ">
      
-<div className="">
-  <img src={items.Img} alt=""  className="w-full h-full"/>
+<div className="max-w-[450px] ">
+  <img src={items.Img} alt=""  className="w-full h-full "/>
 </div>
         <div className=" flex flex-col gap-5">
             <div>

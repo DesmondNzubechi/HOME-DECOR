@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-
+import { Link } from "react-router-dom";
 
 import  aggyRug from '../../../assets/Decor/rug/aggy-rug.avif';
 import  ainaRug from '../../../assets/Decor/rug/aina-rug.avif';
@@ -116,9 +116,9 @@ RugArr.map(items => (
   
 
     <div key={items.id} className=" rounded-2xl relative flex h-full flex-col justify-center items-center w-full rounded   shadow-2xl my-[10px]   ">
-         <div onClick={() => showFullDetail(items)} className=" p-2 max-w-[150px] cursor-pointer h-full  ">
+         <Link to='/product' onClick={() => showFullDetail(items)} className=" p-2 max-w-[150px] cursor-pointer h-[130px] ">
         <img src={items.Img} alt="" className="w-full transition ease-out delay-150 hover:-translate-y-1 hover:scale-110 h-full" />
-        </div>
+        </Link>
        <div className="flex w-full rounded-b-md  bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">
             <div>
             <h1 className="md:text-[17px] text-[12px] text-white font-fonty uppercase ">{items.name}</h1>
