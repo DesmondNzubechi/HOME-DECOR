@@ -28,9 +28,7 @@ export const Ordering = () => {
         iconDown: false,
         cartText: false,
             })
-        }
-    }
-
+        } };
  const {cartItems} = useContext(CartContext);
  let subTotal = 0;
  let shipping = 0;
@@ -38,8 +36,6 @@ export const Ordering = () => {
 let Total = 0;
 let totalSaved = 0;
 let totalDiscount = 0;   
-
-
 cartItems.map(product => {
     let price = Number(product.Price);
      let quantity = Number(product.quantity);
@@ -55,13 +51,7 @@ cartItems.map(product => {
   totalSaved = totalDiscount - subTotal ;
 
 })
-
-
-
     return(
-
-
-    
         <div className="bg-slate-100 relative h-full">
             <div onClick={showOrderedItems} className=" cursor-pointer bg-white shadow p-3 rounded flex flex-col gap-5">
                 <div className="flex  justify-between">
@@ -72,11 +62,8 @@ cartItems.map(product => {
                        {orderedItems.iconUp && <IoIosArrowUp/>}
                     </div>
                 </div>
-
               { orderedItems.orderedP && <div  className="flex flex-col  gap-2">
                 { cartItems.map(prod => {
-
-              
                return  (   <div className="flex justify-between items-center">
                     <div className="max-w-[100px]">
                      <img src={prod.Img} alt="" />
@@ -92,7 +79,6 @@ cartItems.map(product => {
                 </div>
 }
             </div>
-
     <div className="my-[50px] ">
     <div className="flex flex-col gap-2 border-b-[3px] border-slate-500  p-2">
     <span className="flex justify-between gap-2 ">
@@ -117,8 +103,6 @@ cartItems.map(product => {
         <p className="text-red-500">${totalSaved}</p>
     </div>
 </div>
-  
-       
         </div>
     )
 }

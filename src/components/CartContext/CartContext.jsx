@@ -1,17 +1,8 @@
 
-
 import React, { createContext, useReducer, useState } from "react";
 
-
-
-
-
 export const CartContext = createContext();
-
-
 export const CartPro = (props) => {
-
- 
   //CART REDUCER FUNCTION
   //THIS FUNCTION CHECK THE TYPE OF ACTION THAT IS TAKEN AND THEN CARRYOUT THE NECESSARY 
   const cartReducer = (cartItems, action) => {
@@ -21,7 +12,6 @@ export const CartPro = (props) => {
         const existingProduct = cartItems.find(
           (product) => product.id === action.payload.id
         );
-
 if (existingProduct) {
   //INCREASING THE QUANTITY OF PRODUCT IN THE CART IF THE PRODUCT ALREADY EXIST IN THE CART
   return cartItems.map(pro => (
@@ -67,11 +57,8 @@ if (existingProduct) {
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
       case 'Add_To_WishList':{
-      
-
   return [...wishList, action.favObj]
-
-     /* if (checkList) {
+ /* if (checkList) {
          return wishList.map(n => (
           n.name === action.favObj.name?
           alert(`${n.name} is already in your wishlist`):
@@ -86,7 +73,6 @@ if (existingProduct) {
    return wishList.filter(removeIt => removeIt.id !== action.favObj.id);
         };
         break;
-    
       default:
         return wishList;
         break;
@@ -168,8 +154,6 @@ const showFullDetail = (items) => {
 const HideDetails = () => {
   setDetails('top-[-3000px]')
 }
-
-
 const [Search, setSearch] = useState('top-[-3000px]');
 const showSearch = (items) => {
   setSearch('top-0')
@@ -177,10 +161,6 @@ const showSearch = (items) => {
 const HideSearch = () => {
   setSearch('top-[-3000px]')
 }
-
-
-
-
 // ADDRESS, CARD AND EMAIL FORM VALIDATION
 const [formInputs, setFormInputs] = useState({
   firstName : '',
@@ -211,19 +191,15 @@ cardNameErr : '',
 cardNumberErr: null,
 cardExpiryDateErr : null,
 cardCVCErr: null,
-
 addressLink: '/checkoutEmail',
 paymentLink: '/checkoutAddress',
 
 }) 
-
-
   const emailProceed = () => {
       setFormInputs({  
          email : '',
        });
   };
-  
   const PaymentProceed = () => {
     setFormInputs({
       firstName : '',
@@ -237,8 +213,6 @@ paymentLink: '/checkoutAddress',
   phone: '',
     })
   }
-
-
   console.log(wishList);
   return (
     <CartContext.Provider value={{HideSearch, PaymentProceed, emailProceed, formInputs, setFormInputs, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >

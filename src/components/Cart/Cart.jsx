@@ -7,17 +7,11 @@ import {RiSecurePaymentFill} from 'react-icons/ri';
 import { CartContext } from "../CartContext/CartContext";
 import { Link } from "react-router-dom";
 export const CartLog = () => {
-
 const {cartItems, removeFromCart, showCart, reduceQuantity, hideCartItems, increaseCart} = useContext(CartContext);
 const [hideCart, setHideCart]  = useState(false);
 console.log(reduceQuantity)
 let subTotal = 0;
-
-
-
-
-
-    return(
+return(
       <>
        {showCart &&
         <div className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Icon ">
@@ -27,20 +21,16 @@ let subTotal = 0;
 {/*</div>*/}
 <div className="p-[20px] grid  pt-[80px] pb-[120px] bg-slate-900 gap-4 grid-cols-1 justify-center  ">
 { 
-
 cartItems.length === 0? 
 <div>
   <p className="text-white text-center uppercase font-myfont text-[25px]">Ooops Your<br></br> Cart is Empty</p>
 </div>
 :
 cartItems.map(product => {
-
   let price = Number(product.Price);
   let quantity = Number(product.quantity);
   let totalPrice = price * quantity;
   subTotal += totalPrice;
-
-
   return(
 
 <div key={product.id} className="flex flex-row relative items-center border-b-[2px] border-slate-800  pb-[10px]  justify-around gap-5">

@@ -43,7 +43,6 @@ function App() {
     <Route path='/kitchen' element={   <Kitchen/>} />
     <Route path='/office' element={   <Office/>} />
     <Route path='/product' element={<Product/>} />
-
     <Route path='/checkoutEmail' element={<EmailCheckout/>} />
     <Route path='/checkoutAddress' element={<AddressCheckout/>} />
     <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
