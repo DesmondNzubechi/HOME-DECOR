@@ -65,7 +65,7 @@ cartItems.map(product => {
     <div>
 <div className=" bg-slate-900 items-center text-center  overflow-x-hidden right-[20px] pl-[40px] px-[20px] pr-[30px] gap-0 w-full md:w-[38%] fixed  flex flex-col  justify-around py-[10px] bottom-0 ">
   <p className="text-[20px] text-white items-center flex-row gap-5 justify-around  runded flex  "><span className="font-myfont uppercase ">Subtotal:</span> <span className="font-bold">${subTotal}</span> </p>
-  <Link onClick={hideCartItems} to='/checkout' className="bg-slate-500 rounded shadow-2xl p-[5px] shadow-2xl w-fit flex flex-row items-center justify-center roundd text-[20px] "><RiSecurePaymentFill className="text-black"/>Proceed To Checkout </Link>
+  <Link onClick={hideCartItems} to='/checkoutEmail' className="bg-slate-500 rounded shadow-2xl p-[5px] shadow-2xl w-fit flex flex-row items-center justify-center roundd text-[20px] "><RiSecurePaymentFill className="text-black"/>Proceed To Checkout </Link>
  </div>
 </div>
 </div>

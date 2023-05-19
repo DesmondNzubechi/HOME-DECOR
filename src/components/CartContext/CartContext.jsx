@@ -178,9 +178,70 @@ const HideSearch = () => {
   setSearch('top-[-3000px]')
 }
 
+
+
+
+// ADDRESS, CARD AND EMAIL FORM VALIDATION
+const [formInputs, setFormInputs] = useState({
+  firstName : '',
+  lastName: '',
+  stree: '',
+  state: '',
+  city: '',
+  apartment: '',
+  company: '',
+  zipCode: '',
+  phone: '',
+  email : '',
+  cardName : '',
+  cardNumber: '',
+  cardExpiryDate : '',
+  cardCVC: '',
+  firstNameErr : '',
+lastNameErr: '',
+streeErr: '',
+cityErr: '',
+stateErr : '',
+apartmentErr: '',
+companyErr: '',
+zipCodeErr: '',
+phoneErr: '',
+emailErr : '',
+cardNameErr : '',
+cardNumberErr: null,
+cardExpiryDateErr : null,
+cardCVCErr: null,
+
+emailDisplay: true,
+addressDisplay: false,
+paymentDisplay: false,
+
+}) 
+
+
+  const emailProceed = () => {
+    const { email } = formInputs;
+    if (formInputs.email !== '') {
+     /* setFormInputs({ 
+        emailErr: 'PLEASE INPUT A VALID EMAIL ADDRESS',
+        emailDisplay : true,
+         email : '',
+       });
+       
+    } else {*/
+   return  setFormInputs({
+     ...formInputs,
+     emailDisplay: false,
+      addressDisplay: true,
+     })
+    }
+  };
+  
+
+
   console.log(wishList);
   return (
-    <CartContext.Provider value={{HideSearch, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >
+    <CartContext.Provider value={{HideSearch, emailProceed, formInputs, setFormInputs, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >
       {props.children}
     </CartContext.Provider>
   );
