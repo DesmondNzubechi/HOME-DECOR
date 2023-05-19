@@ -8,13 +8,13 @@ import { Link } from "react-router-dom";
 
 
 export const AddressCheckout = () => {
- const {formInputs, setFormInputs} = useContext(CartContext);
+ const {formInputs, setFormInputs, PaymentProceed} = useContext(CartContext);
 
 let linkToPayment = '';
 let {firstName , lastName , stree ,  state , city , zipCode , phone } = formInputs;
 
 if ( firstName === '' || lastName === '' || stree === '' ||  state === '' || city === '' || zipCode === '' || phone === '') {
-    linkToPayment ='';
+    linkToPayment  = '';
 } else {
 
     linkToPayment = '/checkoutPayment';
@@ -221,7 +221,7 @@ return(
             <span className="text-red-500 text-[13px] font-semibold ">{formInputs.phoneErr}</span>
            
            </div>
-           <Link to={linkToPayment} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Continue to Payment</Link >
+           <Link to={linkToPayment} onClick={PaymentProceed} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Continue to Payment</Link >
           
            <div>
 

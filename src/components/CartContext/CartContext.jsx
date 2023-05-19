@@ -224,11 +224,24 @@ paymentLink: '/checkoutAddress',
        });
   };
   
+  const PaymentProceed = () => {
+    setFormInputs({
+      firstName : '',
+  lastName: '',
+  stree: '',
+  state: '',
+  city: '',
+  apartment: '',
+  company: '',
+  zipCode: '',
+  phone: '',
+    })
+  }
 
 
   console.log(wishList);
   return (
-    <CartContext.Provider value={{HideSearch, emailProceed, formInputs, setFormInputs, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >
+    <CartContext.Provider value={{HideSearch, PaymentProceed, emailProceed, formInputs, setFormInputs, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >
       {props.children}
     </CartContext.Provider>
   );
