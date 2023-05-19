@@ -3,9 +3,17 @@ import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
 import { Link } from "react-router-dom";
+
+
+
+
+
+
+
+
+
 export const EmailCheckout = () => {
     const {formInputs, emailProceed, setFormInputs} = useContext(CartContext);
-
     return(
      
         <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">

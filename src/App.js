@@ -17,7 +17,6 @@ import { SearchP } from './components/Search/Search';
 import { Product } from './components/Products/product';
 import { CartContext } from './components/CartContext/CartContext';
 import { useContext } from 'react';
-import { CheckOut } from './components/Checkout/Checkout';
 import { EmailCheckout } from './components/Checkout/CheckoutEmail';
 import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
