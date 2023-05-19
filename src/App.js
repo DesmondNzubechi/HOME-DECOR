@@ -21,6 +21,9 @@ import { CheckOut } from './components/Checkout/Checkout';
 import { EmailCheckout } from './components/Checkout/CheckoutEmail';
 import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
+
+
+
 function App() {
   return (
     <CartPro>
@@ -44,7 +47,7 @@ function App() {
 
     <Route path='/checkoutEmail' element={   <EmailCheckout/>} />
     <Route path='/checkoutAddress' element={   <AddressCheckout/>} />
-    <Route path='checkoutPayment' element={<PaymentCheckout/>} />
+    <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
  
   </Routes>
     </div>

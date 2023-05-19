@@ -2,18 +2,31 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
-export const AddressCheckout = () => {
+import { Link } from "react-router-dom";
 
-   
+
+
+
+export const AddressCheckout = () => {
  const {formInputs, setFormInputs} = useContext(CartContext);
+
+let linkToPayment = '';
+let {firstName , lastName , stree ,  state , city , zipCode , phone } = formInputs;
+
+if ( firstName === '' || lastName === '' || stree === '' ||  state === '' || city === '' || zipCode === '' || phone === '') {
+    linkToPayment ='';
+} else {
+
+    linkToPayment = '/checkoutPayment';
+}
+
+console.log(linkToPayment);
+
+
 return(
     <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">
     <div className='md:col-span-3 p-4  md:border-r '>
-
-
-  
-
-<div>
+    <div>
     <div className="flex-col flex gap-5" >
         <h1 className="text-[25px] uppercase font-myfont ">Homedecor</h1>
         <div className="flex gap-1 flex-col">
@@ -27,9 +40,10 @@ return(
         <div className="flex flex-col gap-5">
             <div>
             <h2 className="text-[20px] font-fonty capitalize text-slate-900   ">Shipping address info.</h2>
-                <p className="text-[15px] text-slate-600 font-fonty ">Fields marked with an asterisk (*) are required.</p>
+                <p className="text-[15px] text-red-500 font-fonty ">Fields marked with an asterisk (*) are required.</p>
             </div>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-5 ">
+         
             <div>
             <div className="flex flex-col gap-0  border border-slate-300 p-2 rounded">
             <label className="text-slate-700 font-semibold" htmlFor="">First name *</label>
@@ -207,7 +221,7 @@ return(
             <span className="text-red-500 text-[13px] font-semibold ">{formInputs.phoneErr}</span>
            
            </div>
-           <button className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Continue to Payment</button>
+           <Link to={linkToPayment} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Continue to Payment</Link >
           
            <div>
 

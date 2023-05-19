@@ -35,6 +35,7 @@ export const EmailCheckout = () => {
                     email : value,
                     emailDisplay: true,
                     emailErr : value === ''? 'Please Input Your Email' : '',
+                    addressLink : value === ''? '/checkoutEmail': '/checkAddress',
                 });
                
             }}
@@ -43,13 +44,15 @@ export const EmailCheckout = () => {
                     const value = formInputs.email;
                 setFormInputs({
                     emailErr : value === ''? 'Please Input Your Email' : '',
+                    addressLink : value === ''? '/checkoutEmail': '/checkoutAddress',
+               
                 });
                     }}
              type="email" placeholder="Nzubechukwu@gmail.com" className="outline-0" name="email" id="" />
            </div>
            <span className="text-red-500 text-[13px] font-semibold ">{formInputs.emailErr}</span>
            </div>
-           <Link to='/checkoutAddress' onClick={emailProceed} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Proceed to Shipping</Link>
+           <Link to={formInputs.addressLink} onClick={emailProceed}  className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Proceed to Shipping</Link>
           
            <div>
 

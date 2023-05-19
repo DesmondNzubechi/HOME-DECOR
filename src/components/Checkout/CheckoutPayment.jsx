@@ -4,7 +4,7 @@ import paypal from  '../../assets/payr.png';
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
-
+import { Link } from "react-router-dom";
 export const PaymentCheckout = () => {
 const [payment, setPayment] = useState({
     cardDisplay: true,
@@ -160,7 +160,7 @@ const {formInputs, setFormInputs} = useContext(CartContext);
            
            </div>
            </div>
-           <button className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Complete Payment</button>
+           <Link to='/checkoutPayment' className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Complete Payment</Link>
           
                  </div>}
                

@@ -212,29 +212,16 @@ cardNumberErr: null,
 cardExpiryDateErr : null,
 cardCVCErr: null,
 
-emailDisplay: true,
-addressDisplay: false,
-paymentDisplay: false,
+addressLink: '/checkoutEmail',
+paymentLink: '/checkoutAddress',
 
 }) 
 
 
   const emailProceed = () => {
-    const { email } = formInputs;
-    if (formInputs.email !== '') {
-     /* setFormInputs({ 
-        emailErr: 'PLEASE INPUT A VALID EMAIL ADDRESS',
-        emailDisplay : true,
+      setFormInputs({  
          email : '',
        });
-       
-    } else {*/
-   return  setFormInputs({
-     ...formInputs,
-     emailDisplay: false,
-      addressDisplay: true,
-     })
-    }
   };
   
 
