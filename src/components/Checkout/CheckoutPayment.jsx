@@ -39,7 +39,7 @@ const {formInputs, setFormInputs} = useContext(CartContext);
         <div className='md:col-span-3 p-4  md:border-r '>
  
    
-    <div className="flex-col p-2 bg-white  flex gap-5" >
+    <div className="flex-col p-2 bg-white  flex gap-2" >
         <h1 className="text-[25px] uppercase text-slate-800 font-myfont ">Homedecor</h1>
         <div className="flex gap-1 flex-col">
             <span className="w-full border rounded border-slate-300 h-[10px] flex "><span className=" w-full bg-slate-900 rounded  h-[10px] "></span></span>
@@ -160,7 +160,7 @@ const {formInputs, setFormInputs} = useContext(CartContext);
            
            </div>
            </div>
-           <Link to='/checkoutPayment' className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Complete Payment</Link>
+           <Link to='/checkoutPayment' className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[5px]  text-slate-50 ">Complete Payment</Link>
           
                  </div>}
                

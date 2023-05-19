@@ -82,9 +82,9 @@ cartItems.map(product => {
                      <img src={prod.Img} alt="" />
                     </div>
                    
-                    <p className="text-slate-900 font-semibold uppercase ">{prod.name}</p>
-                    <p className="font-semibold text-slate-900">Quantity: {prod.quantity}</p>
-                    <p> <span className="font-semibold text-slate-900">${prod.Price} </span> <span className="line-through text-slate-400 "> ${prod.discount}</span></p>
+                    <p className="text-slate-900 md:text-[20px] text-[12px] font-semibold uppercase ">{prod.name}</p>
+                    <p className="font-semibold md:text-[20px] text-[12px] text-slate-900">Quantity: {prod.quantity}</p>
+                    <p> <span className="font-semibold md:text-[20px] text-[12px] text-slate-900">${prod.Price} </span> <span className="line-through text-slate-400 md:text-[20px] text-[12px]"> ${prod.discount}</span></p>
                          </div>
                )
                 })
