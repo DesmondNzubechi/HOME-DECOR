@@ -6,7 +6,7 @@ import {FaBars} from 'react-icons/fa';
 import {HiOutlineXMark} from 'react-icons/hi2';
 import './style.css';
 import { CartContext } from "../CartContext/CartContext";
-
+import { NavigationLink } from "./desktopviewNav";
 export const MobileNav = () => {
 
 
@@ -43,46 +43,17 @@ const HideSideLink = ()  => {
 
 
 <ul id="links" className={`flex fixed transition ease-out duration-500 top-[50px] py-[40px] bg-black w-[50%] h-full ${sideLink}  font-fonty flex-col text-slate-200  gap-5 items-center`}>
-<li><NavLink onClick={HideSideLink} to='/'
+{
+        NavigationLink.map(navs => {
+            return(
+                <li><NavLink  to={navs.link}
 style={({isActive}) => {
 return isActive ? {borderBottom : '5px solid white'} : {}
 }}
- className="text-[17px] " >Home</NavLink></li>
-<li><NavLink onClick={HideSideLink} 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-to='/bedroom' className="text-[17px]">Bedroom</NavLink></li>
-<li><NavLink onClick={HideSideLink} 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-to='/livingroom' className="text-[17px]">Living Room</NavLink></li>
-<li><NavLink onClick={HideSideLink} to='/dinningroom' 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-className="text-[17px]">Dinning Room</NavLink></li>
-<li><NavLink onClick={HideSideLink} to='/office' 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-className="text-[17px]">Office</NavLink></li>
-<li><NavLink onClick={HideSideLink} to='/outdoor'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="text-[17px]">Outdoor </NavLink></li>
-<li><NavLink onClick={HideSideLink} to='/decor'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="text-[17px]">Decor</NavLink></li>
-<li><NavLink onClick={HideSideLink} to='/kitchen'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="text-[17px]">Kitchen</NavLink></li>
+ className="xl:text-[17px] text-[14px] " >{navs.name}</NavLink></li>
+            )
+        })
+    }
 </ul>
 
 <div className="flex text-slate-100 items-center flex-row gap-3  ">

@@ -4,30 +4,15 @@ import { NewArrContext } from "../New Arrival/NewArrival";
 import { newArrivalObj } from "../New Arrival/NewArrival";
 import { CartContext } from "../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
-import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
-
-
-
-
-
-
-
-
-
+import {AiFillShopping, AiFillHeart} from 'react-icons/ai'
 export const Product = () => {
-
     const {HideSearch, showSearch, Search, addToCart, addToWishList, showFullDetail, fullDetail, HideDetails, details,} = useContext(CartContext);
-    
-
     return(
-      
    <div className={` ease-in-out  duration-500 pt-[130px] px-[20px]  py-[70px]   bg-slate-100 `}>
         { 
 fullDetail.map(items => {
     return (
-      
         <div className="bg-slate-100 md:items-center flex md:flex-row flex-col gap-5 justify-around relative  rounded-lg overflow-y-auto  ">
-     
 <div className="max-w-[600px] ">
   <img src={items.Img} alt=""  className="w-full  "/>
 </div>
@@ -41,7 +26,6 @@ fullDetail.map(items => {
             <div class="flex flex-row gap-5">
             <p className="text-slate-800 font-bold text-[15px] ">${items.Price}</p>
                 <p className="text-slate-400 line-through font-bold text-[15px] ">${items.discount}</p>
-            
             </div>
              </div>
             <div>
@@ -54,9 +38,7 @@ fullDetail.map(items => {
 </div>
         </div>
     </div>
-    )
-})
-       }
+    )}) }
         
      </div>
     )

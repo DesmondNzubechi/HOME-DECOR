@@ -5,60 +5,60 @@ import {BsSearch} from 'react-icons/bs';
 import './style.css';
 import { CartContext } from "../CartContext/CartContext";
 
+export const NavigationLink = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'Bedroom',
+        link: '/bedroom'
+    },
+    {
+        name: 'Living Room',
+        link: '/livingroom'
+    },
+    {
+        name: 'Dinning Room',
+        link: '/dinningroom'
+    },
+    {
+        name: 'Office',
+        link: '/office'
+    },
+    {
+        name: 'Outdoor',
+        link: '/outdoor'
+    },
+    {
+        name: 'Decor',
+        link: '/decor'
+    },
+    {
+        name: 'Kitchen',
+        link: '/kitchen'
+    }
+]
 
 export const DesktopNav = () => {
-
     const {showCartItems, wishList, showWishList, cartItems, showSearch,} = useContext(CartContext);
-
 let cartNum = cartItems.length;
 let wishListNum = wishList.length;
-
     return(
         <div className="lg:flex hidden flex-row py-[22px] z-[20]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black  gap-5 justify-around">
             <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[30px] ">HomeDecor</h1></div>
-
-
 <ul id="links" className="flex  font-fonty flex-row text-slate-200  gap-5 items-center ">
-<li><NavLink  to='/'
+    {
+        NavigationLink.map(navs => {
+            return(
+                <li><NavLink  to={navs.link}
 style={({isActive}) => {
 return isActive ? {borderBottom : '5px solid white'} : {}
 }}
- className="xl:text-[17px] text-[14px] " >Home</NavLink></li>
-<li><NavLink  
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-to='/bedroom' className="xl:text-[17px] text-[14px]">Bedroom</NavLink></li>
-<li><NavLink  
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-to='/livingroom' className="xl:text-[17px] text-[14px] ">Living Room</NavLink></li>
-<li><NavLink  to='/dinningroom' 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-className="xl:text-[17px] text-[14px]">Dinning Room</NavLink></li>
-<li><NavLink  to='/office' 
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
-className="xl:text-[17px] text-[14px]">Office</NavLink></li>
-<li><NavLink  to='/outdoor'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="xl:text-[17px] text-[14px]">Outdoor </NavLink></li>
-<li><NavLink  to='/decor'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="xl:text-[17px] text-[14px]">Decor</NavLink></li>
-<li><NavLink  to='/kitchen'
-style={({isActive}) => {
-    return isActive ? {borderBottom : '5px solid white'} : {}
-    }}
- className="xl:text-[17px] text-[14px]">Kitchen</NavLink></li>
+ className="xl:text-[17px] text-[14px] " >{navs.name}</NavLink></li>
+            )
+        })
+    }
 </ul>
 
 <div className="flex text-slate-100 flex-row gap-3  ">
