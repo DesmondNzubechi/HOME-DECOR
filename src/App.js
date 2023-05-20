@@ -22,6 +22,7 @@ import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
 import { Footer } from './pages/Footer/Footer';
 import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
     <Route path='/checkoutAddress' element={<AddressCheckout/>} />
     <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
     <Route path='/about' element={<About/>} />
+    <Route path='/contact' element={<Contact/>} />
  
   </Routes>
   <Footer/>
