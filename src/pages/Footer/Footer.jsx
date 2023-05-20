@@ -36,10 +36,10 @@ export const Footer = () => {
 <div className="flex flex-col gap-2">
     <h1 className="text-slate-100 font-bold text-[25px]">Important Links</h1>
     <div className="flex flex-col gap-1">
-<a href="/" to='/' className="text-slate-300 text-[20px] flex flex-row items-center hover:text-slate-500 active:text-sky-500 gap-2"><BiLink /> Home</a>
-<a href="/about" to='/about' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink /> About</a>
-<a href="/contact" to='/Contact' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Contact Us</a>
-<a href="/review" to='/review' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Reviews</a>
+<Link to='/' className="text-slate-300 text-[20px] flex flex-row items-center hover:text-slate-500 active:text-sky-500 gap-2"><BiLink /> Home</Link>
+<Link to='/about' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink /> About</Link>
+<Link  to='/Contact' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Contact Us</Link>
+<Link  to='/' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Reviews</Link>
     </div>
 </div>
 <div>
