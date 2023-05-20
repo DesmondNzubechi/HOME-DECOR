@@ -11,6 +11,7 @@ const {cartItems, removeFromCart, showCart, reduceQuantity, hideCartItems, incre
 const [hideCart, setHideCart]  = useState(false);
 console.log(reduceQuantity)
 let subTotal = 0;
+let quantityprice = 0;
 return(
       <>
        {showCart &&
@@ -31,6 +32,13 @@ cartItems.map(product => {
   let quantity = Number(product.quantity);
   let totalPrice = price * quantity;
   subTotal += totalPrice;
+   let quantityP = totalPrice.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
+  let finalPrice = subTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  })
+
+
   return(
 
 <div key={product.id} className="flex flex-row relative items-center border-b-[2px] border-slate-800  pb-[10px]  justify-around gap-5">
@@ -40,12 +48,12 @@ cartItems.map(product => {
     <div className="flex flex-col gap-1 md:gap-3">
   <h1 className="text-slate-50 font-fonty uppercase text-[15px] ">{product.name}</h1>
   <span className="text-slate-200 flex flex-row gap-5 ">
-  <p className=" text-slate-50 text-[20px] ">{product.Price}</p>
-  <p className="text-slate-500 text-[20px] line-through">{product.discount}</p>
+  <p className=" text-slate-50 text-[20px] ">${product.Price}</p>
+  <p className="text-slate-500 text-[20px] line-through">${product.discount}</p>
   </span>
   <span className="flex flex-row items-center gap-2">
     <AiFillMinusCircle onClick={() => reduceQuantity(product)} className="text-slate-100 text-[20px] hover:text-yellow-500 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110  "/>
-    <p className="flex flex-row gap-1 text-slate-50 "><span className="text-[15px] text-slate-200  font-semibold ">X{product.quantity}</span> <span className="text-[15px] text-slate-200 font-semibold "> {totalPrice}</span> </p>
+    <p className="flex flex-row gap-1 text-slate-50 "><span className="text-[15px] text-slate-200  font-semibold ">X{product.quantity}</span> <span className="text-[15px] text-slate-200 font-semibold "> { quantityP}</span> </p>
     <BsFillPlusCircleFill onClick={() => increaseCart(product)} className="text-slate-100 transition ease-in delay-150 hover:-translate-y-1 hover:scale-110 hover:text-green-500 text-[20px]"/>
   </span>
   <button onClick={() => removeFromCart(product)} className="text-slate-500 shadow-2xl bg-slate-900 border-slate-500 border border-[2px] hover:text-white hover:bg-red-500 transition ease-in  rounded">Remove</button>
@@ -54,7 +62,7 @@ cartItems.map(product => {
     </div>
     <div>
 <div className=" bg-slate-900 items-center text-center  overflow-x-hidden right-[20px] pl-[40px] px-[20px] pr-[30px] gap-0 w-full md:w-[38%] fixed  flex flex-col  justify-around py-[10px] bottom-0 ">
-  <p className="text-[20px] text-white items-center flex-row gap-5 justify-around  runded flex  "><span className="font-myfont uppercase ">Subtotal:</span> <span className="font-bold">${subTotal}</span> </p>
+  <p className="text-[20px] text-white items-center flex-row gap-5 justify-around  runded flex  "><span className="font-myfont uppercase ">Subtotal:</span> <span className="font-bold">{finalPrice}</span> </p>
   <Link onClick={hideCartItems} to='/checkoutEmail' className="bg-green-500 rounded shadow-2xl p-[5px] text-slate-50 shadow-2xl w-fit flex flex-row items-center justify-center roundd text-[20px] px-[20px] ">Checkout<RiSecurePaymentFill className="text-white"/> </Link>
  </div>
 </div>

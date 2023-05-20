@@ -20,7 +20,7 @@ import { useContext } from 'react';
 import { EmailCheckout } from './components/Checkout/CheckoutEmail';
 import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
-
+import { Footer } from './pages/Footer/Footer';
 
 
 function App() {
@@ -48,6 +48,7 @@ function App() {
     <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
  
   </Routes>
+  <Footer/>
     </div>
     </BrowserRouter>
   </CartPro>
