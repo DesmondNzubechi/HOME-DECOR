@@ -46,7 +46,7 @@ const HideSideLink = ()  => {
 {
         NavigationLink.map(navs => {
             return(
-                <li><NavLink  to={navs.link}
+                <li><NavLink onClick={HideSideLink}  to={navs.link}
 style={({isActive}) => {
 return isActive ? {borderBottom : '5px solid white'} : {}
 }}
