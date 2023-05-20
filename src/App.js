@@ -21,7 +21,7 @@ import { EmailCheckout } from './components/Checkout/CheckoutEmail';
 import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
 import { Footer } from './pages/Footer/Footer';
-
+import { About } from './components/About/About';
 
 function App() {
   return (
@@ -46,6 +46,7 @@ function App() {
     <Route path='/checkoutEmail' element={<EmailCheckout/>} />
     <Route path='/checkoutAddress' element={<AddressCheckout/>} />
     <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
+    <Route path='/about' element={<About/>} />
  
   </Routes>
   <Footer/>

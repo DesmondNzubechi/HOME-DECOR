@@ -37,7 +37,7 @@ export const MobileNav = () => {
   };
 
   return (
-    <div className="lg:hidden z-[20] flex flex-row py-[22px] fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black gap-5 justify-around">
+    <div className="lg:hidden shadow-2xl z-[20] flex flex-row py-[22px] fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black gap-5 justify-around">
       <div className="font-myfont">
         <h1 className="uppercase relative z-[10] text-slate-100 font-bold text-[20px] md:text-[30px]">HomeDecor</h1>
       </div>
