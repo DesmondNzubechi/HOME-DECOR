@@ -21,7 +21,7 @@ const [decor, setDecor]  = useState({
     return(
         <div className="py-[50px] pt-[130px] px-[20px] ">
        <div>
-        <div className="flex md:px-[20px] items-end flex-row justify-between ">
+        <div className="flex md:px-[20px]  items-end flex-row justify-between ">
         <h1 className="uppercase  p-1 text-center border-b-[4px] border-slate-500 shadow-lg w-fit font-myfont text-[15px] px-[20px] md:text-[40px] ">{decor.title} </h1>
         <div>
             <span className="font-myfont text-[15px] md:text-[20px] flex flex-col gap-0 ">Filter Items</span>
@@ -86,7 +86,6 @@ const [decor, setDecor]  = useState({
             <option value="light">light</option>
             <option value="throw">throw</option>
             <option value="All Outdoor"> All Decor</option>
-            
         </select>
         </div>
         </div>
