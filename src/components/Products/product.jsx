@@ -6,7 +6,17 @@ import { CartContext } from "../../components/CartContext/CartContext";
 import { HiOutlineXMark } from "react-icons/hi2";
 import {AiFillShopping, AiFillHeart} from 'react-icons/ai'
 export const Product = () => {
-    const {HideSearch, showSearch, Search, addToCart, addToWishList, showFullDetail, fullDetail, HideDetails, details,} = useContext(CartContext);
+
+    const [button, setButton] = useState({
+        cart: 'Add To Cart',
+        wishlist: "Add To Wishlist"
+    })
+
+    const {
+         addToCart,
+          addToWishList,
+            fullDetail,
+                      } = useContext(CartContext);
     return(
    <div className={` ease-in-out  duration-500 pt-[130px] px-[20px]  py-[70px]   bg-slate-100 `}>
         { 
@@ -33,8 +43,18 @@ fullDetail.map(items => {
                 <p className="text-slate-600 text-[15px] max-w-[500px] font-fonty" >{items.descr}</p>
             </div>
             <div className="flex flex-row gap-2 my-5">
-    <button onClick={() => addToCart(items)} className="bg-slate-800 w-fit px-[22px] py-[10px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-100  rounded text-[14px] md:text-[17px] text-slate-50 border ">Addd to Cart</button>
-    <button onClick={() => addToWishList(items)} className=" border w-fit  px-[15px] py-[10px] border-slate-800 rounded transition ease-in delay-150 hover:-translate-y-1 hover:scale-100 text-slate-800 text-[14px] md:text-[17px]">Add to Wishlist</button>
+    <button 
+    onClick={() => {
+        addToCart(items);
+        setButton({...button, cart: 'Added To cart'})
+    }}
+    className="bg-slate-800 w-fit px-[22px] py-[10px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-100  rounded text-[14px] md:text-[17px] text-slate-50 border ">{button.cart}</button>
+    <button 
+    onClick={() => {
+        addToWishList(items);
+        setButton({...button, wishlist: 'Added To Wishlist'})
+    }}
+ className=" border w-fit  px-[15px] py-[10px] border-slate-800 rounded transition ease-in delay-150 hover:-translate-y-1 hover:scale-100 text-slate-800 text-[14px] md:text-[17px]">{button.wishlist}</button>
 </div>
         </div>
     </div>

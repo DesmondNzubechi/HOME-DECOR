@@ -1,225 +1,244 @@
-
 import React, { createContext, useReducer, useState } from "react";
 
 export const CartContext = createContext();
+
 export const CartPro = (props) => {
-  //CART REDUCER FUNCTION
-  //THIS FUNCTION CHECK THE TYPE OF ACTION THAT IS TAKEN AND THEN CARRYOUT THE NECESSARY 
+  // CART REDUCER FUNCTION
   const cartReducer = (cartItems, action) => {
     switch (action.type) {
-      case "Add_To_Cart":{
-// THIS CHECK IF THE PRODUCT ALREADY EXIST IN THE CART
+      case "Add_To_Cart": {
+        // Check if the product already exists in the cart
         const existingProduct = cartItems.find(
           (product) => product.id === action.payload.id
         );
-if (existingProduct) {
-  //INCREASING THE QUANTITY OF PRODUCT IN THE CART IF THE PRODUCT ALREADY EXIST IN THE CART
-  return cartItems.map(pro => (
-    pro.id === action.payload.id?
-    {...pro, quantity: pro.quantity + 1}:
-    pro
-  ));
-} else {
-  //ADDING THE PRODUCT TO CART IF IT IS NOT IN THE CART
-  return [...cartItems, 
-    {...action.payload,}
-  ];
-} }
-        break;
-        //THIS REMOVE PRODUCT IN THE CART WHEN REMOVE BUTTON IS CLICKED
-      case "Remove_From_Cart":
-        return cartItems.filter(product => product.id !== action.payload.id);
-        break;
-        //THIS INCREASE THE QUANTITY OF PRODUCT IN THE CART WHEN INCREAMENT BUTTON IS CLICKED
-        case 'Update_Quantity':{
-          return cartItems.map(pro => (
-            pro.id === action.payload.id?
-            {...pro, quantity: pro.quantity + 1}:
-            pro
-          ));
-        };
-        break;
-        //THIS DECREASE THE QUANTITY OF PRODUCT IN THE CART WHEN DECREAMENT BUTTON IS CLICKED
-        case 'Reduce_Quantity': {
-          return cartItems.map((item) => (
-            item.id === action.payload.id
-              ? { ...item, quantity: item.quantity > 1? item.quantity - 1: item.quantity }
-              : item
-          ));
+
+        if (existingProduct) {
+          // Increase the quantity of the existing product in the cart
+          return cartItems.map((pro) =>
+            pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
+          );
+        } else {
+          // Add the product to the cart if it's not already in the cart
+          return [...cartItems, { ...action.payload }];
         }
-        break;
+      }
+
+      case "Remove_From_Cart":
+        // Remove the product from the cart when the remove button is clicked
+        return cartItems.filter((product) => product.id !== action.payload.id);
+
+      case "Update_Quantity": {
+        // Increase the quantity of the product in the cart when the increment button is clicked
+        return cartItems.map((pro) =>
+          pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
+        );
+      }
+
+      case "Reduce_Quantity": {
+        // Decrease the quantity of the product in the cart when the decrement button is clicked
+        return cartItems.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity }
+            : item
+        );
+      }
+
       default:
         return cartItems;
     }
   };
-  //WISHLIST REDUCER FUNCTION
-  //THIS FUNCTION CHECK THE TYPE OF ACTION THAT IS TAKEN AND THEN CARRYOUT THE NECESSARY 
+
+  // WISHLIST REDUCER FUNCTION
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
-      case 'Add_To_WishList':{
-  return [...wishList, action.favObj]
- /* if (checkList) {
-         return wishList.map(n => (
-          n.name === action.favObj.name?
-          alert(`${n.name} is already in your wishlist`):
-          n
-         ))
-      } else {
-        return [...wishList, action.favObj]
-      };*/
-      }
-        break;
-        case 'Remove_Wish':{
-   return wishList.filter(removeIt => removeIt.id !== action.favObj.id);
-        };
-        break;
+      case "Add_To_WishList":
+        // Add a product to the wishlist when the heart icon button is clicked
+        return [...wishList, action.favObj];
+
+      case "Remove_Wish":
+        // Remove a product from the wishlist when the remove button is clicked
+        return wishList.filter((removeIt) => removeIt.id !== action.favObj.id);
+
       default:
         return wishList;
-        break;
     }
-  }
-// CART REDUCER
-  const [cartItems, dispatch] = useReducer(cartReducer, []);
-  //WISHLIST REDUCER
-   const [wishList, dispatchWishList] = useReducer(wishListReducer, []);
-/// ADD TO CART FUNCTION 
-  const addToCart = (items) => {
-    dispatch({
-      type: 'Add_To_Cart',
-      payload: {...items, quantity: 1,},
-    })
   };
-  ///THIS FUNCTION INCREASE THE QUANTITY OF THE PRODUCT IN THE CART WHEN THE PLUS BUTTON IS CLICKED
-const increaseCart = (product) => {
-  dispatch({
-    type: 'Update_Quantity',
-    payload: product,
-  })
-};
-///THIS FUNCTION DECREASE THE QUANTITY OF THE PRODUCT IN THE CART WHEN THE MINUS BUTTON IS CLICKED
-const reduceQuantity = (product) => {
-  dispatch({
-    type:'Reduce_Quantity',
-    payload: product,
-  })
-};
-///THIS FUNCTION REMOVE THE PRODUCT IN THE CART WHEN THE REMOVE BUTTON IS CLICKED
-const removeFromCart = (product) => {
-  dispatch({
-    type:'Remove_From_Cart',
-    payload: product,
-  })
-}
-///THIS FUNCTION ADD  PRODUCT IN THE WISHLIST WHEN THE HEART ICON BUTTON IS CLICKED
-  const addToWishList = (items) => {
-    dispatchWishList({
-      type: 'Add_To_WishList',
-      favObj: items,
-    })
-  };
-const removeFromWishList = (items) => {
-  dispatchWishList({
-    type: 'Remove_Wish',
-    favObj: items,
-  })
-}
-//this set cart page invisible
-  const [showCart, setShowCart] = useState(false);
-  //this set wishlist page invisible
-const [showWish, setShowWishList] = useState(false);
 
-//THIS FUNCTION SET CART PAGE VISIBLE WHEN THE CART ICON IS CLICKED
+  const [cartItems, dispatch] = useReducer(cartReducer, []);
+  const [wishList, dispatchWishList] = useReducer(wishListReducer, []);
+
+  const addToCart = (items) => {
+    // Add a product to the cart
+    dispatch({
+      type: "Add_To_Cart",
+      payload: { ...items, quantity: 1 },
+    });
+  };
+
+  const increaseCart = (product) => {
+    // Increase the quantity of a product in the cart
+    dispatch({
+      type: "Update_Quantity",
+      payload: product,
+    });
+  };
+
+  const reduceQuantity = (product) => {
+    // Decrease the quantity of a product in the cart
+    dispatch({
+      type: "Reduce_Quantity",
+      payload: product,
+    });
+  };
+
+  const removeFromCart = (product) => {
+    // Remove a product from the cart
+    dispatch({
+      type: "Remove_From_Cart",
+      payload: product,
+    });
+  };
+
+  const addToWishList = (items) => {
+    // Add a product to the wishlist
+    dispatchWishList({
+      type: "Add_To_WishList",
+      favObj: items,
+    });
+  };
+
+  const removeFromWishList = (items) => {
+    // Remove a product from the wishlist
+    dispatchWishList({
+      type: "Remove_Wish",
+      favObj: items,
+    });
+  };
+
+  const [showCart, setShowCart] = useState(false);
+  const [showWish, setShowWishList] = useState(false);
+  const [fullDetail, setFullDetail] = useState([]);
+  const [details, setDetails] = useState("top-[-3000px]");
+  const [Search, setSearch] = useState("top-[-3000px]");
+  const [formInputs, setFormInputs] = useState({
+    firstName: "",
+    lastName: "",
+    stree: "",
+    state: "",
+    city: "",
+    apartment: "",
+    company: "",
+    zipCode: "",
+    phone: "",
+    email: "",
+    cardName: "",
+    cardNumber: "",
+    cardExpiryDate: "",
+    cardCVC: "",
+    firstNameErr: "",
+    lastNameErr: "",
+    streeErr: "",
+    cityErr: "",
+    stateErr: "",
+    apartmentErr: "",
+    companyErr: "",
+    zipCodeErr: "",
+    phoneErr: "",
+    emailErr: "",
+    cardNameErr: "",
+    cardNumberErr: null,
+    cardExpiryDateErr: null,
+    cardCVCErr: null,
+    addressLink: "/checkoutEmail",
+    paymentLink: "/checkoutAddress",
+  });
+
   const showCartItems = () => {
     setShowCart(true);
   };
-//THIS FUNCTION SET CART PAGE VISIBLE WHEN THE HEART ICON IS CLICKED
+
   const showWishList = () => {
     setShowWishList(true);
   };
-//THIS FUNCTION SET WISHLIST PAGE INVISIBLE WHEN THE X ICON IS CLICKED
+
   const hideWishList = () => {
     setShowWishList(false);
   };
-//THIS FUNCTION SET CART PAGE INVISIBLE WHEN THE X ICON IS CLICKED
+
   const hideCartItems = () => {
     setShowCart(false);
-  }
-  //SHOW PRODUCT FULL DETAIL
-  const [fullDetail, setFullDetail] = useState([]);
-  const [details, setDetails] = useState('top-[-3000px]');
-
-const showFullDetail = (items) => {
-  setFullDetail([items]);
-}
-const HideDetails = () => {
-  setDetails('top-[-3000px]')
-}
-const [Search, setSearch] = useState('top-[-3000px]');
-const showSearch = (items) => {
-  setSearch('top-0')
-}
-const HideSearch = () => {
-  setSearch('top-[-3000px]')
-}
-// ADDRESS, CARD AND EMAIL FORM VALIDATION
-const [formInputs, setFormInputs] = useState({
-  firstName : '',
-  lastName: '',
-  stree: '',
-  state: '',
-  city: '',
-  apartment: '',
-  company: '',
-  zipCode: '',
-  phone: '',
-  email : '',
-  cardName : '',
-  cardNumber: '',
-  cardExpiryDate : '',
-  cardCVC: '',
-  firstNameErr : '',
-lastNameErr: '',
-streeErr: '',
-cityErr: '',
-stateErr : '',
-apartmentErr: '',
-companyErr: '',
-zipCodeErr: '',
-phoneErr: '',
-emailErr : '',
-cardNameErr : '',
-cardNumberErr: null,
-cardExpiryDateErr : null,
-cardCVCErr: null,
-addressLink: '/checkoutEmail',
-paymentLink: '/checkoutAddress',
-
-}) 
-  const emailProceed = () => {
-      setFormInputs({  
-         email : '',
-       });
   };
+
+  const showFullDetail = (items) => {
+    setFullDetail([items]);
+  };
+
+  const HideDetails = () => {
+    setDetails("top-[-3000px]");
+  };
+
+  const showSearch = (items) => {
+    setSearch("top-0");
+  };
+
+  const HideSearch = () => {
+    setSearch("top-[-3000px]");
+  };
+
+  const emailProceed = () => {
+    setFormInputs({
+      email: "",
+    });
+  };
+
   const PaymentProceed = () => {
     setFormInputs({
-      firstName : '',
-  lastName: '',
-  stree: '',
-  state: '',
-  city: '',
-  apartment: '',
-  company: '',
-  zipCode: '',
-  phone: '',
-    })
-  }
+      firstName: "",
+      lastName: "",
+      stree: "",
+      state: "",
+      city: "",
+      apartment: "",
+      company: "",
+      zipCode: "",
+      phone: "",
+    });
+  };
+
   console.log(wishList);
+
   return (
-    <CartContext.Provider value={{HideSearch, PaymentProceed, emailProceed, formInputs, setFormInputs, showSearch, Search, cartItems, showFullDetail, dispatch, addToCart, showCart,  hideCartItems, showCartItems, addToWishList, removeFromCart, increaseCart, reduceQuantity, showWish, hideWishList,  showWishList, wishList, removeFromWishList, HideDetails, details, fullDetail  }} >
+    <CartContext.Provider
+      value={{
+        HideSearch,
+        PaymentProceed,
+        emailProceed,
+        formInputs,
+        setFormInputs,
+        showSearch,
+        Search,
+        cartItems,
+        showFullDetail,
+        dispatch,
+        addToCart,
+        showCart,
+        hideCartItems,
+        showCartItems,
+        addToWishList,
+        removeFromCart,
+        increaseCart,
+        reduceQuantity,
+        showWish,
+        hideWishList,
+        showWishList,
+        wishList,
+        removeFromWishList,
+        HideDetails,
+        details,
+        fullDetail,
+      }}
+    >
       {props.children}
     </CartContext.Provider>
   );
-
 };
-
-
