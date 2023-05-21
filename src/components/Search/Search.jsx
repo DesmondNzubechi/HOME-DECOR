@@ -89,7 +89,7 @@ export const SearchP = () => {
         <div className="flex flex-row  items-end  justify-center">
             
     <div key={items.id} className=" max-w-[350px]  py-0   mx-[20px] transition ease-out delay-150 hover:-translate-y-1 hover:scale-100 rounded-2xl relative flex  flex-col justify-center items-center w-full rounded   shadow-2xl mb-[10px]   ">
-    <Link to='/product' onClick={() => showFullDetail(items)} className=" p-2 max-w-[150px] cursor-pointer h-[130px] ">
+    <Link to='/product' onClick={() => { showFullDetail(items); HideSearch()}} className=" p-2 max-w-[150px] cursor-pointer h-[130px] ">
         <img src={items.Img} alt="" className="w-full transition ease-out delay-150 hover:-translate-y-1 hover:scale-110 h-full" />
         </Link>
        <div className="flex w-full rounded-b-md  bottom-0 left-0 right-0  bg-black p-2  flex-row justify-between ">
