@@ -1,41 +1,37 @@
-import React, { createContext, useReducer, useState } from "react";
+import React, { createContext, useReducer, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartPro = (props) => {
-  // CART REDUCER FUNCTION
   const cartReducer = (cartItems, action) => {
     switch (action.type) {
       case "Add_To_Cart": {
-        // Check if the product already exists in the cart
         const existingProduct = cartItems.find(
           (product) => product.id === action.payload.id
         );
 
         if (existingProduct) {
-          // Increase the quantity of the existing product in the cart
           return cartItems.map((pro) =>
             pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
           );
         } else {
-          // Add the product to the cart if it's not already in the cart
           return [...cartItems, { ...action.payload }];
         }
       }
 
-      case "Remove_From_Cart":
-        // Remove the product from the cart when the remove button is clicked
-        return cartItems.filter((product) => product.id !== action.payload.id);
+      case "Remove_From_Cart": {
+        const updatedCartItems = cartItems.filter((product) => product.id !== action.payload.id);
+        localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+        return updatedCartItems;
+      }
 
       case "Update_Quantity": {
-        // Increase the quantity of the product in the cart when the increment button is clicked
         return cartItems.map((pro) =>
           pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
         );
       }
 
       case "Reduce_Quantity": {
-        // Decrease the quantity of the product in the cart when the decrement button is clicked
         return cartItems.map((item) =>
           item.id === action.payload.id
             ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity }
@@ -48,78 +44,25 @@ export const CartPro = (props) => {
     }
   };
 
-  // WISHLIST REDUCER FUNCTION
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
       case "Add_To_WishList":
-        // Add a product to the wishlist when the heart icon button is clicked
         return [...wishList, action.favObj];
-
       case "Remove_Wish":
-        // Remove a product from the wishlist when the remove button is clicked
         return wishList.filter((removeIt) => removeIt.id !== action.favObj.id);
-
       default:
         return wishList;
     }
   };
 
-  const [cartItems, dispatch] = useReducer(cartReducer, []);
-  const [wishList, dispatchWishList] = useReducer(wishListReducer, []);
-
-  const addToCart = (items) => {
-    // Add a product to the cart
-    dispatch({
-      type: "Add_To_Cart",
-      payload: { ...items, quantity: 1 },
-    });
-  };
-
-  const increaseCart = (product) => {
-    // Increase the quantity of a product in the cart
-    dispatch({
-      type: "Update_Quantity",
-      payload: product,
-    });
-  };
-
-  const reduceQuantity = (product) => {
-    // Decrease the quantity of a product in the cart
-    dispatch({
-      type: "Reduce_Quantity",
-      payload: product,
-    });
-  };
-
-  const removeFromCart = (product) => {
-    // Remove a product from the cart
-    dispatch({
-      type: "Remove_From_Cart",
-      payload: product,
-    });
-  };
-
-  const addToWishList = (items) => {
-    // Add a product to the wishlist
-    dispatchWishList({
-      type: "Add_To_WishList",
-      favObj: items,
-    });
-  };
-
-  const removeFromWishList = (items) => {
-    // Remove a product from the wishlist
-    dispatchWishList({
-      type: "Remove_Wish",
-      favObj: items,
-    });
-  };
-
+  const [cartItems, dispatch] = useReducer(cartReducer, JSON.parse(localStorage.getItem("cartItems")) || []);
+  const [wishList, dispatchWishList] = useReducer(wishListReducer, JSON.parse(localStorage.getItem('wishList')) || []);
   const [showCart, setShowCart] = useState(false);
   const [showWish, setShowWishList] = useState(false);
   const [fullDetail, setFullDetail] = useState([]);
   const [details, setDetails] = useState("top-[-3000px]");
   const [Search, setSearch] = useState("top-[-3000px]");
+
   const [formInputs, setFormInputs] = useState({
     firstName: "",
     lastName: "",
@@ -152,6 +95,68 @@ export const CartPro = (props) => {
     addressLink: "/checkoutEmail",
     paymentLink: "/checkoutAddress",
   });
+
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("cartItems");
+    };
+  }, []);
+
+useEffect(() => {
+  return () => {
+    localStorage.removeItem('wishList')
+  }
+}, [])
+
+useEffect(() => {
+    localStorage.setItem('wishList', JSON.stringify(wishList));
+}, [wishList]);
+
+  const addToCart = (items) => {
+    dispatch({
+      type: "Add_To_Cart",
+      payload: { ...items, quantity: 1 },
+    });
+  };
+
+  const increaseCart = (product) => {
+    dispatch({
+      type: "Update_Quantity",
+      payload: product,
+    });
+  };
+
+  const reduceQuantity = (product) => {
+    dispatch({
+      type: "Reduce_Quantity",
+      payload: product,
+    });
+  };
+
+  const removeFromCart = (product) => {
+    dispatch({
+      type: "Remove_From_Cart",
+      payload: product,
+    });
+  };
+
+  const addToWishList = (items) => {
+    dispatchWishList({
+      type: "Add_To_WishList",
+      favObj: items,
+    });
+  };
+
+  const removeFromWishList = (items) => {
+    dispatchWishList({
+      type: "Remove_Wish",
+      favObj: items,
+    });
+  };
 
   const showCartItems = () => {
     setShowCart(true);
@@ -187,6 +192,7 @@ export const CartPro = (props) => {
 
   const emailProceed = () => {
     setFormInputs({
+      ...formInputs,
       email: "",
     });
   };
@@ -204,8 +210,6 @@ export const CartPro = (props) => {
       phone: "",
     });
   };
-
-  console.log(wishList);
 
   return (
     <CartContext.Provider

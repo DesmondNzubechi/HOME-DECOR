@@ -24,6 +24,8 @@ export const HeroSection = () => {
 
 export const WhyChooseUs = () => {
     return(
+
+        
         <div className="  p-2 rounded  flex flex-row justify-center px-[20px] ">
             <div className="flex flex-col md:flex-row gap-[30px] justify-center">
             <div className="max-w-[300px] border shadow-2xl flex flex-col justify-center items-center gap-2 rounded-lg text-center  p-5 ">
