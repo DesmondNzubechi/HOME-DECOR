@@ -46,7 +46,7 @@ export const CartPro = (props) => {
             : item
         );
       }
-break;
+
       default:
         return cartItems;
     }
@@ -77,7 +77,7 @@ break;
   const [showWish, setShowWishList] = useState(false);
 
   // State for storing full product details and their display status
-  const [fullDetail, setFullDetail] = useState(JSON.parse(localStorage.getItem('fullDetail')) || []);
+  const [fullDetail, setFullDetail] =  useState(JSON.parse(localStorage.getItem('fullDetail')) || []);
   const [details, setDetails] = useState("top-[-3000px]");
 
   // State for storing search input and its display status
@@ -117,17 +117,17 @@ break;
     paymentLink: "/checkoutAddress",
   });
 
-  // Update localStorage when cartItems state changes
-  useEffect(() => {
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
 
   ///Update localstorage product page when a particular product is clicked
   useEffect(() => {
     localStorage.setItem('fullDetail', JSON.stringify(fullDetail));
   }, [fullDetail]);
 
+
+  // Update localStorage when cartItems state changes
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // Clean up localStorage when the component unmounts
   useEffect(() => {
@@ -192,21 +192,37 @@ break;
   const showCartItems = () => {
     // Show cart items
     setShowCart(true);
+    setIconColors({
+      ...iconColors,
+      cartIcon: 'bg-green-500'
+    })
   };
 
   const showWishList = () => {
     // Show wishlist
     setShowWishList(true);
+    setIconColors({
+      ...iconColors,
+      loveIcon: 'bg-green-500'
+    })
   };
 
   const hideWishList = () => {
     // Hide wishlist
     setShowWishList(false);
+    setIconColors({
+      ...iconColors,
+      loveIcon: 'bg-slate-50'
+    })
   };
 
   const hideCartItems = () => {
     // Hide cart items
     setShowCart(false);
+    setIconColors({
+      ...iconColors,
+      cartIcon: 'bg-slate-50'
+    })
   };
 
   const showFullDetail = (items) => {
@@ -222,11 +238,19 @@ break;
   const showSearch = (items) => {
     // Show search
     setSearch("top-0");
+    setIconColors({
+      ...iconColors,
+      searchIcon: 'bg-green-500'
+    })
   };
 
   const HideSearch = () => {
     // Hide search
     setSearch("top-[-3000px]");
+    setIconColors({
+      ...iconColors,
+      cartIcon: 'bg-slate-50'
+    })
   };
 
   const emailProceed = () => {
@@ -237,27 +261,18 @@ break;
     });
   };
 
-  const PaymentProceed = () => {
-    // Proceed with payment step
-    setFormInputs({
-      firstName: "",
-      lastName: "",
-      stree: "",
-      state: "",
-      city: "",
-      apartment: "",
-      company: "",
-      zipCode: "",
-      phone: "",
-    });
-  };
+  ////icons color
+  const [iconColors, setIconColors] = useState({
+    searchIcon : 'text-slate-50',
+    loveIcon :  'text-slate-50',
+    cartIcon:  'text-slate-50',
+  })
 
   return (
     // Provide the cart context to the children components
     <CartContext.Provider
       value={{
         HideSearch,
-        PaymentProceed,
         emailProceed,
         formInputs,
         setFormInputs,

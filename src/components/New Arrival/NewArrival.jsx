@@ -39,7 +39,7 @@ export let newArrivalObj = [
         Img : newArrivalImg3,
         name: 'Expensive',
         Price: 400,
-        discount : 310,
+        discount : 450,
         descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
     
     },
@@ -122,15 +122,15 @@ newArrivalObj.map(items => (
             </div>
           
             <p className="absolute top-2 text-[15px] bg-Icon p-1 italic text-slate-200 rounded ">New</p>
-          
             <div className="flex flex-row gap-2  items-center">
-            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px] text-slate-50  transition ease-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-slate-300    shadow rounded-full md:text-[30px]  "/>
-    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] transition ease-out delay-150 hover:-translate-y-1 hover:scale-110  text-slate-50 hover:text-slate-300 rounded-full  md:text-[35px] "/>
+            <AiFillHeart onClick={() => addToWishList(items)} className="text-[20px] text-slate-50  transition ease-out delay-150 text-slate-50 hover:text-slate-300 active:text-green-500   shadow rounded-full md:text-[30px]  "/>
+    <AiFillShopping onClick={() => addToCart(items)} className="text-[20px] transition ease-out delay-150 text-slate-50 hover:text-slate-300 active:text-green-500 rounded-full  md:text-[35px] "/>
             </div>
         </div>
         </div>
        
 ))
+
 }
 { 
 fullDetail.map(items => {

@@ -37,26 +37,40 @@ export const EmailCheckout = () => {
            <div className="flex flex-col gap-0  border p-2 rounded">
             <label className="text-slate-700 font-semibold" htmlFor="">Email:</label>
             <input
-            onChange={(e) => {
-                const value = e.target.value;
-                setFormInputs({
-                    email : value,
-                    emailDisplay: true,
-                    emailErr : value === ''? 'Please Input Your Email' : '',
-                    addressLink : value === ''? '/checkoutEmail': '/checkAddress',
-                });
-               
-            }}
-            
-                onBlur={() => {
-                    const value = formInputs.email;
-                setFormInputs({
-                    emailErr : value === ''? 'Please Input Your Email' : '',
-                    addressLink : value === ''? '/checkoutEmail': '/checkoutAddress',
-               
-                });
-                    }}
-             type="email" placeholder="Nzubechukwu@gmail.com" className="outline-0" name="email" id="" />
+  onChange={(e) => {
+    const value = e.target.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation
+
+    setFormInputs({
+      email: value,
+      emailDisplay: true,
+      emailErr: value === "" ? "Please Input Your Email" : !emailRegex.test(value) ? "Invalid Email" : "",
+      addressLink:
+        value === "" || !emailRegex.test(value)
+          ? "/checkoutEmail"
+          : "/checkoutAddress",
+    });
+  }}
+  onBlur={(e) => {
+    const value = formInputs.email;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation
+
+    setFormInputs({
+      emailErr: value === "" ? "Please Input Your Email" : !emailRegex.test(value) ? "Invalid Email" : "",
+      addressLink:
+        value === "" || !emailRegex.test(value)
+          ? "/checkoutEmail"
+          : "/checkoutAddress",
+    });
+  }}
+  value={formInputs.email}
+  type="email"
+  placeholder="Nzubechukwu@gmail.com"
+  className="outline-0"
+  name="email"
+  id=""
+/>
+
            </div>
            <span className="text-red-500 text-[13px] font-semibold ">{formInputs.emailErr}</span>
            </div>

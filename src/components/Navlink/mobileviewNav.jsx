@@ -70,7 +70,7 @@ export const MobileNav = () => {
           <button className="absolute bg-Icon text-slate-50 px-[10px] right-[-10px] font-bold rounded-full top-[-20px] ">
             {cartNum}
           </button>
-          <AiFillShopping className="text-[22px] cursor-pointer hover:text-slate-300 md:text-[25px]" />
+          <AiFillShopping className="text-[22px] text-slate-50 cursor-pointer hover:text-slate-300 md:text-[25px]" />
         </div>
         {navIcons.showIcon && (
           <FaBars

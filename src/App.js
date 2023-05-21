@@ -20,7 +20,7 @@ import { useContext } from 'react';
 import { EmailCheckout } from './components/Checkout/CheckoutEmail';
 import { PaymentCheckout } from './components/Checkout/CheckoutPayment';
 import { AddressCheckout } from './components/Checkout/CheckoutAddress';
-import { Footer } from './pages/Footer/Footer';
+import { Footer } from './components/Footer/Footer';
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
 

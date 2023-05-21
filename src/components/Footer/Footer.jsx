@@ -39,7 +39,6 @@ export const Footer = () => {
 <Link to='/' className="text-slate-300 text-[20px] flex flex-row items-center hover:text-slate-500 active:text-sky-500 gap-2"><BiLink /> Home</Link>
 <Link to='/about' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink /> About</Link>
 <Link  to='/Contact' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Contact Us</Link>
-<Link  to='/' className="text-slate-300 text-[20px] flex flex-row items-center gap-2 hover:text-slate-500 active:text-sky-500"><BiLink />Reviews</Link>
     </div>
 </div>
 <div>

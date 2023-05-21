@@ -35,8 +35,13 @@ export const Ordering = () => {
  let saleTax = 0;
 let Total = 0;
 let totalSaved = 0;
-let totalDiscount = 0;   
-cartItems.map(product => {
+let totalDiscount = 0;  
+let shippingCurrency;
+let totalSavedCurrency;
+let saleTaxCurrency; 
+let  subTotalCurrency;
+let  totalCurrency;
+cartItems.forEach(product => {
     let price = Number(product.Price);
      let quantity = Number(product.quantity);
      let totalPrice = price * quantity;
@@ -49,7 +54,26 @@ cartItems.map(product => {
  let getDiscountPrice = Number(product.discount);
   totalDiscount += getDiscountPrice *  quantity;
   totalSaved = totalDiscount - subTotal ;
-
+  saleTaxCurrency = saleTax.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+  shippingCurrency = shipping.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+  totalCurrency = Total.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+  totalSavedCurrency = totalSaved.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
+subTotalCurrency = subTotal.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  });
 })
     return(
         <div className="bg-slate-100 relative h-full">
@@ -83,24 +107,24 @@ cartItems.map(product => {
     <div className="flex flex-col gap-2 border-b-[3px] border-slate-500  p-2">
     <span className="flex justify-between gap-2 ">
         <p className="text-slate-600 font-fonty">Subtotal:</p>
-        <p className="text-slate-600 font-fonty">${subTotal}</p>
+        <p className="text-slate-600 font-fonty">{subTotalCurrency}</p>
     </span>
     <span className="flex justify-between gap-2 ">
         <p className="text-slate-600 font-fonty">Shipping:</p>
-        <p className="text-slate-600 font-fonty">${shipping}</p>
+        <p className="text-slate-600 font-fonty">{shippingCurrency}</p>
     </span>
     <span className="flex justify-between gap-2 ">
         <p className="text-slate-600 font-fonty">Salels Tax:</p>
-        <p className="text-slate-600 font-fonty">${saleTax}</p>
+        <p className="text-slate-600 font-fonty">{saleTaxCurrency}</p>
     </span>
     </div>
     <div className="flex justify-between flex-row p-2  font-semibold ">
         <p className="text-[20px]">Total:</p>
-        <p className="text-[20px]">${Total}</p>
+        <p className="text-[20px]">{totalCurrency}</p>
     </div>
     <div className="flex justify-between flex-row p-2  font-semibold ">
         <p className="text-red-500">You saved:</p>
-        <p className="text-red-500">${totalSaved}</p>
+        <p className="text-red-500">{totalSavedCurrency}</p>
     </div>
 </div>
         </div>
