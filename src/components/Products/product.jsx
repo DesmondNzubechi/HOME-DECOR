@@ -9,7 +9,9 @@ export const Product = () => {
 
     const [button, setButton] = useState({
         cart: 'Add To Cart',
-        wishlist: "Add To Wishlist"
+        wishlist: "Add To Wishlist",
+        cartBg: 'bg-slate-800',
+        wishlistBorder: 'border-slate-800',
     })
 
     const {
@@ -46,15 +48,23 @@ fullDetail.map(items => {
     <button 
     onClick={() => {
         addToCart(items);
-        setButton({...button, cart: 'Added To cart'})
+        setButton({
+            ...button,
+             cart: 'Added To cart',
+             cartBg: 'bg-green-500',
+            });
     }}
-    className="bg-slate-800 w-fit px-[22px] py-[10px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-100  rounded text-[14px] md:text-[17px] text-slate-50 border ">{button.cart}</button>
+    className={`${button.cartBg} w-fit px-[22px] py-[10px] transition ease-in delay-150 hover:-translate-y-1 hover:scale-100  rounded text-[14px] md:text-[17px] text-slate-50 border `}>{button.cart}</button>
     <button 
     onClick={() => {
         addToWishList(items);
-        setButton({...button, wishlist: 'Added To Wishlist'})
+        setButton({
+            ...button, 
+            wishlist: 'Added To Wishlist',
+            wishlistBorder: 'border-green-500'
+        })
     }}
- className=" border w-fit  px-[15px] py-[10px] border-slate-800 rounded transition ease-in delay-150 hover:-translate-y-1 hover:scale-100 text-slate-800 text-[14px] md:text-[17px]">{button.wishlist}</button>
+ className={` border w-fit  px-[15px] py-[10px] ${button.wishlistBorder} rounded transition ease-in delay-150 hover:-translate-y-1 hover:scale-100 text-slate-800 text-[14px] md:text-[17px]`}>{button.wishlist}</button>
 </div>
         </div>
     </div>
