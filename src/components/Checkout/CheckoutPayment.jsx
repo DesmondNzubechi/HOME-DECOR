@@ -32,7 +32,18 @@ const showPaypal = () => {
 }
 
    
-const {formInputs, setFormInputs} = useContext(CartContext);
+const {formInputs, setFormInputs, cartItems} = useContext(CartContext);
+
+let productName = '';
+cartItems.forEach(element => {
+    productName += element.name;
+  console.log(productName);
+});
+
+let homeLink = '/paymentCheckout';
+
+const {cardCVC, cardName, cardNumber, CardExpiryDate}  = formInputs;
+
 
     return(
         <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">
@@ -63,7 +74,7 @@ const {formInputs, setFormInputs} = useContext(CartContext);
             </div>
             </div> 
                  </div>
-                {payment.paypalDisplay && <a href="#" className="text-[30px] bg-gradient-to-r from-slate-200 to-slate-300 py-[3px] text-center w-full max-w-[450px] rounded  px-[30px]  font-bold "><span className="text-blue-900">Pay</span><span className="text-blue-500">Pal</span></a>
+                {payment.paypalDisplay && <Link to='/' onClick={() => {alert('Order succesfully placed. Thanks for shopping with us.')}} className="text-[30px] bg-gradient-to-r from-slate-200 to-slate-300 py-[3px] text-center w-full max-w-[450px] rounded  px-[30px]  font-bold "><span className="text-blue-900">Pay</span><span className="text-blue-500">Pal</span></Link>
                  }
                {payment.cardDisplay &&  <div className="grid grid-cols-1 gap-5">
 
@@ -160,7 +171,7 @@ const {formInputs, setFormInputs} = useContext(CartContext);
            
            </div>
            </div>
-           <Link to='/checkoutPayment' className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[5px]  text-slate-50 ">Complete Payment</Link>
+           <Link to='/' onClick={() => {alert('Order succesfully placed. Thanks for shopping with us.')}} className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[5px]  text-slate-50 ">Complete Payment</Link>
           
                  </div>}
                
