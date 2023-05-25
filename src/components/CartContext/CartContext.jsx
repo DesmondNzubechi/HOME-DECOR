@@ -56,8 +56,18 @@ export const CartPro = (props) => {
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
       case "Add_To_WishList":
-        // Add a product to the wishlist
-        return [...wishList, action.favObj];
+        // Check if the product already exists in the wishlist
+        const isProductInWishlist = wishList.some(item => item.id === action.favObj.id);
+      
+        if (isProductInWishlist) {
+          alert(`${action.favObj.name} already added to the wishlist`);
+          // Product already exists, do not add to wishlist
+          return wishList;
+        } else {
+          // Product does not exist, add it to the wishlist
+          return [...wishList, action.favObj];
+        }
+      
       case "Remove_Wish":
         // Remove a product from the wishlist
         return wishList.filter((removeIt) => removeIt.id !== action.favObj.id);
