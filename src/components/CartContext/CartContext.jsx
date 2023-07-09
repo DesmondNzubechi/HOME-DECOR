@@ -1,9 +1,13 @@
 import React, { createContext, useReducer, useState, useEffect } from "react";
-
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 // Create a context for the cart
 export const CartContext = createContext();
 
 export const CartPro = (props) => {
+
+  const notification = () => toast('bbhh');
+
   // Cart reducer function to handle cart item updates
   const cartReducer = (cartItems, action) => {
     switch (action.type) {
@@ -15,11 +19,17 @@ export const CartPro = (props) => {
 
         // If the product exists, increase its quantity by 1
         if (existingProduct) {
+          const noti = () => toast(`Quantity of ${action.payload.name} in the cart 🛒 increased by 1️⃣`);
+
+          noti();
           return cartItems.map((pro) =>
             pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
           );
         } else {
           // If the product doesn't exist, add it to the cart with a quantity of 1
+          const noti = () => toast(`${action.payload.name} added to the cart 🛒`);
+
+          noti();
           return [...cartItems, { ...action.payload }];
         }
       }
@@ -33,6 +43,9 @@ export const CartPro = (props) => {
 
       case "Update_Quantity": {
         // Increase the quantity of a product in the cart by 1
+        const noti = () => toast(`Quantity of ${action.payload.name} increased by 1️⃣`);
+
+        noti();
         return cartItems.map((pro) =>
           pro.id === action.payload.id ? { ...pro, quantity: pro.quantity + 1 } : pro
         );
@@ -51,7 +64,7 @@ export const CartPro = (props) => {
         return cartItems;
     }
   };
-
+ 
   // Wishlist reducer function to handle wishlist updates
   const wishListReducer = (wishList, action) => {
     switch (action.type) {
@@ -60,13 +73,21 @@ export const CartPro = (props) => {
         const isProductInWishlist = wishList.some(item => item.id === action.favObj.id);
       
         if (isProductInWishlist) {
-          alert(`${action.favObj.name} already added to the wishlist`);
+        const noti = () => toast(`${action.favObj.name} already added to the wishlist`);
+
+       noti();
+         // notification(`${action.favObj.name} already added to the wishlist`)
+
+         // alert(`${action.favObj.name} already added to the wishlist`);
           // Product already exists, do not add to wishlist
           return wishList;
         } else {
           // Product does not exist, add it to the wishlist
+          const noti = () => toast(`${action.favObj.name} added to the wishlist`);
+
+       noti();
           return [...wishList, action.favObj];
-        }
+          }
       
       case "Remove_Wish":
         // Remove a product from the wishlist
@@ -190,6 +211,7 @@ export const CartPro = (props) => {
       favObj: items,
     });
   };
+
 
   const removeFromWishList = (items) => {
     // Remove a product from the wishlist

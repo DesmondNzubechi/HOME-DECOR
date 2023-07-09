@@ -23,7 +23,7 @@ import { AddressCheckout } from './components/Checkout/CheckoutAddress';
 import { Footer } from './components/Footer/Footer';
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
-
+import { ToastContainer, toast } from 'react-toastify';
 function App() {
   return (
     <CartPro>
@@ -53,6 +53,9 @@ function App() {
   </Routes>
   <Footer/>
     </div>
+    <ToastContainer
+    autoClose={2000}
+    />
     </BrowserRouter>
   </CartPro>
   );
