@@ -36,6 +36,8 @@ export const MobileNav = () => {
     setSideLink('left-[-1000px]');
   };
 
+
+
   return (
     <div className="lg:hidden shadow-2xl z-[20] flex flex-row py-[22px] fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black gap-5 justify-around">
       <div className="font-myfont">
@@ -54,6 +56,16 @@ export const MobileNav = () => {
             </NavLink>
           </li>
         ))}
+        
+      <div className="flex relative z-2 flex-col gap-2">
+            <button className="border-slate-50 w-fit border text-white px-[20px] text-center py-[4px] text-[20px] rounded capitaliz font-semibold ">
+            <Link onClick={HideSideLink}>Login</Link>
+            </button>
+            <button className="bg-slate-50 text-slate-900 px-[20px] text-center py-[4px] text-[17px] rounded w-fit capitaliz font-semibold ">
+            <Link onClick={HideSideLink} >Signup</Link>
+            </button>
+          </div>
+
       </ul>
       <div className="flex text-slate-100 items-center flex-row gap-3">
         <BsSearch
@@ -84,6 +96,8 @@ export const MobileNav = () => {
             className="text-[22px] hover:cursor-pointer md:text-[25px]"
           />
         )}
+
+        
       </div>
     </div>
   );

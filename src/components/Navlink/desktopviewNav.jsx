@@ -62,6 +62,15 @@ return isActive ? {borderBottom : '5px solid white'} : {}
     }
 </ul>
 
+<div className="flex relative z-2 flex-row gap-2">
+            <button className="border-slate-50 w-fit border text-white px-[10px] text-center py-[4px] text-[15px] rounded capitaliz font-semibold ">
+            <Link >Login</Link>
+            </button>
+            <button className="bg-slate-50 text-slate-900 px-[10px] text-center py-[4px] text-[15px] rounded w-fit capitaliz font-semibold ">
+            <Link>Signup</Link>
+            </button>
+          </div>
+
 <div className="flex text-slate-100 flex-row gap-3  ">
     <BsSearch onClick={showSearch} className="text-[30px]  cursor-pointer hover:text-slate-300"/>
     <div onClick={showWishList} className="relative">
