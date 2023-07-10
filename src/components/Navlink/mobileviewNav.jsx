@@ -59,10 +59,10 @@ export const MobileNav = () => {
         
       <div className="flex relative z-2 flex-col gap-2">
             <button className="border-slate-50 w-fit border text-white px-[20px] text-center py-[4px] text-[20px] rounded capitaliz font-semibold ">
-            <Link onClick={HideSideLink}>Login</Link>
+            <Link to='/login' onClick={HideSideLink}>Login</Link>
             </button>
             <button className="bg-slate-50 text-slate-900 px-[20px] text-center py-[4px] text-[17px] rounded w-fit capitaliz font-semibold ">
-            <Link onClick={HideSideLink} >Signup</Link>
+            <Link to='/signup' onClick={HideSideLink} >Signup</Link>
             </button>
           </div>
 

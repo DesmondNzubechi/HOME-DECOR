@@ -24,6 +24,8 @@ import { Footer } from './components/Footer/Footer';
 import { About } from './components/About/About';
 import { Contact } from './components/Contact/Contact';
 import { ToastContainer, toast } from 'react-toastify';
+import { Signup } from './pages/Signup/Signup';
+import { Login } from './pages/login/login';
 function App() {
   return (
     <CartPro>
@@ -49,7 +51,8 @@ function App() {
     <Route path='/checkoutPayment' element={<PaymentCheckout/>} />
     <Route path='/about' element={<About/>} />
     <Route path='/contact' element={<Contact/>} />
- 
+    <Route path='/signup' element={<Signup/>} />
+    <Route path='/login' element={<Login/>} />
   </Routes>
   <Footer/>
     </div>

@@ -64,10 +64,10 @@ return isActive ? {borderBottom : '5px solid white'} : {}
 
 <div className="flex relative z-2 flex-row gap-2">
             <button className="border-slate-50 w-fit border text-white px-[10px] text-center py-[4px] text-[15px] rounded capitaliz font-semibold ">
-            <Link >Login</Link>
+            <Link to='/login'>Login</Link>
             </button>
             <button className="bg-slate-50 text-slate-900 px-[10px] text-center py-[4px] text-[15px] rounded w-fit capitaliz font-semibold ">
-            <Link>Signup</Link>
+            <Link to='/signup'>Signup</Link>
             </button>
           </div>
 
