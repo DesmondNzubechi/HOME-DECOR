@@ -6,9 +6,24 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { BounceLoader } from "react-spinners";
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
 export const Login = () => {
     const [spinnerJs, setSpinnerJs] = useState(false);
+ 
+    const [inputs, setInputs] = useState({
+        signInemail: '',
+        signInpassword: '',
+    });
+
+    const signin = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, inputs.signInemail, inputs.signInpassword);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return(
         <div className="py-[150px] px-[20px]  ">
@@ -20,7 +35,7 @@ export const Login = () => {
               <div>
                 <h1 className="text-center text-slate-50 font-semibold text-[20px] capitalize    mb-3">Welcome back!</h1>
                {/* <button onClick={signInWithgoogleE} className="flex text-center justify-center items-center my-5 gap-x-2 text-[20px] bg-pink-500 p-2 capitalize text-white rounded-[2px] font-[300]"><FcGoogle/> Sign in with your google accout </button>*/}
-                <p className="text-center text-slate-300 capitalize mb-[20px]  text-[17px]">login with your email</p>
+               {/* <p className="text-center text-slate-300 capitalize mb-[20px]  text-[17px]">login with your email</p>*/}
               </div>
                 <form action="" className="flex  flex-col gap-5">
                     <div className="flex flex-col items-start">

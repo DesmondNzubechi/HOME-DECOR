@@ -5,10 +5,28 @@ import {FcGoogle} from 'react-icons/fc';
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { BounceLoader } from "react-spinners";
+import { auth } from "../../config/firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
 
 export const Signup = () => {
 
+    
+    const [inputs, setInputs] = useState({
+        signUpemail: '',
+        signUppassword: '',
+    });
+
+    const SignUp = async () => {
+        try {
+         const userDetail =  await createUserWithEmailAndPassword(auth, inputs.signUpemail, inputs.signUppassword);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const [spinnerJs, setSpinnerJs] = useState(false);
+
+
     return(
         <div className="py-[150px] px-[20px] ">
          { spinnerJs &&  <div className="fixed bg-Tp w-full z-[500] left-0 right-0 flex justify-center h-full top-0 bottom-0 items-center"><BounceLoader color="#ffb700"
@@ -24,13 +42,19 @@ export const Signup = () => {
                 <form action="" className="flex  flex-col gap-5">
                     <div className="flex flex-col items-start">
                         <label htmlFor="email" className="flex font-semibold items-center text-slate-900 text-[15px]"><AiOutlineMail/>Email</label>
-                        <input   value='' type="email" placeholder="nzubechukwu@gmail.com"  className="p-3 shadow rounded w-full outline-0 "/>
+                        <input onChange={(e) => setInputs({...inputs, signUpemail: e.target.value})}  value={inputs.signUpemail} type="email" placeholder="nzubechukwu@gmail.com"  className="p-3 shadow rounded w-full outline-0 "/>
                     </div>
                     <div>
                     <label htmlFor="password" className="flex font-semibold items-center text-slate-900 text-[15px] "><RiLockPasswordFill/>Password</label>
-                        <input value='' type="password" placeholder="******"  className="p-3 rounded outline-0 w-full shadow "/>
+                        <input 
+                        onChange={(e) => setInputs({...inputs, signUppassword: e.target.value})} 
+                        value={inputs.signUppassword} 
+                        type="password" 
+                        placeholder="******"  
+                        className="p-3 rounded outline-0 w-full shadow "
+                        />
                     </div>
-                  <button type="button" className="bg-green-500 rounded text-[17px] font-semibold p-3">Signup</button>
+                  <button onClick={SignUp} type="button" className="bg-green-500 rounded text-[17px] font-semibold p-3">Signup</button>
                   {/*<button type="button" onClick={signout} className="bg-green-500 rounded text-[17px] font-semibold p-3">Logout</button>*/}
                   <p className="text-center text-slate-200 text-[17px] ">Already have an account? <Link to='/login' className="text-slate-50 uppercase font-bold">Log In</Link></p>
                 </form>
