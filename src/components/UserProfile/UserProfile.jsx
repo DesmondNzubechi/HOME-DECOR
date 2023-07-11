@@ -6,12 +6,17 @@ import {RiLockPasswordFill} from 'react-icons/ri';
 import {AiFillEdit} from 'react-icons/ai'; 
 import  { HiOutlineBars3, HiXMark } from 'react-icons/hi2';
 import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../CartContext/CartContext";
+import { useNavigate } from "react-router-dom";
 
 const levels = [
    100, 200, 300, 400, 500
 ];
 
 export const UserProfile = () => {
+
+  const {user} = useContext(CartContext);
     const [form, setForm] = useState({
         changePassword : 'top-[-2000px]', 
         editProfile : 'top-[-2000px]',
@@ -48,10 +53,12 @@ export const UserProfile = () => {
            });
         }
       
+const navigate = useNavigate();
 
     return(
+      !user?  navigate('/login') :
         <>
-        <div className="flex justify-center flex-row py-[50px] items-center bg-white">
+        <div className="flex justify-center flex-row py-[100px] items-center bg-white">
             <div className="bg-gradient-to-b  from-white to-white p-5 rounded ">
                 <div className="flex flex-col items-center md:items-start md:flex-row gap-5 md:gap-[150px]">
                     <div className="flex flex-col items-center ">
@@ -69,7 +76,7 @@ export const UserProfile = () => {
                      <p className="flex flex-col"><span className="text-[25px] font-semibold ">Level:</span> <span className="text-slate-700 text-[20px] " >300 </span></p>
                      <div className="flex items-center text-center justify-center flex-col md:flex-row gap-1">
             <button onClick={viewChangePassword} className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-green-500 text-[15px]  p-2 h-fit rounded ">Change Password <RiLockPasswordFill/></button>
-            <button onClick={viewEditProfile}  className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-yellow-500 text-[15px]  p-2 h-fit rounded ">Edit Profile<AiFillEdit/></button>
+           {/* <button onClick={viewEditProfile}  className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-yellow-500 text-[15px]  p-2 h-fit rounded ">Edit Profile<AiFillEdit/></button>*/}
             <button className="flex items-center  text-slate-50 gap-2 md:text-[20px] bg-red-500 text-[15px]  p-2 px-[45px] h-fit rounded ">Logout <AiOutlineLogout/></button>
                      </div>
                     </div>

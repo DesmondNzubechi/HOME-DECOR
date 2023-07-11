@@ -1,13 +1,21 @@
 import React, { createContext, useReducer, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../config/firebase";
 // Create a context for the cart
 export const CartContext = createContext();
 
 export const CartPro = (props) => {
 
-  const notification = () => toast('bbhh');
-
+  //const notification = () => toast('bbhh');
+ 
+  const [user, setUser] = useState({});
+  useEffect(() => {
+     onAuthStateChanged(auth, (currentUser) => {
+     setUser(currentUser)
+     }, [user])
+  })
   // Cart reducer function to handle cart item updates
   const cartReducer = (cartItems, action) => {
     switch (action.type) {
@@ -329,6 +337,7 @@ export const CartPro = (props) => {
         HideDetails,
         details,
         fullDetail,
+        user
       }}
     >
       {props.children}

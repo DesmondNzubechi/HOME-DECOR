@@ -26,6 +26,8 @@ import { Contact } from './components/Contact/Contact';
 import { ToastContainer, toast } from 'react-toastify';
 import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/login/login';
+import { UserProfile } from './components/UserProfile/UserProfile';
+
 function App() {
   return (
     <CartPro>
@@ -53,6 +55,7 @@ function App() {
     <Route path='/contact' element={<Contact/>} />
     <Route path='/signup' element={<Signup/>} />
     <Route path='/login' element={<Login/>} />
+    <Route path='/profile' element={<UserProfile/>} />
   </Routes>
   <Footer/>
     </div>
