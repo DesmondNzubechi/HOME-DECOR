@@ -24,10 +24,10 @@ export const UserProfile = () => {
 const navigate = useNavigate();
   const {user} = useContext(CartContext);
   const PicFolder = `${user.email}`;
-    const [profilePic, setProfilePic] = useState([]);
+    const [profilePic, setProfilePic] = useState(localStorage.getItem('profilePic') || '');
     const [selectedPic, setSelectedPic] = useState(null);
     const [profilePicFolder, setProfilePicFolder] = useState('');
-console.log(profilePic);
+console.log(profilePicFolder);
     const uploadProfilePic = () => {
       if (selectedPic === null) {
         const notify = () => toast('Please select profile picture to be uploaded');
@@ -49,16 +49,18 @@ console.log(profilePic);
       listAll(folderRef).then(response => {
         response.items.forEach(item => {
           getDownloadURL(item).then(url => {
-            setProfilePic((prev) => [...prev, url]);
+            setProfilePic(url);
           })
         })
       })
     });
 
   }
-
+console.log(profilePic) 
   useEffect(() => {
-    if (profilePicFolder === '')return;
+
+    localStorage.setItem('profilePic', profilePic);
+   if (profilePicFolder === '')return;
     const imgRef = ref(storage, `${profilePicFolder}/`);
     listAll(imgRef).then((response) => {
       response.items.forEach(item => {
@@ -67,7 +69,9 @@ console.log(profilePic);
         })
       })
     })
-  }, [])
+  }, [profilePicFolder, profilePic]);
+
+  
     const [form, setForm] = useState({
         changePassword : 'top-[-2000px]', 
         editProfile : 'top-[-2000px]',
@@ -102,7 +106,7 @@ console.log(profilePic);
              changePassword : 'top-[-2000px]',
             editProfile : 'top-[-2000px]',
            })
-        }
+        } 
 
         //hide change password page
         const hideChangePassword = () => {
@@ -118,11 +122,11 @@ console.log(profilePic);
             <div className="bg-gradient-to-b  from-white to-white p-5 rounded ">
                 <div className="flex flex-col items-center md:items-start md:flex-row gap-5 md:gap-[150px]">
                     <div className="flex flex-col items-center ">
-                     {profilePic.length !== 0 ?
+                     {profilePic == '' ?
                        <img className="w-[100px] shadow-2xl h-[100px] rounded-full" src={userImg} alt="" /> : 
-                       profilePic.map(img => {
-                     return  <img className="w-[100px] shadow-2xl h-[100px] rounded-full" src={img} alt="" /> 
-})}
+                      // profilePic.map(img => {
+                      <img className="w-[100px] shadow-2xl h-[100px] rounded-full" src={profilePic} alt="" /> 
+}
                         <div className="flex flex-col justify-center items-center">
                     <input onChange={(e) => setSelectedPic(e.target.files[0])} type="file" className="file:bg-transparent font-semibold py-[10px] file:border-0 max-w-[200px]" name="" id="" />
                     <button onClick={uploadProfilePic} className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] font-semibold bg-black text-[15px]  p-2 h-fit rounded ">Update profile picture</button>
