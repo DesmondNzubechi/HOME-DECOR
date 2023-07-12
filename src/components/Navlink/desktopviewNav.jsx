@@ -4,6 +4,7 @@ import {AiFillShopping, AiFillHeart} from 'react-icons/ai';
 import {BsSearch} from 'react-icons/bs';
 import './style.css';
 import { CartContext } from "../CartContext/CartContext";
+import { FaUserCircle } from "react-icons/fa";
 
 export const NavigationLink = [
     {
@@ -41,7 +42,7 @@ export const NavigationLink = [
 ]
 
 export const DesktopNav = () => {
-    const {showCartItems, wishList, showWishList, cartItems, showSearch,} = useContext(CartContext);
+    const {showCartItems, wishList, user, showWishList, cartItems, showSearch,} = useContext(CartContext);
 let cartNum = cartItems.length;
 let wishListNum = wishList.length;
     return(
@@ -61,7 +62,7 @@ return isActive ? {borderBottom : '5px solid white'} : {}
         })
     }
 </ul>
-
+{!user &&
 <div className="flex relative z-2 flex-row gap-2">
             <button className="border-slate-50 w-fit border text-white px-[10px] text-center py-[4px] text-[15px] rounded capitaliz font-semibold ">
             <Link to='/login'>Login</Link>
@@ -69,7 +70,9 @@ return isActive ? {borderBottom : '5px solid white'} : {}
             <button className="bg-slate-50 text-slate-900 px-[10px] text-center py-[4px] text-[15px] rounded w-fit capitaliz font-semibold ">
             <Link to='/signup'>Signup</Link>
             </button>
-          </div>
+          </div>}
+{
+       user &&   <NavLink  to='/profile' className='  w-fit rounded-full  text-slate-300 active:text-white  uppercase text-center font-[500] shadow-2xl text-[30px] p-2'><FaUserCircle className="shadow-2xl"/></NavLink>}
 
 <div className="flex text-slate-100 flex-row gap-3  ">
     <BsSearch onClick={showSearch} className="text-[30px]  cursor-pointer hover:text-slate-300"/>

@@ -2,20 +2,14 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
-import { Link } from "react-router-dom";
-
-
-
-
-
-
-
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const EmailCheckout = () => {
-    const {formInputs, emailProceed, setFormInputs} = useContext(CartContext);
+    const {formInputs, emailProceed, user, setFormInputs} = useContext(CartContext);
+const navigate = useNavigate();
     return(
-     
+      !user? navigate('/login') :
         <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">
         <div className='md:col-span-3 p-4  md:border-r '>
         
@@ -37,6 +31,7 @@ export const EmailCheckout = () => {
            <div className="flex flex-col gap-0  border p-2 rounded">
             <label className="text-slate-700 font-semibold" htmlFor="">Email:</label>
             <input
+            
   onChange={(e) => {
     const value = e.target.value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation
@@ -63,7 +58,8 @@ export const EmailCheckout = () => {
           : "/checkoutAddress",
     });
   }}
-  value={formInputs.email}
+  value={user?.email} 
+  disabled
   type="email"
   placeholder="Nzubechukwu@gmail.com"
   className="outline-0"
@@ -74,7 +70,7 @@ export const EmailCheckout = () => {
            </div>
            <span className="text-red-500 text-[13px] font-semibold ">{formInputs.emailErr}</span>
            </div>
-           <Link to={formInputs.addressLink} onClick={emailProceed}  className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Proceed to Shipping</Link>
+           <Link to='/checkoutAddress' onClick={emailProceed}  className="bg-slate-900 hover:bg-slate-700 active:bg-green-500 capitalize w-fit px-[20px] ac text-[20px] p-[5px] rounded shadow my-[30px]  text-slate-50 ">Proceed to Shipping</Link>
           
            <div>
 

@@ -4,7 +4,7 @@ import paypal from  '../../assets/payr.png';
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export const PaymentCheckout = () => {
 const [payment, setPayment] = useState({
     cardDisplay: true,
@@ -32,7 +32,7 @@ const showPaypal = () => {
 }
 
    
-const {formInputs, setFormInputs, cartItems} = useContext(CartContext);
+const {formInputs, setFormInputs, user, cartItems} = useContext(CartContext);
 
 let productName = '';
 cartItems.forEach(element => {
@@ -43,9 +43,11 @@ cartItems.forEach(element => {
 let homeLink = '/paymentCheckout';
 
 const {cardCVC, cardName, cardNumber, CardExpiryDate}  = formInputs;
-
+ 
+const navigate = useNavigate();
 
     return(
+        !user? navigate('/login') :
         <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">
         <div className='md:col-span-3 p-4  md:border-r '>
  

@@ -7,9 +7,10 @@ import { HiOutlineXMark } from 'react-icons/hi2';
 import './style.css';
 import { CartContext } from "../CartContext/CartContext";
 import { NavigationLink } from "./desktopviewNav";
+import { FaUserCircle } from "react-icons/fa";
 
 export const MobileNav = () => {
-  const { showCartItems, wishList, showWishList, cartItems, showSearch } = useContext(CartContext);
+  const { showCartItems, wishList, user, showWishList, cartItems, showSearch } = useContext(CartContext);
   let cartNum = cartItems.length;
   let wishListNum = wishList.length;
 
@@ -57,14 +58,16 @@ export const MobileNav = () => {
           </li>
         ))}
         
-      <div className="flex relative z-2 flex-col gap-2">
+     {!user && <div className="flex relative z-2 flex-col gap-2">
             <button className="border-slate-50 w-fit border text-white px-[20px] text-center py-[4px] text-[20px] rounded capitaliz font-semibold ">
             <Link to='/login' onClick={HideSideLink}>Login</Link>
             </button>
             <button className="bg-slate-50 text-slate-900 px-[20px] text-center py-[4px] text-[17px] rounded w-fit capitaliz font-semibold ">
             <Link to='/signup' onClick={HideSideLink} >Signup</Link>
             </button>
-          </div>
+          </div>}
+
+        { user && <NavLink onClick={HideSideLink}  to='/profile' className='  w-fit rounded-full  text-slate-300 active:text-white  uppercase text-center font-[500] shadow-2xl text-[30px] p-2'><FaUserCircle className="shadow-2xl"/></NavLink>}
 
       </ul>
       <div className="flex text-slate-100 items-center flex-row gap-3">

@@ -9,18 +9,28 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
-
+import { signOut } from "firebase/auth";
+import { auth } from "../../config/firebase";
 const levels = [
    100, 200, 300, 400, 500
 ];
 
 export const UserProfile = () => {
-
+    
+const navigate = useNavigate();
   const {user} = useContext(CartContext);
     const [form, setForm] = useState({
         changePassword : 'top-[-2000px]', 
         editProfile : 'top-[-2000px]',
       });
+      const signUserOut = async () => {
+        try {
+          await signOut(auth);
+          navigate('/login');
+        } catch (error) {
+          console.log(error)
+        }
+      }
       //view edit profile page
         const viewEditProfile = () => {
           setForm({
@@ -52,13 +62,10 @@ export const UserProfile = () => {
             editProfile : 'top-[-1000px]',
            });
         }
-      
-const navigate = useNavigate();
-
     return(
       !user?  navigate('/login') :
         <>
-        <div className="flex justify-center flex-row py-[100px] items-center bg-white">
+        <div className="flex justify-center flex-row pb-[100px] pt-[150px] items-center bg-white">
             <div className="bg-gradient-to-b  from-white to-white p-5 rounded ">
                 <div className="flex flex-col items-center md:items-start md:flex-row gap-5 md:gap-[150px]">
                     <div className="flex flex-col items-center ">
@@ -71,13 +78,13 @@ const navigate = useNavigate();
                   
                     <div className="flex flex-col text-center md:text-start gap-[20px] ">
                      <h1 className="uppercase font-bold text-[25px] ">My Profile</h1>
-                     <p className="flex flex-col"><span className="text-[25px] font-semibold ">Name:</span> <span className="text-slate-700 text-[20px] " >Nzubechukwu Desmond</span></p>
-                     <p className="flex flex-col"><span className="text-[25px] font-semibold ">Email:</span> <span className="text-slate-700 text-[20px] " >Nzubechukwu@gmail.com</span></p>
-                     <p className="flex flex-col"><span className="text-[25px] font-semibold ">Level:</span> <span className="text-slate-700 text-[20px] " >300 </span></p>
+                  {   <p className="flex flex-col"><span className="text-[25px] font-semibold ">Name:</span> <span className="text-slate-700 text-[20px] " >{user?.email}</span></p>}
+                     <p className="flex flex-col"><span className="text-[25px] font-semibold ">Email:</span> <span className="text-slate-700 text-[20px] " >{user?.email}</span></p>
+                  
                      <div className="flex items-center text-center justify-center flex-col md:flex-row gap-1">
             <button onClick={viewChangePassword} className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-green-500 text-[15px]  p-2 h-fit rounded ">Change Password <RiLockPasswordFill/></button>
            {/* <button onClick={viewEditProfile}  className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-yellow-500 text-[15px]  p-2 h-fit rounded ">Edit Profile<AiFillEdit/></button>*/}
-            <button className="flex items-center  text-slate-50 gap-2 md:text-[20px] bg-red-500 text-[15px]  p-2 px-[45px] h-fit rounded ">Logout <AiOutlineLogout/></button>
+            <button onClick={signUserOut} className="flex items-center  text-slate-50 gap-2 md:text-[20px] bg-red-500 text-[15px]  p-2 px-[45px] h-fit rounded ">Logout <AiOutlineLogout/></button>
                      </div>
                     </div>
                 </div>

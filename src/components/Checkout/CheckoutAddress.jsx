@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext/CartContext";
 import { Ordering } from "./OrderingProducts";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -19,11 +19,12 @@ if ( firstName === '' || lastName === '' || stree === '' ||  state === '' || cit
 
     linkToPayment = '/checkoutPayment';
 }
-
+const {user} = useContext(CartContext);
 console.log(linkToPayment);
-
+const navigate = useNavigate();
 
 return(
+    !user? navigate('/login') :
     <div className="grid relative z-[100] w-full h-full bg-white gap-0 md:grid-cols-5 ">
     <div className='md:col-span-3 p-4  md:border-r '>
     <div>

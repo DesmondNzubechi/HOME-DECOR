@@ -7,27 +7,31 @@ import { useContext } from "react";
 import { BounceLoader } from "react-spinners";
 import { auth } from "../../config/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
+import { CartContext } from "../../components/CartContext/CartContext";
+
 
 export const Signup = () => {
 
-    
+    const {user} = useContext(CartContext);
     const [inputs, setInputs] = useState({
         signUpemail: '',
         signUppassword: '',
     });
-
+    const navigate = useNavigate();
+    const [spinnerJs, setSpinnerJs] = useState(false);
     const SignUp = async () => {
+      setSpinnerJs(true);
         try {
          const userDetail =  await createUserWithEmailAndPassword(auth, inputs.signUpemail, inputs.signUppassword);
+        navigate('/profile');
+
         } catch (error) {
             console.log(error);
         }
     }
-
-    const [spinnerJs, setSpinnerJs] = useState(false);
-
-
     return(
+ 
+      user &&
         <div className="py-[150px] px-[20px] ">
          { spinnerJs &&  <div className="fixed bg-Tp w-full z-[500] left-0 right-0 flex justify-center h-full top-0 bottom-0 items-center"><BounceLoader color="#ffb700"
            size={100}
