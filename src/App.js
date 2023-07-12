@@ -27,6 +27,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Signup } from './pages/Signup/Signup';
 import { Login } from './pages/login/login';
 import { UserProfile } from './components/UserProfile/UserProfile';
+import { ScrollToTop } from './components/ScrollTop/ScrollTop';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
   <MobileNav/>
   <CartLog/>
   <WishList/>
+  <ScrollToTop/>
   <SearchP/>
   <Routes>
     <Route path='/' element={  <Home/>} />

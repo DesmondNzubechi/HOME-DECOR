@@ -31,7 +31,7 @@ export const Signup = () => {
     }
     return(
  
-      user &&
+      !user &&
         <div className="py-[150px] px-[20px] ">
          { spinnerJs &&  <div className="fixed bg-Tp w-full z-[500] left-0 right-0 flex justify-center h-full top-0 bottom-0 items-center"><BounceLoader color="#ffb700"
            size={100}
