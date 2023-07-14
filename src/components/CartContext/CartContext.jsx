@@ -44,6 +44,9 @@ export const CartPro = (props) => {
 
       case "Remove_From_Cart": {
         // Remove a product from the cart based on its ID
+        const noti = () => toast(`${action.payload.name} removed to the cart 🛒`);
+
+        noti();
         const updatedCartItems = cartItems.filter((product) => product.id !== action.payload.id);
         localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
         return updatedCartItems;
@@ -61,9 +64,13 @@ export const CartPro = (props) => {
 
       case "Reduce_Quantity": {
         // Decrease the quantity of a product in the cart by 1, minimum quantity is 1
+        const noti = () => toast(`Quantity of ${action.payload.name} in the cart 🛒  by 1️⃣`);
         return cartItems.map((item) =>
           item.id === action.payload.id
-            ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity }
+            ? { ...item, quantity: item.quantity > 1 ?
+               item.quantity - 1 
+               
+               : item.quantity }
             : item
         );
       }
@@ -99,6 +106,9 @@ export const CartPro = (props) => {
       
       case "Remove_Wish":
         // Remove a product from the wishlist
+        const noti = () => toast(`${action.favObj.name} removed to the wishlist`);
+
+        noti();
         return wishList.filter((removeIt) => removeIt.id !== action.favObj.id);
       default:
         return wishList;

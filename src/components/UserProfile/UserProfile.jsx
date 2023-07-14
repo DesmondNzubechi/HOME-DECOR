@@ -124,7 +124,7 @@ console.log(profilePic)
                 <div className="flex flex-col items-center md:items-start md:flex-row gap-5 md:gap-[150px]">
                     <div className="flex flex-col items-center ">
                      {profilePic == '' ?
-                      <div   className='  w-fit rounded-full  text-slate-300 active:text-white  uppercase text-center font-[500] shadow-2xl text-[30px] p-2'><FaUserCircle className="shadow-2xl"/></div> : 
+                      <div   className='  w-fit rounded-full  text-slate-300 active:text-white  uppercase text-center font-[500] shadow-2xl text-[100px] p-2'><FaUserCircle className="shadow-2xl"/></div> : 
                       // profilePic.map(img => {
                       <img className="w-[100px] shadow-2xl h-[100px] rounded-full" src={profilePic} alt="" /> 
 }
@@ -142,7 +142,7 @@ console.log(profilePic)
                      <div className="flex items-center text-center justify-center flex-col md:flex-row gap-1">
            {/* <button onClick={viewChangePassword} className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-green-500 text-[15px]  p-2 h-fit rounded ">Change Password <RiLockPasswordFill/></button>}
            {/* <button onClick={viewEditProfile}  className="flex items-center text-center text-slate-50 gap-2 md:text-[20px] bg-yellow-500 text-[15px]  p-2 h-fit rounded ">Edit Profile<AiFillEdit/></button>*/}
-            <button onClick={signUserOut} className="flex items-center  text-slate-50 gap-2 md:text-[20px] bg-red-500 text-[15px]  p-2 px-[45px] h-fit rounded ">Logout <AiOutlineLogout/></button>
+            <button onClick={signUserOut} className="flex items-center  text-slate-50 gap-2 md:text-[20px] hover:bg-red-900 bg-red-500 text-[15px]  p-2 px-[45px] h-fit rounded ">Logout <AiOutlineLogout/></button>
                      </div>
                     </div>
                 </div>
