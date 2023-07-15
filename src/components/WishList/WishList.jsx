@@ -12,7 +12,12 @@ const {cartItems,wishList, removeFromCart, showCart, reduceQuantity, hideCartIte
     return(
       <>
        {showWish &&
-        <div className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Icon ">
+        <span onClick={(e) => {
+         const tag = e.target.tagName;
+         if (tag === 'SPAN') {
+          hideWishList();
+         }
+        }} className="fixed p-[20px] h-full overflow-y-auto top-0 left-0 right-0  z-[30] bg-Icon ">
 <div className="bg-slate-900 h-[100vh] overflow-y-auto fixed top-0 right-0 bottom-0 w-[100%] md:w-[40%] ">
 <div className="flex fixed top-0 z-[20] right-[20px]  md:w-[38%] w-full bg-slate-900 flex-row  p-[10px] justify-around items-center  gap-2  ">
     <h1 className="font-myfont py-[5px] text-[20px]  uppercase text-white">my wishlist</h1>
@@ -52,7 +57,7 @@ wishList.map(product => {
 </div>
 
 </div>
- </div>
+ </span>
        }
         </>
     )
