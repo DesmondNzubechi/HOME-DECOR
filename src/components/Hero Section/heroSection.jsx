@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 import { TbTruckDelivery } from 'react-icons/tb';
 import {MdChair} from 'react-icons/md';
 import { MdPayments } from 'react-icons/md';
-
+import { CartContext } from "../CartContext/CartContext";
+import { useContext } from "react";
 export const HeroSection = () => {
+    const {user} = useContext(CartContext);
     return(
         <div className="flex my-[50px] gap-[30px]  justify-around flex-col md:flex-row items-center">
             <div className="md:max-w-[500px] flex flex-col gap-[10px] ">
                <h1 className="capitalize font-myfont  text-[30px] md:text-[50px] ">Home of quality furniture</h1>
                <p className="md:text-[27px] text-[20px] font-fonty text-slate-700 ">Welcome to HomeDecor , your one-stop shop for stylish furniture and home decor</p> 
-               <Link to='/bedroom' className="bg-slate-900  w-fit px-[20px] py-[5px] rounded shadow-2xl text-[25px] hover:bg-green-500 active:bg-green-900 text-slate-200 ">Explore</Link>
+               <div className="flex gap-3">
+               <Link to='/bedroom' className="bg-slate-900  w-fit px-[20px] py-[5px] rounded shadow-2xl text-[20px] hover:bg-green-500 active:bg-green-900 text-slate-200 ">Explore</Link>
+             {!user &&  <Link to='/signup' className="bg-slate-500  w-fit px-[20px] py-[5px] rounded shadow-2xl text-[20px] border border-slate-400 hover:bg-green-500 active:bg-green-900 text-slate-50 ">Get Started</Link>}
+               </div>
             </div>
             <div className="max-w-[600px]">
                 <img src={Heroimg} alt="" />
