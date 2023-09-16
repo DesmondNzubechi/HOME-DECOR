@@ -47,7 +47,7 @@ let cartNum = cartItems.length;
 let wishListNum = wishList.length;
     return(
         <div className="lg:flex hidden flex-row shadow-2xl py-[22px] z-[20]  fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black  gap-5 justify-around">
-            <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[30px] ">HomeDecor</h1></div>
+            <div className="font-myfont"><h1 className="uppercase text-slate-100 font-bold text-[30px] ">Home Decor</h1></div>
 <ul id="links" className="flex  font-fonty flex-row text-slate-200  gap-5 items-center ">
    
     {

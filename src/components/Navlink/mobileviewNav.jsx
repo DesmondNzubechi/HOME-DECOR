@@ -42,7 +42,7 @@ export const MobileNav = () => {
   return (
     <div className="lg:hidden shadow-2xl z-[20] flex flex-row py-[22px] fixed top-0 left-0 right-0 w-full px-[20px] items-center overflow-x-hidden bg-black gap-5 justify-around">
       <div className="font-myfont">
-        <h1 className="uppercase relative z-[10] text-slate-100 font-bold text-[20px] md:text-[30px]">HomeDecor</h1>
+        <h1 className="uppercase relative z-[10] text-slate-100 font-bold text-[20px] md:text-[30px]">Home Decor</h1>
       </div>
       <ul id="links" className={`flex fixed transition ease-out duration-500 top-[50px] py-[40px] bg-black w-[50%] h-full ${sideLink} font-fonty flex-col text-slate-200 gap-5 items-center`}>
         {NavigationLink.map(navs => (

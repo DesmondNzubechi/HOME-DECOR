@@ -19,7 +19,7 @@ export const Footer = () => {
                 <h1 className="text-20px font-semibold mt-[15px] mb-[10px] text-white">Connect with the developer</h1>
                 <div className="flex flex-row gap-5 mb-[20px]">
                   <a href="https://www.linkedin.com/in/desmond.nzubechukwu-38895422" className="text-[20px] hover:bg-slate-200 shadow-xl p-1 bg-white text-slate-900 rounded-full"><AiFillLinkedin /></a> 
-                  <a href="https://www.twitter.com/nzubechukwu101" className="text-[20px] shadow-xl p-1 bg-white text-slate-900 rounded-full"> < BsTwitter /></a>
+                  <a href="https://www.twitter.com/nzubechukwudev" className="text-[20px] shadow-xl p-1 bg-white text-slate-900 rounded-full"> < BsTwitter /></a>
                    <a href="https://wa.me/2347084183611?text=Hello,%20Nzubechukwu(B2R)%20My%20name%20is%20.....%20I%20got%20Your%20Contact%20From%20A%20Website%20that%20you%20built%20AirtimeSeller" className="text-[20px] shadow-xl p-1 bg-white text-slate-900 rounded-full"><RiWhatsappFill /></a>
                <a href="https://www.github.com/DesmondNzubechi" className="text-[20px] shadow-xl p-1 bg-white text-slate-900 rounded-full"><AiOutlineGithub /></a>
                <a href="https://nzubechukwu.com" className="text-[20px] shadow-xl p-1 bg-white text-slate-900 rounded-full"><FiExternalLink /></a>

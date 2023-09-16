@@ -8,7 +8,10 @@ export const CartContext = createContext();
 
 export const CartPro = (props) => {
 
-  //const notification = () => toast('bbhh');
+ // const notification = () => toast('This website is not a real website and not currently being used');
+
+//setTimeout(notification(), 7000);
+
  
   const [user, setUser] = useState({});
   useEffect(() => {

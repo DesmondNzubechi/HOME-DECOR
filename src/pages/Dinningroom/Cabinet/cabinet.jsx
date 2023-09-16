@@ -21,7 +21,7 @@ export let CabinetArr = [
     {
         id:70,
         Img : MordernCab,
-        name: 'Mordern',
+        name: 'Modern',
         Price: 350,
         discount : 400,
        descr: 'Lorem ipsum dolor sit amet. Est voluptates placeat qui error dolor in iusto earum aut dolorum veniam et incidunt harum. Ab consectetur omnis 33 eveniet possimus et rerum consequatur At aliquid dolores',
