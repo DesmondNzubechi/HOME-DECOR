@@ -96,7 +96,7 @@ I initially created this furniture e-commerce website as a personal project. How
 
 ### Try It Out
 
-We encourage you to explore the project by visiting our live demo:
+I encourage you to explore the project by visiting our live demo:
 
 [Demo Link](https://home-decor-by-nzubechukwu.vercel.app/)
 
